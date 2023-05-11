@@ -1,0 +1,14 @@
+@use 'positioning';
+@use 'icons';
+
+.anchor {
+  text-decoration: none;
+}
+
+.icon, .withoutSelfAlignment {
+  @include icons.icon;
+}
+
+.icon {
+  @include positioning.row-top-right-self;
+}

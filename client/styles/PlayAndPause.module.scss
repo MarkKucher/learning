@@ -1,0 +1,12 @@
+@use 'icons';
+@use 'positioning';
+
+.icon {
+  @include icons.icon;
+  @include positioning.row-bottom-right-self;
+  @include positioning.centered;
+  width: 35px;
+  height: 35px;
+  margin: 0.1rem;
+  margin-left: auto;
+}

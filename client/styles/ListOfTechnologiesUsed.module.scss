@@ -1,0 +1,80 @@
+@use 'positioning';
+@use 'theme-primary';
+@use 'scrollbars';
+
+.logoContainer {
+  width: 400px;
+  height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem;
+  border-radius: 10px;
+  @include scrollbars.light-scrollbar;
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0 10px 10px 0;
+  }
+  @include theme-primary.golden-gradient-background;
+}
+
+.logos {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.technologies {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logoCube, .logoAlbum, .logoBook {
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 20px;
+  @include positioning.centered;
+  & img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  &:hover {
+    outline: 4px solid white
+  }
+  &:active {
+    outline: 4px solid theme-primary.$text-color;
+  }
+  cursor: pointer;
+}
+
+.logoAlbum {
+  width: 240px;
+  height: 160px;
+}
+
+.logoBook {
+  width: 160px;
+  height: 240px;
+}
+
+.logoCube {
+  width: 200px;
+  height: 200px;
+}
+
+.logoTitle {
+  flex: 1;
+  @include positioning.centered;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}

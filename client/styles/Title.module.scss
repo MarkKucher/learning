@@ -1,0 +1,13 @@
+@use 'theme-primary';
+
+.title, .grandTitle {
+  font-size: 3rem;
+  font-weight: bolder;
+  @include theme-primary.golden-gradient-background;
+  @include theme-primary.text-gradient;
+  margin-right: auto;
+}
+
+.grandTitle {
+  font-size: 5rem;
+}

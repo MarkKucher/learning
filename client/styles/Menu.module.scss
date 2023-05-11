@@ -1,0 +1,92 @@
+@use 'theme-primary';
+@use 'positioning';
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+}
+
+.background {
+  clip-path: circle(30px at 40px calc(45vh + 22.5px));
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  @include theme-primary.blocks-gradient-background;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 45vh;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.row {
+  transition: all 300ms;
+  display: flex;
+  flex-direction: row;
+  min-width: 200px;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.link {
+  transition: 300ms;
+  font-size: 1rem;
+  line-height: 24px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.items {
+  padding: 25px 25px 25px 50px;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  opacity: 0;
+}
+
+.directory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  transition: all 300ms;
+  overflow: hidden;
+}
+
+.virtualContainer {
+  max-height: 200px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 15px;
+}

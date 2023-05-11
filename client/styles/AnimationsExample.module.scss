@@ -1,0 +1,61 @@
+@use 'positioning';
+
+.block {
+  height: 100%;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  @include positioning.centered;
+  flex-direction: row;
+}
+
+.cube, .cubeAnimate {
+  margin-left: auto;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 30%;
+}
+
+.cubeAnimate {
+  animation: scaleAnimation 1s infinite, rotateAnimation 1s infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.iconContainer {
+  font-size: 2rem;
+  color: white;
+  @include positioning.row-bottom-right-self;
+  cursor: pointer;
+}
+
+.icon {
+  @include positioning.centered;
+}

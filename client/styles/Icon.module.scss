@@ -1,0 +1,25 @@
+@use 'icons';
+@use 'positioning';
+
+.icon {
+  @include icons.icon;
+}
+
+.smaller {
+  @include icons.smaller;
+}
+
+.withoutAnimation {
+  @include icons.withoutAnimation;
+}
+
+.succeeded {
+  @include icons.succeeded;
+}
+
+.switchIcon {
+  @include positioning.centered;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}

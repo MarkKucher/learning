@@ -1,0 +1,38 @@
+@use 'theme-primary';
+@use 'positioning';
+
+.header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem 1rem 4rem;
+  @include theme-primary.blocks-gradient-background;
+}
+
+.subHeader {
+  width: 100%;
+  padding: 3rem;
+  @include positioning.centered;
+  flex-direction: row;
+}
+
+.title {
+  @include theme-primary.golden-gradient-background;
+  @include theme-primary.text-gradient;
+  font-size: 4rem;
+}
+
+.tools {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 30%;
+  & > div, & > a {
+    margin-left: 0.5rem;
+  }
+}

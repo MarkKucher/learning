@@ -1,0 +1,49 @@
+@use 'positioning';
+@use 'icons';
+
+.main {
+  min-width: 350px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  border-radius: 40px;
+}
+
+.sample {
+  @include positioning.centered;
+  height: 120px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover, &:active {
+    outline: 3px solid;
+  }
+  &__container {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    &_smaller {
+      @include positioning.centered;
+      width: 50px;
+      height: 45px;
+      border-radius: 5px;
+      &__content {
+        font-size: 1rem;
+      }
+    }
+  }
+  &__description {
+    margin-right: 10px;
+    div {
+      width: 40px;
+      height: 12px;
+      border-bottom: 2px solid;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use 'theme-primary';
+@use 'scrollbars';
+
+.main {
+    cursor: default;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include theme-primary.background-gradient;
+}

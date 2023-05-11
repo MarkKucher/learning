@@ -1,0 +1,8 @@
+@use 'positioning';
+@use 'icons';
+
+.icon {
+  @include positioning.centered;
+  @include icons.icon;
+  @include positioning.row-top-left-self;
+}

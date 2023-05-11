@@ -1,18 +1,15 @@
 import React from 'react';
 import MainLayout from "@/components/layout/MainLayout";
-import MainPart from "@/modules/main/MainPart";
+import AnimationsBlock from "@/modules/animations/AnimationsBlock";
 import Header from "@/modules/header/Header";
-import Footer from "@/modules/footer/Footer";
 
-const Index = () => {
-
+const Animations = () => {
     return (
         <MainLayout>
             <Header/>
-            <MainPart/>
-            <Footer/>
+            <AnimationsBlock/>
         </MainLayout>
     );
 };
 
-export default Index;
+export default Animations;

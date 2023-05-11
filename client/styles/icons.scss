@@ -1,0 +1,36 @@
+@use 'positioning';
+@use 'animations';
+
+@mixin icon {
+  @include positioning.centered;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  @include animations.tapWithScale;
+  margin: 1rem;
+}
+
+@mixin withoutAnimation {
+  @include positioning.centered;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+@mixin succeeded {
+  color: limegreen !important;
+  @include positioning.centered;
+  font-size: 1.7rem;
+  padding: 0.4rem;
+  border: 2px solid limegreen;
+  border-radius: 30%;
+}
+
+@mixin smaller {
+  @include icon;
+  margin: 0;
+  @include positioning.centered;
+  font-size: 1.7rem;
+  padding: 0.4rem;
+}

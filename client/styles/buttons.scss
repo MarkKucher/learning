@@ -1,0 +1,23 @@
+@use 'theme-primary';
+@use 'animations';
+@use 'positioning';
+
+@mixin button {
+  @include positioning.centered;
+  width: 200px;
+  height: 80px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 20px;
+  background: theme-primary.$dark-color;
+  color: white;
+  border: 2px solid black;
+  transition: 300ms;
+  &:hover {
+    background: black;
+  }
+  &:active {
+    border-color: theme-primary.$dark-color;
+  }
+}
+

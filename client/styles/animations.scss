@@ -1,0 +1,9 @@
+@mixin tapWithScale {
+  transition: scale 200ms;
+  &:hover {
+    scale: 1.1;
+  }
+  &:active {
+    scale: 0.9;
+  }
+}
