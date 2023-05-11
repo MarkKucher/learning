@@ -31,7 +31,7 @@ const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, 
     if(customDescription) {
         description = customDescription;
     } else if(hasDescription) {
-        description = articleDescriptions[title.toLowerCase()]
+        description = (articleDescriptions as any)[title.toLowerCase()]
     }
 
     return (
