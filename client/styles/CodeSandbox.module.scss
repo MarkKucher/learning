@@ -1,7 +1,0 @@
-@use 'buttons';
-
-.csbtn {
-  @include buttons.button;
-  margin: 1rem auto 1rem 1rem;
-  cursor: pointer;
-}

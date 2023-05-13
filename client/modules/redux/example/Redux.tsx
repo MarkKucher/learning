@@ -9,12 +9,13 @@ interface StyledOptionProps {
 }
 
 const StyledOption = styled.div<StyledOptionProps>`
-  background: ${props => props.isChosen ? props.theme.subGradient.gradient : 'none'};
+  background: ${props => props.isChosen ? props.theme.description : 'none'};
   color: ${props => props.theme.text};
-  outline-color: ${props => props.theme.text};
+  outline: ${props => props.isChosen ? `2px solid ${props.theme.text}` : 'none'};
   &:hover {
     outline-color: ${props => props.theme.text};
   }
+  transition: background-color 300ms;
 `
 
 const Redux = () => {

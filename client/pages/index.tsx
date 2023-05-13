@@ -8,7 +8,7 @@ const Index = () => {
 
     return (
         <MainLayout>
-            <Header/>
+            <Header shouldHaveArrow/>
             <MainPart/>
             <Footer/>
         </MainLayout>

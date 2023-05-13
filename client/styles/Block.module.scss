@@ -9,10 +9,21 @@
   align-items: center;
   justify-content: space-between;
   width: 80vw;
-  height: 60vh;
-  @include theme-primary.blocks-gradient-background;
+  min-height: 60vh;
   box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
+}
+
+.topicBlock {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: wrap column;
+  padding: 1rem 3rem 3rem;
+  margin: 5rem 0;
+  border-radius: 20px;
+  box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -25,12 +36,19 @@
   justify-content: space-between;
 }
 
+.mainHeader {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+}
+
 .icons {
   margin-left: auto;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   align-self: start;
   width: 100px;
 }
@@ -43,19 +61,35 @@
 }
 
 .content {
+  display: flex;
   margin: 1rem;
+  padding: 0.5rem;
   flex: 1;
-  height: 60%;
+  min-height: 200px;
   border-radius: 10px;
-  @include theme-primary.golden-gradient-background;
+  min-width: 250px;
+  max-width: 500px;
 }
 
 .main {
   flex: 5;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    padding: 1rem;
+  }
+  .main {
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+  }
+  .topicBlock {
+    padding: 1rem;
+  }
 }

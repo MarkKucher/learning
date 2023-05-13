@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/ScrollTo.module.scss';
+import styles from '../../styles/Icon.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowUp, faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import {useRouter} from "next/router";
@@ -11,14 +11,13 @@ interface ScrollTo {
     id?: string;
     x?: number;
     y?: number;
-    withoutSelfAlignment?: boolean;
 }
 
 const SI = styled.a`
   color: ${props => props.theme.text}
 `
 
-const ScrollTo: React.FC<ScrollTo> = ({isArrowUp, id, x, y, withoutSelfAlignment}) => {
+const ScrollTo: React.FC<ScrollTo> = ({isArrowUp, id, x, y}) => {
     const router = useRouter()
 
     const moveTo = () => {
@@ -29,7 +28,7 @@ const ScrollTo: React.FC<ScrollTo> = ({isArrowUp, id, x, y, withoutSelfAlignment
     }
 
     return (
-        <SI href={id} className={withoutSelfAlignment ? styles.withoutSelfAlignment : styles.icon} onClick={moveTo}>
+        <SI href={id} className={styles.icon} onClick={moveTo}>
             <FontAwesomeIcon icon={isArrowUp ? faArrowUp : faArrowDown}/>
         </SI>
     );

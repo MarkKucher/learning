@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {articleDescriptions} from "@/utils/articleDescriptions";
-import StyledDescription from "@/components/styled/StyledDescription";
+import Description from "@/components/styled/Description";
 
 interface BlockProps {
     title: string;
@@ -37,15 +37,13 @@ const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, 
     return (
         <StyledBlock className={styles.block} id={title}>
             <div className={styles.header}>
-                <Title title={title}/>
-                <div className={styles.icons}>
-                    {hasLink && <OpenPage link={`/${title.toLowerCase()}`}/>}
-                </div>
+                <Title title={title} position={'left'}/>
+                {hasLink && <OpenPage link={`/${title.toLowerCase()}`}/>}
             </div>
             <div className={styles.main}>
-                {description && <StyledDescription CN={styles.description}>
+                {description && <Description CN={styles.description}>
                     {description}
-                </StyledDescription>}
+                </Description>}
                 <StyledContent className={styles.content}>
                     {children}
                 </StyledContent>

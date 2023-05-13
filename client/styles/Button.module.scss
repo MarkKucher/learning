@@ -5,6 +5,12 @@
   @include buttons.button;
 }
 
+.csbtn {
+  @include buttons.button;
+  margin: 1rem auto 1rem 1rem;
+  cursor: pointer;
+}
+
 .roundButton {
   @include positioning.centered;
   width: 50px;
@@ -16,4 +22,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .csbtn {
+    width: 120px;
+    height: 70px;
+    font-size: 1.2rem;
+    margin: 0 auto 0 0;
+  }
 }

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from '../../styles/Description.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import StyledIcon from "@/components/styled/StyledIcon";
+import Icon from "@/components/styled/Icon";
 import styled from "styled-components";
 import {AnimatePresence, motion} from "framer-motion";
 import {wrap} from "popmotion";
@@ -74,9 +74,9 @@ const DescriptionExtended: React.FC<DescriptionExtendedProps> = ({content}) => {
                 </StyledContent>
             </AnimatePresence>
             <div className={styles.control}>
-                <StyledIcon className={styles.chevron} onClick={() => paginate(-1)}>
+                <Icon CN={"icon"} onClick={() => paginate(-1)}>
                     <FontAwesomeIcon icon={faChevronLeft}/>
-                </StyledIcon>
+                </Icon>
                 {content.length > 3 && <div className={styles.options}>
                     {content.map((c, i) => (
                         <StyledOption
@@ -86,9 +86,9 @@ const DescriptionExtended: React.FC<DescriptionExtendedProps> = ({content}) => {
                         />
                     ))}
                 </div>}
-                <StyledIcon className={styles.chevron} onClick={() => paginate(1)}>
+                <Icon CN={"icon"} onClick={() => paginate(1)}>
                     <FontAwesomeIcon icon={faChevronRight}/>
-                </StyledIcon>
+                </Icon>
             </div>
         </div>
     );

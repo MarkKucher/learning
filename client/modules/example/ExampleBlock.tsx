@@ -7,17 +7,14 @@ import DescriptionExtended from "@/modules/example/DescriptionExtended";
 import CodeExample from "@/modules/example/CodeExample";
 import {codeExamples} from "@/modules/example/utils/code";
 import styled from "styled-components";
-import StyledColor from "@/components/styled/StyledColor";
+import Color from "@/components/styled/Color";
+import Title from "@/components/Title";
 
 interface ExampleBlockProps {
     title: string;
     children: React.ReactNode;
     descriptionContent?: React.ReactNode[];
 }
-
-const StyledTitle = styled.h3`
-  color: ${props => props.theme.text}
-`
 
 interface StyledBlockProps {
     isDescription: boolean;
@@ -61,7 +58,7 @@ const ExampleBlock: React.FC<ExampleBlockProps> = ({title, children, description
     return (
         <StyledBlock isDescription={shouldShowDescription} className={shouldShowDescription ? styles.description : styles.block}>
                 <div className={styles.header}>
-                    <StyledTitle className={styles.title}>{title}</StyledTitle>
+                    <Title type={'medium'} position={'left'} title={title} sub/>
                     {descriptionContent && <DetailInfo state={shouldShowDescription} toggleState={setShouldShowDescription}/>}
                 </div>
                 <motion.div

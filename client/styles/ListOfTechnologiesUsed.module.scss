@@ -3,6 +3,7 @@
 @use 'scrollbars';
 
 .logoContainer {
+  min-width: 220px;
   width: 400px;
   height: 400px;
   overflow-y: auto;
@@ -77,4 +78,11 @@
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .logoContainer {
+    width: 300px;
+    margin: 5rem 1rem;
+  }
 }

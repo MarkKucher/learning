@@ -1,22 +1,21 @@
-@use 'theme-primary';
 @use "positioning";
 @use 'scrollbars';
 
 .footer {
   width: 100%;
   min-height: 100px;
-  @include theme-primary.blocks-gradient-background;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color: white;
   margin-top: 10rem;
 }
 
-.header {
+.miniFooter {
   width: 100%;
-  padding: 3rem;
-  @include positioning.centered;
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
 }

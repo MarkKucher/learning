@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../../styles/OpenPage.module.scss';
+import styles from '../../styles/Icon.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLink} from "@fortawesome/free-solid-svg-icons";
-import StyledIcon from "@/components/styled/StyledIcon";
+import Icon from "@/components/styled/Icon";
 
 interface OpenPageProps {
     link: string;
@@ -11,9 +11,9 @@ interface OpenPageProps {
 const OpenPage: React.FC<OpenPageProps> = ({link}) => {
 
     return (
-        <StyledIcon CN={"icon"} onClick={() => {window.open(link)}}>
+        <Icon CN={"icon"} onClick={() => {window.open(link)}}>
             <FontAwesomeIcon icon={faLink}/>
-        </StyledIcon>
+        </Icon>
     );
 };
 

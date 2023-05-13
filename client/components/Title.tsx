@@ -4,17 +4,26 @@ import styled from "styled-components";
 
 interface TitleProps {
     title: string;
-    bigger?: boolean;
+    sub?: boolean;
+    type?: 'small' | 'medium' | 'big';
+    position?: 'left' | 'center' | 'right';
 }
 
-const StyledTitle = styled.div`
-  background: ${props => props.theme.mainGradient.gradient};
+interface StyledTitleProps {
+    position: 'left' | 'center' | 'right';
+    sub?: boolean;
+}
+
+const StyledTitle = styled.div<StyledTitleProps>`
+  background: ${props => !props.sub ? props.theme.mainGradient.gradient : props.theme.text};
   -webkit-background-clip: text;
+  margin-right: ${props => (props.position === 'center' || props.position === 'left') && 'auto'};
+  margin-left: ${props => (props.position === 'center' || props.position === 'right') && 'auto'};
 `
 
-const Title: React.FC<TitleProps> = ({title, bigger}) => {
+const Title: React.FC<TitleProps> = ({title, sub, position = 'center', type = 'small'}) => {
     return (
-        <StyledTitle className={bigger ? styles.grandTitle : styles.title}>
+        <StyledTitle sub={sub} className={styles[type]} position={position}>
             {title}
         </StyledTitle>
     );

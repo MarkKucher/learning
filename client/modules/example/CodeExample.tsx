@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import styles from "../../styles/CodeExample.module.scss";
+import footerStyles from "../../styles/Footer.module.scss";
 import Prism from "prismjs";
 import CopyIcon from "@/components/icons/CopyIcon";
 import CodeSandboxButton from "@/modules/example/buttons/CodeSandboxButton";
@@ -20,14 +21,14 @@ const CodeExample: React.FC<CodeExampleProps> = ({code, language, codesandboxLin
     return (
         <div className={styles.container}>
             <pre className={styles.code}>
-                <header className={styles.header}>
-                    <CopyIcon text={code}/>
-                </header>
                 <code className={`language-${language}`}>
                     {code}
                 </code>
             </pre>
-            {codesandboxLink && <CodeSandboxButton link={codesandboxLink}/>}
+            <footer className={footerStyles.miniFooter}>
+                {codesandboxLink && <CodeSandboxButton link={codesandboxLink}/>}
+                <CopyIcon text={code}/>
+            </footer>
         </div>
     );
 };

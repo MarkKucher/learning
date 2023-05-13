@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "@/components/buttons/Button";
-import styles from "../../../styles/CodeSandbox.module.scss";
+import styles from "../../../styles/Button.module.scss";
 
 interface CodeSandboxProps {
     link: string;

@@ -14,15 +14,14 @@
   @include positioning.centered;
   color: white;
   font-size: 2rem;
-  padding: 1rem;
+  margin: 1rem;
   cursor: pointer;
 }
 
 @mixin succeeded {
   color: limegreen !important;
   @include positioning.centered;
-  font-size: 1.7rem;
-  padding: 0.4rem;
+  font-size: 2rem;
   border: 2px solid limegreen;
   border-radius: 30%;
 }

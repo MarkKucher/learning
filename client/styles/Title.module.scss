@@ -1,13 +1,52 @@
 @use 'theme-primary';
 
-.title, .grandTitle {
-  font-size: 3rem;
+.small, .medium, .big {
   font-weight: bolder;
-  @include theme-primary.golden-gradient-background;
+  text-align: center;
   @include theme-primary.text-gradient;
-  margin-right: auto;
 }
 
-.grandTitle {
+.small {
+  font-size: 3rem;
+}
+
+.medium {
+  font-size: 4rem;
+}
+
+.big {
   font-size: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .small {
+    font-size: 2rem;
+  }
+  .medium {
+    font-size: 3rem;
+  }
+  .big {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .big {
+    font-size: 3.5rem;
+  }
+  .medium {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .medium {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .big {
+    font-size: 3rem;
+  }
 }

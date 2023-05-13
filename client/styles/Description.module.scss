@@ -45,11 +45,6 @@
   @include positioning.centered;
 }
 
-.chevron {
-  @include animations.tapWithScale;
-  cursor: pointer;
-}
-
 .option {
   height: 1rem;
   width: 1rem;

@@ -11,14 +11,18 @@ const StyledHeader = styled.header`
   background: ${props => props.theme.subGradient.gradient};
 `
 
-const Header = () => {
+interface HeaderProps {
+    shouldHaveArrow?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({shouldHaveArrow}) => {
     return (
         <StyledHeader className={styles.header}>
             <Menu/>
-            <Title title={'Learning'} bigger={true}/>
+            <Title position={'left'} title={'Learning'} type={"big"}/>
             <Tools>
                 <ChangeTheme/>
-                <ScrollTo isArrowUp={false} id={'#footer'} withoutSelfAlignment/>
+                {shouldHaveArrow && <ScrollTo isArrowUp={false} id={'#footer'} withoutSelfAlignment/>}
             </Tools>
         </StyledHeader>
     );

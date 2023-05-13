@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 
-const StyledColor = styled.div`
+const Color = styled.div`
   color: ${props => props.theme.text};
 `
 
-export default StyledColor;
+export default Color;

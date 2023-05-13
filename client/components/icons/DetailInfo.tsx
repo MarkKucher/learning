@@ -1,7 +1,7 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInfo} from "@fortawesome/free-solid-svg-icons";
-import styles from "../../styles/DetailInfo.module.scss";
+import styles from "../../styles/Icon.module.scss";
 import styled from "styled-components";
 
 interface DetailInfoProps {
@@ -28,7 +28,7 @@ const StyledIcon = styled.div<StyledIconProps>`
 const DetailInfo: React.FC<DetailInfoProps> = ({state, toggleState}) => {
 
     return (
-        <StyledIcon isInfoOpened={state} className={styles.icon} onClick={() => {toggleState((prev: boolean) => !prev)}}>
+        <StyledIcon isInfoOpened={state} className={styles.detailInfo} onClick={() => {toggleState((prev: boolean) => !prev)}}>
             <FontAwesomeIcon icon={faInfo}/>
         </StyledIcon>
     );

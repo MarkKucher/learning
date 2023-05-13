@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../../styles/Animations.module.scss'
 import ExampleBlock from "@/modules/example/ExampleBlock";
 import AnimationExample from "@/modules/animations/pageExamples/AnimationExample";
 import {framerMotionDescription} from "@/modules/animations/utils/animationsDescription";
@@ -7,6 +6,7 @@ import CodeExample from "@/modules/example/CodeExample";
 import {framerMotion} from "@/modules/animations/utils/codesandboxLinks";
 import {framerMotionCodeExamples} from "@/modules/animations/utils/animationsCodeExample";
 import styled from "styled-components";
+import TopicBlock from "@/modules/example/TopicBlock";
 
 const StyledMainBlock = styled.div`
         background: ${props => props.theme.subGradient.gradient};
@@ -20,15 +20,14 @@ const StyledTitle = styled.h1`
 const AnimationsBlock = () => {
 
     return (
-        <StyledMainBlock className={styles.mainBlock}>
-            <StyledTitle className={styles.title}>Framer motion</StyledTitle>
+        <TopicBlock title={'Framer motion'}>
             <ExampleBlock
                 title={'Animation'}
                 descriptionContent={[framerMotionDescription.animation, <CodeExample code={framerMotionCodeExamples.animation} language={'js'} codesandboxLink={framerMotion.animation}/>]}
             >
                 <AnimationExample/>
             </ExampleBlock>
-        </StyledMainBlock>
+        </TopicBlock>
     );
 };
 

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef } from "react";
+import {useEffect, useRef, useState} from "react";
 import {AnimatePresence, motion, sync, useCycle} from "framer-motion";
 import MenuToggle from "./MenuToggle";
 import Navigation from "./Navigation";
@@ -9,10 +9,10 @@ import styled, {DefaultTheme} from "styled-components";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {useSelector} from "react-redux";
 
-const sidebar = (theme: DefaultTheme) => ({
+const sidebar = (active: DefaultTheme) => ({
     open: (height = 1000) => ({
+        borderRight: `2px solid ${active.text}`,
         clipPath: `circle(${height * 2 + 200}px at 40px calc(45vh + 22.5px))`,
-        background: `${theme.description}`,
         transition: {
             type: "spring",
             stiffness: 20,
@@ -21,7 +21,6 @@ const sidebar = (theme: DefaultTheme) => ({
     }),
     closed: {
         clipPath: "circle(30px at 40px calc(45vh + 22.5px))",
-        background: `${theme.description}`,
         transition: {
             delay: 0.5,
             type: "spring",
@@ -36,6 +35,14 @@ export const Menu = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
     const { height } = useDimensions(containerRef);
+    const [shouldChangeBackground, setShouldChangeBackground] = useState<boolean>(false)
+
+    useEffect(() => {
+        setShouldChangeBackground(true)
+        setTimeout(() => {
+            setShouldChangeBackground(false)
+        }, 2000)
+    }, [active])
 
     return (
         <motion.nav
@@ -44,7 +51,13 @@ export const Menu = () => {
             custom={height}
             ref={containerRef}
         >
-            <motion.div style={{backgroundColor: active.description}} className={styles.background} variants={sidebar(active)} />
+            <motion.div
+                animate={shouldChangeBackground && {
+                    background: active.description
+                }}
+                className={styles.background}
+                variants={sidebar(active)}
+            />
             <AnimatePresence>
                 {isOpen && <Navigation/>}
             </AnimatePresence>

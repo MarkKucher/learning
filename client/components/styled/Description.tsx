@@ -10,7 +10,7 @@ const SD = styled.div`
   color: ${props => props.theme.description};
 `
 
-const StyledDescription: React.FC<StyledDescriptionProps> = ({children, CN, ...props}) => {
+const Description: React.FC<StyledDescriptionProps> = ({children, CN, ...props}) => {
     return (
         <SD className={CN} {...props}>
             {children}
@@ -18,4 +18,4 @@ const StyledDescription: React.FC<StyledDescriptionProps> = ({children, CN, ...p
     );
 };
 
-export default StyledDescription;
+export default Description;
