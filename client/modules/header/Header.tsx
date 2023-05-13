@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({shouldHaveArrow}) => {
             <Title position={'left'} title={'Learning'} type={"big"}/>
             <Tools>
                 <ChangeTheme/>
-                {shouldHaveArrow && <ScrollTo isArrowUp={false} id={'#footer'} withoutSelfAlignment/>}
+                {shouldHaveArrow && <ScrollTo isArrowUp={false} id={'#footer'}/>}
             </Tools>
         </StyledHeader>
     );
