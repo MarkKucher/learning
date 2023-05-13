@@ -1,6 +1,7 @@
 @use 'positioning';
 @use 'theme-primary';
 @use 'scrollbars';
+@use 'shadow';
 
 .logoContainer {
   min-width: 220px;
@@ -17,6 +18,7 @@
     border-radius: 0 10px 10px 0;
   }
   @include theme-primary.golden-gradient-background;
+  @include shadow.block-shadow;
 }
 
 .logos {

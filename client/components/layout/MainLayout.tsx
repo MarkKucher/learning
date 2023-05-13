@@ -58,7 +58,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({children}) => {
             <StyledLayout className={styles.main}>
                 {children}
                 {shouldShowArrowUp && <RoundButton position={"fixed"} right={'15px'} top={'45vh'}>
-                    <ScrollTo withoutSelfAlignment isArrowUp={true} x={0} y={0}/>
+                    <ScrollTo isArrowUp={true} x={0} y={0}/>
                 </RoundButton>}
             </StyledLayout>
         </ThemeProvider>

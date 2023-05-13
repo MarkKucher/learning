@@ -1,5 +1,6 @@
 @use 'theme-primary';
 @use 'positioning';
+@use 'shadow';
 
 .header {
   width: 100%;
@@ -10,7 +11,7 @@
   justify-content: space-between;
   padding: 1rem 2rem 1rem 4rem;
   @include theme-primary.blocks-gradient-background;
-  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.5);
+  @include shadow.header-shadow;
 }
 
 .subHeader {

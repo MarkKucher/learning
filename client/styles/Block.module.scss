@@ -1,5 +1,6 @@
 @use 'theme-primary';
 @use 'icons';
+@use 'shadow';
 
 .block {
   margin: 10rem 0 0;
@@ -10,7 +11,7 @@
   justify-content: space-between;
   width: 80vw;
   min-height: 60vh;
-  box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+  @include shadow.block-shadow;
   border-radius: 20px;
 }
 
@@ -23,7 +24,7 @@
   padding: 1rem 3rem 3rem;
   margin: 5rem 0;
   border-radius: 20px;
-  box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+  @include shadow.block-shadow;
 }
 
 .header {
@@ -69,6 +70,7 @@
   border-radius: 10px;
   min-width: 250px;
   max-width: 500px;
+  @include shadow.block-shadow;
 }
 
 .main {
