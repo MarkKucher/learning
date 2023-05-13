@@ -27,7 +27,7 @@ const Themes = () => {
             className={styles.main}
             initial={variants.exit} animate={variants.enter} exit={variants.exit}
         >
-            {themes.map(t => <ThemeSample theme={t}/>)}
+            {themes.map(t => <ThemeSample key={t.name} theme={t}/>)}
         </motion.div>
     );
 };

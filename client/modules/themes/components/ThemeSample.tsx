@@ -36,7 +36,7 @@ const ThemeSample: React.FC<ThemeSampleProps> = ({theme}) => {
     }
 
     return (
-        <StyledSample key={theme.name} isActive={isActive} onClick={clickHandler} className={styles.sample} style={{background: theme.bodyBackground, outlineColor: theme.text}}>
+        <StyledSample isActive={isActive} onClick={clickHandler} className={styles.sample} style={{background: theme.bodyBackground, outlineColor: theme.text}}>
             <div className={styles.sample__container} style={{background: theme.subGradient.gradient}}>
                 <div className={styles.sample__description} style={{color: theme.description}}>
                     <StyledDescription/><StyledDescription/><StyledDescription/>

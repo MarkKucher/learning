@@ -56,7 +56,7 @@ const ExampleBlock: React.FC<ExampleBlockProps> = ({title, children, description
     }
 
     return (
-        <StyledBlock isDescription={shouldShowDescription} className={shouldShowDescription ? styles.description : styles.block}>
+        <StyledBlock id={title} isDescription={shouldShowDescription} className={shouldShowDescription ? styles.description : styles.block}>
                 <div className={styles.header}>
                     <Title type={'medium'} position={'left'} title={title} sub/>
                     {descriptionContent && <DetailInfo state={shouldShowDescription} toggleState={setShouldShowDescription}/>}

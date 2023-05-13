@@ -15,6 +15,7 @@ const StyledOption = styled.div<StyledOptionProps>`
   &:hover {
     outline-color: ${props => props.theme.text};
   }
+  cursor: pointer;
   transition: background-color 300ms;
 `
 

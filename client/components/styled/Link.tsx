@@ -16,7 +16,7 @@ interface StyledLinkProps extends ComponentPropsWithoutRef<"a"> {
 
 const Link: React.FC<StyledLinkProps> = ({title, link,shouldOpenInNewTab, ...rest}) => {
     return (
-        <SLink href={link} target={shouldOpenInNewTab ? '_blank' : undefined}>
+        <SLink href={link} target={shouldOpenInNewTab ? '_blank' : undefined} {...rest}>
             {title}
         </SLink>
     );

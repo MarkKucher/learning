@@ -14,7 +14,13 @@
   --scrollbar-thumb-background: blue;
 }
 
-
+button {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
 
 body {
   font-family: Manrope, serif;

@@ -19,6 +19,7 @@ const StyledLogo = styled.div`
   &:active {
     outline-color: ${props => props.theme.description}
   }
+  cursor: pointer;
 `
 
 const ListOfTechnologiesUsed = () => {

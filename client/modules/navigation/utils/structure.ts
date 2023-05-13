@@ -36,10 +36,27 @@ class Link {
     }
 }
 
-export const navigationStructure: navigationElement[] = [
+export const defaultStructure: navigationElement[] = [
+    new Link('Home', '/'),
     new Directory('My projects', [
         new Link('Morse code translator', 'https://translator-morse-code.vercel.app', true),
         new Link('Music platform', 'https://music-platform.up.railway.app', true)
     ]),
-    new Directory('Skills', [new Link('Animations', '#Animations'), new Link('Redux', '#Redux')])
 ]
+
+export const pageNavigationElements = {
+    '/': [
+        new Directory('Skills', [
+            new Directory('Animations', [
+                new Link('Animation example', '#Animations'),
+                new Link('Animations page', '/animations', false)
+            ]),
+            new Link('Redux', '#Redux')]
+        )
+    ],
+    '/animations': [
+        new Directory('Font awesome', [
+            new Link('Animation', '#Animation')
+        ])
+    ]
+}

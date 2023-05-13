@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import styles from "../../../styles/Menu.module.scss";
 import Directory from "@/modules/navigation/menu/items/Directory";
 import MenuLink from "@/modules/navigation/menu/items/MenuLink";
-import {navigationElement, navigationStructure} from "@/modules/navigation/utils/structure";
+import {defaultStructure, navigationElement, pageNavigationElements} from "@/modules/navigation/utils/structure";
 
 const variants = {
     open: {
@@ -20,6 +20,7 @@ const variants = {
 };
 
 const Navigation = () => {
+
     const returnTree = (children: navigationElement[]) => children.map(entity => entity.isLink
         ? <MenuLink shouldOpenInNewTab={entity.shouldOpenInNewTab} title={entity.title} link={entity.link}/>
         : <Directory title={entity.title}>
@@ -35,7 +36,7 @@ const Navigation = () => {
             transition={{stiffness: 1000, damping: 40}}
             className={styles.items}
         >
-            {returnTree(navigationStructure)}
+            {returnTree([...defaultStructure, ...(pageNavigationElements as any)[window.location.pathname]])}
         </motion.div>
     );
 };
