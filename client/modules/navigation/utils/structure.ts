@@ -37,7 +37,7 @@ class Link {
 }
 
 export const defaultStructure: navigationElement[] = [
-    new Link('Home', '/'),
+    new Link('Home', '/', false),
     new Directory('My projects', [
         new Link('Morse code translator', 'https://translator-morse-code.vercel.app', true),
         new Link('Music platform', 'https://music-platform.up.railway.app', true)
@@ -51,12 +51,20 @@ export const pageNavigationElements = {
                 new Link('Animation example', '#Animations'),
                 new Link('Animations page', '/animations', false)
             ]),
-            new Link('Redux', '#Redux')]
-        )
+            new Directory('Redux', [
+                new Link('Redux example', '#Redux'),
+                new Link('Redux page', '/redux', false)
+            ])
+        ])
     ],
     '/animations': [
-        new Directory('Font awesome', [
+        new Directory('Framer motion', [
             new Link('Animation', '#Animation')
+        ])
+    ],
+    '/redux': [
+        new Directory('Redux toolkit', [
+            new Link('Create theme', '#Create theme')
         ])
     ]
 }

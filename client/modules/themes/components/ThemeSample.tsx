@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from "../../../styles/Themes.module.scss";
 import styled, {DefaultTheme} from "styled-components";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlay} from "@fortawesome/free-solid-svg-icons";
+import {faPlay, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
-import {selectTheme, setTheme} from "@/modules/themes/redux/themeSlice";
+import {deleteTheme, selectTheme, setTheme} from "@/modules/themes/redux/themeSlice";
 
 interface ThemeSampleProps {
     theme: DefaultTheme;
@@ -31,6 +31,11 @@ const ThemeSample: React.FC<ThemeSampleProps> = ({theme}) => {
 
     const isActive = active.name === theme.name;
 
+    const deleteThemeFunc = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
+        dispatch(deleteTheme(theme.name))
+    }
+
     const clickHandler = () => {
         dispatch(setTheme(theme.name))
     }
@@ -45,6 +50,9 @@ const ThemeSample: React.FC<ThemeSampleProps> = ({theme}) => {
                     <FontAwesomeIcon icon={faPlay} className={styles.sample__container_smaller__content} style={{color: theme.text}}/>
                 </div>
             </div>
+            {theme.created && <div onClick={deleteThemeFunc} style={{color: theme.text}} className={styles.delete}>
+                <FontAwesomeIcon icon={faTrash}/>
+            </div>}
         </StyledSample>
     );
 };

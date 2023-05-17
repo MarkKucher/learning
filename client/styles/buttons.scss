@@ -1,23 +1,19 @@
 @use 'theme-primary';
 @use 'animations';
 @use 'positioning';
+@use 'shadow';
 
 @mixin button {
   @include positioning.centered;
-  width: 200px;
-  height: 80px;
+  width: 180px;
+  height: 70px;
   font-size: 1.5rem;
   text-align: center;
   border-radius: 20px;
-  background: theme-primary.$dark-color;
-  color: white;
-  border: 2px solid black;
-  transition: 300ms;
-  &:hover {
-    background: black;
-  }
+  cursor: pointer;
   &:active {
-    border-color: theme-primary.$dark-color;
+    scale: 0.9;
   }
+  transition: scale 300ms;
 }
 

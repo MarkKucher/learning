@@ -7,7 +7,7 @@ import DescriptionExtended from "@/modules/example/DescriptionExtended";
 import CodeExample from "@/modules/example/CodeExample";
 import {codeExamples} from "@/modules/example/utils/code";
 import styled from "styled-components";
-import Color from "@/components/styled/Color";
+import Text from "@/components/Text";
 import Title from "@/components/Title";
 
 interface ExampleBlockProps {
@@ -23,7 +23,7 @@ interface StyledBlockProps {
 const StyledBlock = styled.div<StyledBlockProps>`
   background: ${props => props.theme.mainGradient.gradient};
   transition: 300ms linear;
-  box-shadow: ${props => props.isDescription && `inset -1000px 0 0 0 ${props.theme.description}`};
+  box-shadow: ${props => props.isDescription ? `inset -1000px 0 0 0 ${props.theme.description}` : 'none'};
   &::-webkit-scrollbar-thumb {
     background: ${props => props.theme.subScrollbarBackground};
   }

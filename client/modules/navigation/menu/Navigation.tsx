@@ -22,8 +22,8 @@ const variants = {
 const Navigation = () => {
 
     const returnTree = (children: navigationElement[]) => children.map(entity => entity.isLink
-        ? <MenuLink shouldOpenInNewTab={entity.shouldOpenInNewTab} title={entity.title} link={entity.link}/>
-        : <Directory title={entity.title}>
+        ? <MenuLink key={entity.title} shouldOpenInNewTab={entity.shouldOpenInNewTab} title={entity.title} link={entity.link}/>
+        : <Directory key={entity.title} title={entity.title}>
             {returnTree(entity.children)}
         </Directory>
     )

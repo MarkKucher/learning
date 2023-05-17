@@ -21,6 +21,7 @@ const MainPart = () => {
             </Block>
             <Block
                 title={'Redux'}
+                hasLink
                 customDescription={
                     <StyledText>
                         {'Redux is a library that helps manage states across all application. In this example you can see that small container affects a big one thanks to redux.'}

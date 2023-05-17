@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../../../styles/Menu.module.scss';
-import Link from "@/components/styled/Link";
+import Link from "@/components/Link";
 
 interface MenuLinkProps {
     title: string;

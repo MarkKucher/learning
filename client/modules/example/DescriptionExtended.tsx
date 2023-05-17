@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from '../../styles/Description.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import Icon from "@/components/styled/Icon";
+import Icon from "@/components/Icon";
 import styled from "styled-components";
 import {AnimatePresence, motion} from "framer-motion";
 import {wrap} from "popmotion";

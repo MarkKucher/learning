@@ -5,17 +5,7 @@ import {framerMotionDescription} from "@/modules/animations/utils/animationsDesc
 import CodeExample from "@/modules/example/CodeExample";
 import {framerMotion} from "@/modules/animations/utils/codesandboxLinks";
 import {framerMotionCodeExamples} from "@/modules/animations/utils/animationsCodeExample";
-import styled from "styled-components";
 import TopicBlock from "@/modules/example/TopicBlock";
-
-const StyledMainBlock = styled.div`
-        background: ${props => props.theme.subGradient.gradient};
-    `
-
-const StyledTitle = styled.h1`
-      background: ${props => props.theme.mainGradient.gradient};
-      -webkit-background-clip: text;
-    `
 
 const AnimationsBlock = () => {
 

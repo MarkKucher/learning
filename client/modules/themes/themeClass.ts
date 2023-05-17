@@ -1,3 +1,5 @@
+import {getColorsFromGradient} from "@/helpers/getColorsFromGradient";
+
 interface Gradient {
     gradient: string;
     firstColor?: string;
@@ -13,26 +15,27 @@ export class Theme {
     bodyBackground;
     mainScrollbarBackground;
     subScrollbarBackground;
+    created?: boolean;
     constructor(
         name: string, mainGradient: string, subGradient: string, text: string, description: string, bodyBackground: string,
-        mainScrollbarBackground: string, subScrollbarBackground: string, mainGradientFirstColor?: string, mainGradientSecondColor?: string,
-        subGradientFirstColor?: string, subGradientSecondColor?: string
+        mainScrollbarBackground: string, subScrollbarBackground: string, created?: boolean
     ) {
         this.name = name;
         this.mainGradient = {
             gradient: mainGradient,
-            firstColor: mainGradientFirstColor,
-            secondColor: mainGradientSecondColor
+            firstColor: getColorsFromGradient(mainGradient)[0] || mainGradient,
+            secondColor: getColorsFromGradient(mainGradient)[1] || mainGradient
         };
         this.subGradient = {
             gradient: subGradient,
-            firstColor: subGradientFirstColor,
-            secondColor: subGradientSecondColor
+            firstColor: getColorsFromGradient(subGradient)[0] || subGradient,
+            secondColor: getColorsFromGradient(subGradient)[1] || subGradient
         };
         this.text = text;
         this.description = description;
         this.bodyBackground = bodyBackground;
         this.mainScrollbarBackground = mainScrollbarBackground;
         this.subScrollbarBackground = subScrollbarBackground;
+        this.created = created
     }
 }

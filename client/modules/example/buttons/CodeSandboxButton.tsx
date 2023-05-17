@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from "@/components/buttons/Button";
 import styles from "../../../styles/Button.module.scss";
 
 interface CodeSandboxProps {
@@ -13,7 +12,7 @@ const CodeSandboxButton: React.FC<CodeSandboxProps> = ({link}) => {
     }
 
     return (
-        <Button className={styles.csbtn} text={'open in sandbox'} onClick={redirect}/>
+        <button className={styles.csbtn} onClick={redirect}>open in sandbox</button>
     );
 };
 

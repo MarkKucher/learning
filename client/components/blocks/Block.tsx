@@ -7,7 +7,7 @@ import styled from "styled-components";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {articleDescriptions} from "@/utils/articleDescriptions";
-import Description from "@/components/styled/Description";
+import Description from "@/components/Description";
 
 interface BlockProps {
     title: string;

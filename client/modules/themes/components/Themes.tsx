@@ -1,6 +1,5 @@
 import React from 'react';
 import {AnimatePresence, motion} from "framer-motion";
-import {themes} from "@/modules/themes/utils/themes";
 import ThemeSample from "./ThemeSample";
 import styles from "../../../styles/Themes.module.scss";
 import {useSelector} from "react-redux";
@@ -18,7 +17,7 @@ const variants = {
 }
 
 const Themes = () => {
-    const {active} = useSelector(selectTheme)
+    const {active, themes} = useSelector(selectTheme)
 
     return (
         <motion.div

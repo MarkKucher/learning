@@ -2,7 +2,7 @@ import React from 'react';
 import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronUp} from "@fortawesome/free-solid-svg-icons";
-import Icon from "@/components/styled/Icon";
+import Icon from "@/components/Icon";
 
 interface SwitchIconProps {
     isOpen: boolean;

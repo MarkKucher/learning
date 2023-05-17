@@ -17,6 +17,7 @@
 .content {
   width: 100%;
   height: 85%;
+  padding: 0 10px;
   overflow-x: hidden;
   overflow-y: auto;
   display: flex;
@@ -36,7 +37,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem 0;
+  padding: 1rem 0;
   position: absolute;
   bottom: 0;
 }
