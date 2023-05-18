@@ -1,5 +1,5 @@
 import React from 'react';
-import {AnimatePresence, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import ThemeSample from "./ThemeSample";
 import styles from "../../../styles/Themes.module.scss";
 import {useSelector} from "react-redux";

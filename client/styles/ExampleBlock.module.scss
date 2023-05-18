@@ -44,7 +44,8 @@
   width: 100%;
   height: 100%;
   padding: 0 1.5rem;
-  @include positioning.centered;
+  display: flex;
+  justify-content: center;
   @include scrollbars.light-scrollbar;
   color: white;
   line-height: 25px;

@@ -18,6 +18,6 @@ declare module 'styled-components' {
         bodyBackground: string;
         mainScrollbarBackground: string;
         subScrollbarBackground: string;
-        created: boolean | undefined;
+        created?: boolean;
     }
 }

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from "../../../../styles/CreateTheme.module.scss";
 import Text from "@/components/Text";
-import MenuLink from "@/modules/navigation/menu/items/MenuLink";
 import Link from "@/components/Link";
 import Button from "@/components/buttons/Button";
 import Input from "@/components/Input";
@@ -10,6 +9,8 @@ import ErrorMessage from "@/components/ErrorMessage";
 import {isValidColor} from "@/helpers/isValidColor";
 import {createTheme, selectTheme} from "@/modules/themes/redux/themeSlice";
 import {Theme} from "@/modules/themes/themeClass";
+import {AnimatePresence, motion} from "framer-motion";
+import {DefaultTheme} from "styled-components";
 
 const CreateTheme = () => {
     const [name, setName] = useState('');
@@ -23,10 +24,6 @@ const CreateTheme = () => {
     const [error, setError] = useState('');
     const {themes} = useSelector(selectTheme);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        console.log(themes)
-    }, [themes])
 
     const create = () => {
         if(!name) {
@@ -65,7 +62,7 @@ const CreateTheme = () => {
             setError('Sub scrollbar background is not a color')
             return null;
         }
-        const theme = new Theme(name, mainGradient, subGradient, text, description, bodyBackground, mainScrollbarBackground, subScrollbarBackground, true)
+        const theme: DefaultTheme = new Theme(name, mainGradient, subGradient, text, description, bodyBackground, mainScrollbarBackground, subScrollbarBackground, true)
         dispatch(createTheme(theme))
         setError('')
         setName('')
@@ -122,17 +119,21 @@ const CreateTheme = () => {
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={subScrollbarBackground} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
             </div>
-            <div className={styles.button}>
-                <Button onClick={create}>
-                    Create
-                </Button>
-            </div>
+            <motion.div className={styles.footer}>
+                <AnimatePresence>
+                    {error && <div className={styles.error}>
+                        <ErrorMessage message={error}/>
+                    </div>}
+                </AnimatePresence>
+                <div className={styles.button}>
+                    <Button onClick={create}>
+                        Create
+                    </Button>
+                </div>
+            </motion.div>
             <div className={styles.link}>
                 <Link title={'You can create gradients here'} link={'https://gradienta.io/editor'} shouldOpenInNewTab={true}/>
             </div>
-            {error && <div className={styles.error}>
-                <ErrorMessage message={error}/>
-            </div>}
         </div>
     );
 };
