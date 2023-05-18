@@ -30,7 +30,7 @@ const ScrollToTheTop = () => {
     useEffect(() => {
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => {
-            window.removeEventListener("scroll", onScroll, { passive: true });
+            window.removeEventListener("scroll", onScroll);
         }
     }, []);
 
