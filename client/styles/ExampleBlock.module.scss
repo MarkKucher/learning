@@ -3,9 +3,10 @@
 @use 'shadow';
 
 .block, .description {
-  @include positioning.centered;
-  @include shadow.block-shadow;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  @include shadow.block-shadow;
   width: calc(100% - 3rem);
   height: 550px;
   max-width: 550px;
@@ -28,16 +29,16 @@
 
 .header {
   width: 100%;
-  height: calc(20% - 10px);
   display: flex;
   padding: 1.5rem;
+  flex: 1;
   align-items: center;
   justify-content: space-between;
 }
 
 .contentContainer {
   width: 100%;
-  height: calc(80% - 10px);
+  flex: 4;
 }
 
 .content {

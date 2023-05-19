@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Block.module.scss';
-import Title from "@/components/Title";
+import Title from "@/components/text/Title";
 import ScrollTo from "@/components/icons/ScrollTo";
 import OpenPage from "@/components/icons/OpenPage";
 import styled from "styled-components";

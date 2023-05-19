@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../styles/ErrorMessage.module.scss";
+import styles from "../../styles/ErrorMessage.module.scss";
 import {motion} from "framer-motion";
 
 interface ErrorMessageProps {

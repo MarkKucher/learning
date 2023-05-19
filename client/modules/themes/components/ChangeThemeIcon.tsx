@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Icon from "@/components/Icon";
+import Icon from "@/components/icons/Icon";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSun, faMoon} from "@fortawesome/free-solid-svg-icons";
 import styles from "../../../styles/Themes.module.scss";

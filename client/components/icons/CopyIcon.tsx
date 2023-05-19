@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {faCopy, faCheck} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from "../../styles/Icon.module.scss";
-import Icon from "@/components/Icon";
+import Icon from "@/components/icons/Icon";
 
 interface CopyIcon {
     text: string;

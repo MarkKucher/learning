@@ -2,7 +2,7 @@ import React, {Dispatch, SetStateAction} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlay, faPause} from "@fortawesome/free-solid-svg-icons";
 import styles from '../../styles/Icon.module.scss';
-import Icon from "@/components/Icon";
+import Icon from "@/components/icons/Icon";
 
 interface PlayAndPause {
     shouldPlay: boolean;

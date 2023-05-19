@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import styles from "../../../../styles/CreateTheme.module.scss";
-import Text from "@/components/Text";
+import Text from "@/components/text/Text";
 import Link from "@/components/Link";
 import Button from "@/components/buttons/Button";
 import Input from "@/components/Input";
 import {useDispatch, useSelector} from "react-redux";
-import ErrorMessage from "@/components/ErrorMessage";
+import ErrorMessage from "@/components/messages/ErrorMessage";
 import {isValidColor} from "@/helpers/isValidColor";
 import {createTheme, selectTheme} from "@/modules/themes/redux/themeSlice";
 import {Theme} from "@/modules/themes/themeClass";

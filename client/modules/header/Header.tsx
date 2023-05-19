@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Header.module.scss'
-import Title from "@/components/Title";
+import Title from "@/components/text/Title";
 import styled from "styled-components";
 import {Menu} from "@/modules/navigation/menu/Menu";
 import ScrollTo from "@/components/icons/ScrollTo";

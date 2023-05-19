@@ -7,8 +7,8 @@ import DescriptionExtended from "@/modules/example/DescriptionExtended";
 import CodeExample from "@/modules/example/CodeExample";
 import {codeExamples} from "@/modules/example/utils/code";
 import styled from "styled-components";
-import Text from "@/components/Text";
-import Title from "@/components/Title";
+import Text from "@/components/text/Text";
+import Title from "@/components/text/Title";
 
 interface ExampleBlockProps {
     title: string;
