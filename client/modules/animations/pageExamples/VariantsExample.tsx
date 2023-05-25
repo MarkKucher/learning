@@ -85,7 +85,7 @@ const VariantsExample = () => {
                 initial={false}
                 variants={container}
                 animate={isHidden ? 'hidden' : 'visible'}
-                style={{backgroundColor: active.text}}
+                style={{background: active.text}}
                 className={styles.container}
                 transition={{stiffness: 50}}
             >
@@ -93,11 +93,11 @@ const VariantsExample = () => {
                     <motion.div
                         variants={items}
                         className={styles.item}
-                        style={{backgroundColor: active.subGradient.gradient}}
+                        style={{background: active.subGradient.gradient}}
                     >
-                        <motion.div variants={mockContent} className={styles.mockContent} style={{backgroundColor: active.description}}/>
-                        <motion.div variants={mockContent} className={styles.mockContent} style={{backgroundColor: active.description}}/>
-                        <motion.div variants={mockContent} className={styles.mockContent} style={{backgroundColor: active.description}}/>
+                        <motion.div variants={mockContent} className={styles.mockContent} style={{background: active.description}}/>
+                        <motion.div variants={mockContent} className={styles.mockContent} style={{background: active.description}}/>
+                        <motion.div variants={mockContent} className={styles.mockContent} style={{background: active.description}}/>
                     </motion.div>, times
                     )
                 }
