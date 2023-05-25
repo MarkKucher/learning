@@ -24,12 +24,13 @@
   cursor: pointer;
 }
 
-.play {
+.corner {
   @include icons.icon;
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
   margin: 0;
+  padding: 0;
 }
 
 .copy, .succeeded {
@@ -72,7 +73,7 @@
     margin: 0.6rem;
   }
 
-  .play {
+  .corner {
     font-size: 1.5rem;
   }
 

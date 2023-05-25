@@ -12,7 +12,7 @@ interface PlayAndPause {
 const PlayAndPause: React.FC<PlayAndPause> = ({shouldPlay, changeState}) => {
 
     return (
-        <Icon CN={"play"} onClick={() => {changeState(prev => !prev)}}>
+        <Icon CN={"corner"} onClick={() => {changeState(prev => !prev)}}>
             <FontAwesomeIcon icon={shouldPlay ? faPause : faPlay}/>
         </Icon>
     );

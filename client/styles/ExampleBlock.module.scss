@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   @include shadow.block-shadow;
+  margin: 2rem;
   width: calc(100% - 3rem);
   height: 550px;
   max-width: 550px;
@@ -38,7 +39,7 @@
 
 .contentContainer {
   width: 100%;
-  flex: 4;
+  flex: 7;
 }
 
 .content {

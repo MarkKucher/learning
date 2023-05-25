@@ -12,7 +12,7 @@ interface StyledIconProps extends ComponentPropsWithoutRef<'div'> {
     CN?: string;
 }
 
-const Icon: React.FC<StyledIconProps> = ({children, CN= "", ...props}) => {
+const Icon: React.FC<StyledIconProps> = ({children, CN= "icon", ...props}) => {
 
     return (
         <I className={styles[CN]} {...props}>

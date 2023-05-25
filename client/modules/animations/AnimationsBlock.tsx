@@ -6,6 +6,7 @@ import CodeExample from "@/modules/example/CodeExample";
 import {framerMotion} from "@/modules/animations/utils/codesandboxLinks";
 import {framerMotionCodeExamples} from "@/modules/animations/utils/animationsCodeExample";
 import TopicBlock from "@/modules/example/TopicBlock";
+import VariantsExample from "@/modules/animations/pageExamples/VariantsExample";
 
 const AnimationsBlock = () => {
 
@@ -16,6 +17,12 @@ const AnimationsBlock = () => {
                 descriptionContent={[framerMotionDescription.animation, <CodeExample code={framerMotionCodeExamples.animation} language={'js'} codesandboxLink={framerMotion.animation}/>]}
             >
                 <AnimationExample/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={'Variants'}
+                descriptionContent={[framerMotionDescription.variants, <CodeExample code={framerMotionCodeExamples.variants} language={'js'}/>]}
+            >
+                <VariantsExample/>
             </ExampleBlock>
         </TopicBlock>
     );
