@@ -20,7 +20,7 @@ const AnimationsBlock = () => {
             </ExampleBlock>
             <ExampleBlock
                 title={'Variants'}
-                descriptionContent={[framerMotionDescription.variants, <CodeExample code={framerMotionCodeExamples.variants} language={'js'}/>]}
+                descriptionContent={[framerMotionDescription.variants, <CodeExample code={framerMotionCodeExamples.variants} language={'js'} codesandboxLink={framerMotion.variants}/>]}
             >
                 <VariantsExample/>
             </ExampleBlock>
