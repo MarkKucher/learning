@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {ComponentPropsWithoutRef} from "react";
 
-const Path: React.FC<any> = (props) => {
+export const Path: React.FC<any> = (props) => {
     const {active} = useSelector(selectTheme);
 
     return (

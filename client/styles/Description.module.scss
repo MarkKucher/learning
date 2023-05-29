@@ -14,6 +14,21 @@
   overflow-x: hidden;
 }
 
+.singleContent {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @include scrollbars.light-scrollbar;
+  position: absolute;
+  top: 0;
+}
+
 .content {
   width: 100%;
   height: 80%;

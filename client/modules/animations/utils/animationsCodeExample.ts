@@ -57,5 +57,7 @@ export const framerMotionCodeExamples = {
         '    visible: {\n' +
         '        opacity: 1\n' +
         '    }\n' +
-        '}'
+        '}',
+    gestures: '',
+    path: '',
 }
