@@ -20,7 +20,7 @@
   width: 90vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-flow: wrap row;
   padding: 1rem 0;
   margin: 5rem 0;
@@ -67,7 +67,7 @@
   height: 100%;
   position: relative;
   @include positioning.centered;
-  align-items: flex-start;
+  overflow: hidden;
 }
 
 .content {

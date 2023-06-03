@@ -59,7 +59,9 @@ export const pageNavigationElements = {
     ],
     '/animations': [
         new Directory('Framer motion', [
-            new Link('Animation', '#Animation')
+            new Link('Animation', '#Animation'),
+            new Link('Variants', '#Variants'),
+            new Link('Path', '#Path')
         ])
     ],
     '/redux': [

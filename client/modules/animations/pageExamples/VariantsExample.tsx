@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import blockStyles from "../../../styles/Block.module.scss";
 import styles from "../../../styles/VariantsExample.module.scss";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
@@ -80,7 +79,7 @@ const VariantsExample = () => {
     }, [])
 
     return (
-        <div className={blockStyles.pageExample}>
+        <div className={styles.block}>
             <motion.div
                 initial={false}
                 variants={container}

@@ -2,6 +2,9 @@ import React, {useEffect} from 'react';
 import styles from "../../styles/CodeExample.module.scss";
 import footerStyles from "../../styles/Footer.module.scss";
 import Prism from "prismjs";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
 import CopyIcon from "@/components/icons/CopyIcon";
 import CodeSandboxButton from "@/modules/example/buttons/CodeSandboxButton";
 

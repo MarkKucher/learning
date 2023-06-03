@@ -8,6 +8,9 @@ import {framerMotionCodeExamples} from "@/modules/animations/utils/animationsCod
 import TopicBlock from "@/modules/example/TopicBlock";
 import VariantsExample from "@/modules/animations/pageExamples/VariantsExample";
 import PathExample from "@/modules/animations/pageExamples/PathExample";
+import GestureExample from "@/modules/animations/pageExamples/GestureExample";
+import DragExample from "@/modules/animations/pageExamples/DragExample";
+import ScrollExample from "@/modules/animations/pageExamples/ScrollExample";
 
 const AnimationsBlock = () => {
 
@@ -24,6 +27,24 @@ const AnimationsBlock = () => {
                 descriptionContent={[framerMotionDescription.variants, <CodeExample code={framerMotionCodeExamples.variants} language={'js'} codesandboxLink={framerMotion.variants}/>]}
             >
                 <VariantsExample/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={'Gestures'}
+                descriptionContent={[framerMotionDescription.gestures, <CodeExample code={framerMotionCodeExamples.gestures} language={'tsx'}/>]}
+            >
+                <GestureExample/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={'Drag'}
+                descriptionContent={[framerMotionDescription.drag, <CodeExample code={framerMotionCodeExamples.drag} language={'tsx'}/>]}
+            >
+                <DragExample/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={'Scroll'}
+                descriptionContent={[framerMotionDescription.scroll, <CodeExample code={framerMotionCodeExamples.scroll} language={'tsx'}/>]}
+            >
+                <ScrollExample/>
             </ExampleBlock>
             <ExampleBlock
                 title={'Path'}

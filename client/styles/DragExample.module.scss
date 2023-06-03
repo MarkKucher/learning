@@ -1,0 +1,16 @@
+@use 'positioning';
+
+.constraints {
+  width: 50%;
+  height: 50%;
+  @include positioning.centered;
+}
+
+.circle {
+  max-width: 250px;
+  max-height: 250px;
+  width: 33.3vw;
+  height: 33.3vw;
+  border-radius: 50%;
+  cursor: pointer;
+}
