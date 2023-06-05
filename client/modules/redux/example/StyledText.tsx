@@ -2,6 +2,8 @@ import React, {ComponentPropsWithoutRef} from 'react';
 import styled from "styled-components";
 import {useSelector} from "react-redux";
 import {selectExample} from "@/modules/redux/store/slices/exampleSlice";
+import {defaultThemes} from "@/modules/themes/utils/themes";
+import {getColorsFromGradient} from "@/helpers/getColorsFromGradient";
 
 interface StyledTextProps extends ComponentPropsWithoutRef<"div"> {
     children: React.ReactNode;
@@ -22,6 +24,7 @@ const ST = styled.div<STProps>`
 
 const StyledText: React.FC<StyledTextProps> = ({children, ...props}) => {
     const {isBold, isCursive, isUnderlined} = useSelector(selectExample);
+    console.log(defaultThemes[0].mainGradient)
 
     return (
         <ST isBold={isBold} isCursive={isCursive} isUnderlined={isUnderlined} {...props}>
