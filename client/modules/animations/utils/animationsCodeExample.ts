@@ -71,12 +71,27 @@ export const framerMotionCodeExamples = {
         '    }}\n' +
         '/>',
     drag: '' +
-        '<div ref={constraintsRef}>\n' +
-        '    <motion.div\n' +
-        '        drag\n' +
-        '        dragConstraints={constraintsRef}\n' +
-        '    />\n' +
-        '</div>',
+        'const x = useMotionValue(0);\n' +
+        'const y = useMotionValue(0);\n' +
+        'const innerBackground = useTransform(x, [-150, 0, 150], [\'rgb(200, 50, 50)\', \'rgb(50, 200, 50)\', \'rgb(50, 50, 200)\'])\n' +
+        'const outerBackground = useTransform(y, [-150, 0, 150], [\'rgb(50, 200, 50)\', \'rgb(50, 50, 200)\', \'rgb(200, 50, 50)\'])\n' +
+        '\n' +
+        'return (\n' +
+        '    <div className={blockStyles.pageExample}>\n' +
+        '        <motion.div\n' +
+        '            style={{background: outerBackground, borderColor: innerBackground}}\n' +
+        '            ref={constraintsRef}\n' +
+        '            className={styles.constraints}\n' +
+        '        >\n' +
+        '            <motion.div\n' +
+        '                style={{background: innerBackground, x, y}}\n' +
+        '                className={styles.circle}\n' +
+        '                drag\n' +
+        '                dragConstraints={constraintsRef}\n' +
+        '            />\n' +
+        '        </motion.div>\n' +
+        '    </div>\n' +
+        ');',
     scroll: '' +
         '    const { scrollYProgress } = useScroll();\n' +
         '    const scale = useTransform(scrollYProgress, [0, 1], [0.2, 4]);\n' +

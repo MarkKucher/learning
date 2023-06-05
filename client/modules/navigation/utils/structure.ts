@@ -61,6 +61,9 @@ export const pageNavigationElements = {
         new Directory('Framer motion', [
             new Link('Animation', '#Animation'),
             new Link('Variants', '#Variants'),
+            new Link('Gestures', '#Gestures'),
+            new Link('Drag', '#Drag'),
+            new Link('Scroll', '#Scroll'),
             new Link('Path', '#Path')
         ])
     ],

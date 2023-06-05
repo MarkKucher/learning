@@ -1,8 +1,11 @@
 @use 'positioning';
 
 .constraints {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 10%;
+  border: 2px solid black;
   @include positioning.centered;
 }
 
