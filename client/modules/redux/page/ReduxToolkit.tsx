@@ -4,6 +4,7 @@ import ExampleBlock from "@/modules/example/ExampleBlock";
 import CreateTheme from "@/modules/redux/page/examples/CreateTheme";
 import {reduxCodeExamples, reduxDescription} from "@/modules/redux/utils/reduxDescription";
 import CodeExample from "@/modules/example/CodeExample";
+import Todo from "@/modules/redux/page/examples/todo/Todo";
 
 const ReduxToolkit = () => {
     return (
@@ -13,6 +14,12 @@ const ReduxToolkit = () => {
                 title={"Create theme"}
             >
                 <CreateTheme/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={"Todo"}
+                descriptionContent={[reduxDescription.todo]}
+            >
+                <Todo/>
             </ExampleBlock>
         </TopicBlock>
     );

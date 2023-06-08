@@ -1,6 +1,8 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
 import example from './slices/exampleSlice';
 import theme from '../../themes/redux/themeSlice';
+import todo from "./slices/todoSlice";
+import filters from "./slices/filtersSlice";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
@@ -11,6 +13,8 @@ const themePersistConfig = {
 
 const rootReducer = combineReducers({
     example,
+    todo,
+    filters,
     theme: persistReducer(themePersistConfig, theme)
 })
 

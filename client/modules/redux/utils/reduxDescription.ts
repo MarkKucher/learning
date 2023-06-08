@@ -1,6 +1,7 @@
 export const reduxDescription = {
     createTheme: 'In this example, thanks to redux toolkit you can create theme to this  site. Additionally redux persist store your' +
-        ' theme in local storage. Here are also some error handlers.'
+        ' theme in local storage. Here are also some error handlers.',
+    todo: 'I am too lazy to write description for this one.'
 }
 
 export const reduxCodeExamples = {
