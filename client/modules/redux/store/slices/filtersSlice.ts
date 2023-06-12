@@ -1,4 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {RootState} from "@/modules/redux/store/configureStore";
 
 export enum StatusFilters {
     All = 'all',
@@ -23,31 +24,20 @@ export const filtersSlice = createSlice({
         changeStatusFilter(state, action: PayloadAction<StatusFilters>) {
             state.status = action.payload
         },
-        changeColorFilter: {
-            reducer(state, action: PayloadAction<{color: string, changeType: 'added' | 'removed'}>) {
-                const {color, changeType} = action.payload
-                const {colors} = state;
-                switch (changeType) {
-                    case "added":
-                        if(!colors.includes(color)) {
-                            colors.push(color)
-                        }
-                        break
-                    case "removed":
-                        state.colors = colors.filter(existingColor => existingColor !== color)
-                    default:
-                        return
-                }
-            },
-            prepare(color: string, changeType: 'added' | 'removed') {
-                return {
-                    payload: {color, changeType}
-                }
+        changeColorFilter(state, action: PayloadAction<string>) {
+            const color = action.payload;
+            const {colors} = state;
+            if(!colors.includes(color)) {
+                colors.push(color)
+            } else {
+                state.colors = colors.filter(c => c !== color)
             }
         }
     }
 })
 
 export const {changeStatusFilter, changeColorFilter} = filtersSlice.actions;
+
+export const selectFilters = (state: RootState) => state.filters;
 
 export default filtersSlice.reducer;

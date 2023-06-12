@@ -19,7 +19,8 @@ interface TodoItemProps {
 }
 
 const TodoItem: React.FC<TodoItemProps> = ({id}) => {
-    const {text, color, completed} = useSelector((state: RootState) => selectTodoById(state, id));
+    const todo = useSelector((state: RootState) => selectTodoById(state, id));
+    const {text, color, completed} = todo
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
     const [inputText, setInputText] = useState(text);
@@ -50,7 +51,7 @@ const TodoItem: React.FC<TodoItemProps> = ({id}) => {
     }
 
     return (
-        <div className={styles.card}>
+        <div className={styles.card} style={{background: color}}>
             <div className={styles.left}>
                 <div
                     onClick={toggleCompleted}

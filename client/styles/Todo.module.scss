@@ -134,6 +134,84 @@
   padding: 1rem 0;
 }
 
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid black;
+}
+
+@mixin container {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+.colors {
+  @include container;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.color {
+  display: flex;
+  flex-direction: row;
+  input {
+    margin-right: 10px;
+  }
+}
+
+.buttons {
+  @include container;
+  button {
+    width: 175px;
+    height: 50px;
+    @include positioning.centered;
+    background: lightgray;
+    border: 2px solid gray;
+    color: gray;
+    font-size: 1.2rem;
+    cursor: pointer;
+    &:hover {
+      color: black;
+      border-color: black;
+    }
+    &:active {
+      color: dodgerblue;
+      border-color: dodgerblue;
+    }
+  }
+}
+
+.options {
+  @include container;
+  .option {
+    @include positioning.centered;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    color: gray;
+    cursor: pointer;
+  }
+}
+
+.todosLeft {
+  margin: 2rem 0 0;
+  color: black;
+}
+
 @media screen and (max-width: 650px) {
   .circle {
     width: 35px;

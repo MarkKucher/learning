@@ -23,11 +23,10 @@ const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action: PayloadAction<Todo>) => {
-            const todo = action.payload
-            state.entities[todo.id] = todo
+            state.entities.push(action.payload)
         },
         toggleTodo: (state, action: PayloadAction<number>) => {
-            let todo = state.entities.find(t => t.id === action.payload);
+            let todo = state.entities.find((t, id) => id === action.payload);
             if(todo) todo.completed = !todo.completed;
         },
         selectTodoColor: {
@@ -42,7 +41,7 @@ const todoSlice = createSlice({
             }
         },
         deleteTodo: (state, action: PayloadAction<number>) => {
-            state.entities = state.entities.filter(todo => todo.id !== action.payload)
+            state.entities = state.entities.filter((t, id) => id !== action.payload)
         },
         updateTodo: {
             reducer(state, action: PayloadAction<{todoId: number, text: string}>) {
@@ -56,28 +55,29 @@ const todoSlice = createSlice({
             }
         },
         completeAllTodos: (state) => {
-            Object.values(state.entities).forEach((todo) => {
+            state.entities.forEach((todo) => {
                 todo.completed = true;
             })
         },
         clearCompletedTodos: (state) => {
-            Object.values(state.entities).forEach((todo) => {
-                if(todo.completed) delete state.entities[todo.id]
+            let newArr: Todo[] = [];
+            state.entities.forEach((todo) => {
+                if(!todo.completed) newArr.push(todo);
             })
+            state.entities = newArr;
         }
     }
 })
 
-export const {addTodo, toggleTodo, selectTodoColor, deleteTodo, updateTodo} = todoSlice.actions;
+export const {addTodo, toggleTodo, selectTodoColor, deleteTodo, updateTodo, completeAllTodos, clearCompletedTodos} = todoSlice.actions;
 
 export default todoSlice.reducer;
 
-export const selectTodoEntities = (state: RootState) => state.todo.entities;
-
-export const selectTodos = createSelector(selectTodoEntities, (entities) => Object.values(entities));
+export const selectTodos = (state: RootState) => state.todo.entities;
 
 export const selectTodoById = (state: RootState, todoId: number) => {
-    return selectTodoEntities(state)[todoId];
+    const entities = selectTodos(state);
+    return entities[todoId];
 }
 
 export const selectTodoIds = createSelector(selectTodos, (todos) => {
