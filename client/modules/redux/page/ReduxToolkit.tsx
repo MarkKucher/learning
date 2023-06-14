@@ -5,6 +5,7 @@ import CreateTheme from "@/modules/redux/page/examples/CreateTheme";
 import {reduxCodeExamples, reduxDescription} from "@/modules/redux/utils/reduxDescription";
 import CodeExample from "@/modules/example/CodeExample";
 import Todo from "@/modules/redux/page/examples/todo/Todo";
+import Thunk from "@/modules/redux/page/examples/thunk/Thunk";
 
 const ReduxToolkit = () => {
     return (
@@ -20,6 +21,12 @@ const ReduxToolkit = () => {
                 descriptionContent={[reduxDescription.todo]}
             >
                 <Todo/>
+            </ExampleBlock>
+            <ExampleBlock
+                title={"Thunk"}
+                descriptionContent={[reduxDescription.thunk]}
+            >
+                <Thunk/>
             </ExampleBlock>
         </TopicBlock>
     );

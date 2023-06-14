@@ -1,7 +1,8 @@
 export const reduxDescription = {
     createTheme: 'In this example, thanks to redux toolkit you can create theme to this  site. Additionally redux persist store your' +
         ' theme in local storage. Here are also some error handlers.',
-    todo: 'I am too lazy to write description for this one.'
+    todo: 'I am too lazy to write description for this one.',
+    thunk: 'Redux allows to store asynchronous values via redux thunk. In this example you can load random user from fake api.'
 }
 
 export const reduxCodeExamples = {
