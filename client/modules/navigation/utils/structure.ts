@@ -69,7 +69,9 @@ export const pageNavigationElements = {
     ],
     '/redux': [
         new Directory('Redux toolkit', [
-            new Link('Create theme', '#Create theme')
+            new Link('Create theme', '#Create theme'),
+            new Link('Todo', '#Todo'),
+            new Link('Thunk', '#Thunk')
         ])
     ]
 }

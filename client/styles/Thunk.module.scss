@@ -36,13 +36,12 @@
 
 .button {
   position: absolute;
-  bottom: 2rem;
-  margin: 2rem 0 0;
+  top: 2rem;
+  margin: 0 0 2rem;
   padding: 5px 10px;
   width: 50%;
-  height: 10%;
+  height: 50px;
   min-width: 150px;
-  min-height: 50px;
   @include positioning.centered;
   font-size: 1.5rem;
   border-radius: 10px;
@@ -54,7 +53,7 @@
 
 .userInfo {
   position: absolute;
-  top: 0;
+  top: calc(4rem + 50px);
   width: 100%;
   min-height: 70%;
   padding: 0 1rem 0 2rem;
@@ -66,13 +65,11 @@
   align-items: center;
   justify-items: flex-start;
   background: gray;
+  border-top: 4px solid black;
   border-bottom: 4px solid black;
 }
 
 @media screen and (max-width: 550px) {
-  .container {
-    height: 505px;
-  }
   .userInfo {
     padding: 1rem;
     grid-template-columns: 1fr;
