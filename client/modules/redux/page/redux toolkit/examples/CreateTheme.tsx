@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "../../../../styles/CreateTheme.module.scss";
+import styles from "../../../../../styles/CreateTheme.module.scss";
 import Text from "@/components/text/Text";
 import Link from "@/components/Link";
 import Button from "@/components/buttons/Button";

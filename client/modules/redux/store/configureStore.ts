@@ -6,6 +6,7 @@ import filters from "./slices/filtersSlice";
 import thunk from "./slices/thunkSlice";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import {postsApi} from "@/modules/redux/store/apis/postsApi";
 
 const themePersistConfig = {
     key: 'theme',
@@ -17,12 +18,13 @@ const rootReducer = combineReducers({
     todo,
     filters,
     thunk,
-    theme: persistReducer(themePersistConfig, theme)
+    theme: persistReducer(themePersistConfig, theme),
+    [postsApi.reducerPath]: postsApi.reducer
 })
 
 const store = configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false})
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}).concat(postsApi.middleware)
 })
 
 export default () => {

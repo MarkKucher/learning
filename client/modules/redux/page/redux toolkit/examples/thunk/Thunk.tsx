@@ -5,7 +5,7 @@ import {fetchRandomUser, selectThunkExample} from "@/modules/redux/store/slices/
 import {AppDispatch} from "@/modules/redux/store/configureStore";
 import styled from "styled-components";
 import ErrorMessage from "@/components/messages/ErrorMessage";
-import Loader from "@/modules/redux/page/examples/thunk/Loader";
+import Loader from "@/components/Loader";
 
 const StyledButton = styled.button`
   background: ${props => props.disabled ? 'gray' : 'dodgerblue'};

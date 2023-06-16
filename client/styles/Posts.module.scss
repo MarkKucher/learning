@@ -1,0 +1,69 @@
+@use 'positioning';
+@use 'scrollbars';
+
+.container {
+  position: relative;
+  width: 80vw;
+  height: 500px;
+  margin: 2rem 0;
+  background: whitesmoke;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include scrollbars.default-scrollbar;
+  overflow-y: auto;
+}
+
+.post {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 80%;
+    margin: 2rem 0;
+    background: darkgray;
+    border: 2px solid black;
+    color: black;
+  }
+  &__title {
+    position: relative;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: gray;
+    border-bottom: 2px solid black;
+  }
+  &__body {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: darkgray;
+  }
+  &__id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1rem;
+  }
+}
+
+.refresh {
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  margin-left: 2rem;
+  padding: 1rem;
+  background: whitesmoke;
+  z-index: 1;
+  @include positioning.centered;
+  font-size: 1.2rem;
+  border: 1px solid gray;
+  color: gray;
+  cursor: pointer;
+}
+
+.loader {
+  margin-bottom: 1rem;
+}
