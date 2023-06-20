@@ -4,7 +4,7 @@ import Posts from "@/modules/redux/page/rtk query/examples/posts/Posts";
 
 const RtkQuery = () => {
     return (
-        <TopicBlock title={'RTK Query'}>
+        <TopicBlock title={'RTK Query'} id={"RTK Query"}>
             <Posts/>
         </TopicBlock>
     );

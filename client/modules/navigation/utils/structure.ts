@@ -72,6 +72,7 @@ export const pageNavigationElements = {
             new Link('Create theme', '#Create theme'),
             new Link('Todo', '#Todo'),
             new Link('Thunk', '#Thunk')
-        ])
+        ]),
+        new Link('RTK Query', '#RTK Query')
     ]
 }

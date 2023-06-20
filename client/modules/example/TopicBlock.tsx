@@ -12,9 +12,9 @@ const STB = styled.div`
   background: ${props => props.theme.subGradient.gradient};
 `
 
-const TopicBlock: React.FC<TopicBlockProps> = ({children, title}) => {
+const TopicBlock: React.FC<TopicBlockProps> = ({children, title, ...props}) => {
     return (
-        <STB className={styles.topicBlock}>
+        <STB className={styles.topicBlock} {...props}>
             <div className={styles.mainHeader}>
                 <Title title={title} type={"big"}/>
             </div>
