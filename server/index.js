@@ -12,7 +12,7 @@ app.use(express.json())
 
 let ids = [];
 
-app.ws('/', (ws, req) => {
+app.ws('/', (ws) => {
     ws.on('message', (msg) => {
         msg = JSON.parse(msg)
         connectionHandler(ws, msg)
@@ -34,7 +34,7 @@ app.ws('/', (ws, req) => {
 
 let quantity = 0;
 
-app.ws('/quantity', (ws, req) => {
+app.ws('/quantity', (ws) => {
     ws.on('message', (msg) => {
         msg = JSON.parse(msg)
         console.log(msg.method)
@@ -84,7 +84,7 @@ const broadCastConnection = (ws, msg) => {
     })
 }
 
-const getQuantity = (ws) => {
+const getQuantity = () => {
     aWss.clients.forEach(client => {
         client.send(quantity)
     })
