@@ -10,28 +10,28 @@ const Websocket = () => {
         const openHandler = () => {
             socket.readyState === socket.OPEN && socket.send(JSON.stringify({method: 'open'}))
         }
-        socket.onopen = () => {
-            openHandler()
-        }
         const closeHandler = () => {
             console.log('onclose')
             socket.readyState === socket.OPEN && socket.send(JSON.stringify({method: 'close'}))
         }
+        socket.onopen = () => {
+            openHandler()
+        }
         window.onbeforeunload = () => {
             closeHandler()
         }
-        document.onvisibilitychange = (e) => {
-            if (document.visibilityState == 'hidden') {
-                closeHandler()
-            } else if(document.visibilityState == 'visible') {
-                openHandler()
-            }
-        }
+        // document.onvisibilitychange = (e) => {
+        //     if (document.visibilityState == 'hidden') {
+        //         closeHandler()
+        //     } else if(document.visibilityState == 'visible') {
+        //         openHandler()
+        //     }
+        // }
         socket.onmessage = (e) => {
-            setQuantity(e.data - 1)
+            setQuantity(e.data)
         }
         return () => {
-            closeHandler()
+            socket.close()
         }
     }, [])
 

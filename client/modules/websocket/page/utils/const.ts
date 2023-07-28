@@ -1,2 +1,2 @@
-export const websocketServer = 'ws://localhost:5000';
-export const serverUrl = 'http://localhost:5000';
+export const websocketServer = 'ws://learning-rosy.onrender.com';
+export const serverUrl = 'https://learning-rosy.onrender.com';
