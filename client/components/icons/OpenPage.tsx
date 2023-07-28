@@ -13,7 +13,7 @@ const OpenPage: React.FC<OpenPageProps> = ({link}) => {
     const router = useRouter()
 
     return (
-        <Icon CN={"icon"} onClick={() => {router.push(link)}}>
+        <Icon CN={"icon"} onClick={async () => {await router.push(link)}}>
             <FontAwesomeIcon icon={faLink}/>
         </Icon>
     );

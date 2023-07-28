@@ -4,6 +4,7 @@ import theme from '../../themes/redux/themeSlice';
 import todo from "./slices/todoSlice";
 import filters from "./slices/filtersSlice";
 import thunk from "./slices/thunkSlice";
+import paint from "@/modules/websocket/page/redux/paint";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import {postsApi} from "@/modules/redux/store/apis/postsApi";
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     todo,
     filters,
     thunk,
+    paint,
     theme: persistReducer(themePersistConfig, theme),
     [postsApi.reducerPath]: postsApi.reducer
 })

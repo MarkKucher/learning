@@ -74,5 +74,8 @@ export const pageNavigationElements = {
             new Link('Thunk', '#Thunk')
         ]),
         new Link('RTK Query', '#RTK Query')
+    ],
+    '/websocket': [
+        new Link('Websocket', '#Websocket')
     ]
 }

@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import styles from '../../../styles/AnimationsExample.module.scss';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import PlayAndPause from "@/components/icons/PlayAndPause";
 import styled from "styled-components";
 

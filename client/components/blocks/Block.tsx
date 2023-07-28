@@ -15,6 +15,7 @@ interface BlockProps {
     hasDescription?: boolean;
     hasLink?: boolean;
     customDescription?: React.ReactNode;
+    customLink?: string;
 }
 
 const StyledBlock = styled.div`
@@ -25,8 +26,9 @@ const StyledContent = styled.div`
   background: ${props => props.theme.mainGradient.gradient};
 `;
 
-const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, customDescription}) => {
+const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, customDescription, customLink}) => {
     let description = undefined;
+    let link = undefined;
 
     if(customDescription) {
         description = customDescription;
@@ -34,11 +36,17 @@ const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, 
         description = (articleDescriptions as any)[title.toLowerCase()]
     }
 
+    if(customLink) {
+        link = customLink;
+    } else if(hasLink) {
+        link = `/${title.toLowerCase()}`;
+    }
+
     return (
         <StyledBlock className={styles.block} id={title}>
             <div className={styles.header}>
                 <Title title={title} position={'left'}/>
-                {hasLink && <OpenPage link={`/${title.toLowerCase()}`}/>}
+                {link && <OpenPage link={link}/>}
             </div>
             <div className={styles.main}>
                 {description && <Description CN={styles.description}>

@@ -17,28 +17,8 @@ const Thunk = () => {
     const [shouldResize, setShouldResize] = useState<boolean>(false);
     const dispatch = useDispatch<AppDispatch>();
 
-    const condition = (width: number) => {
-        if(width <= 550) {
-            setShouldResize(true)
-        } else {
-            setShouldResize(false)
-        }
-    }
-
-    let onResize = useCallback(() => {
-        condition(window.innerWidth)
-    }, [])
-
-    useEffect(() => {
-        condition(window.innerWidth)
-        window.addEventListener('resize', onResize, {passive: true})
-        return () => {
-            window.removeEventListener('resize', onResize)
-        }
-    }, [])
-
     return (
-        <div className={styles.container} style={{height: (shouldResize && user) ? '505px' : '100%'}}>
+        <div className={styles.container}>
             {user && loading === 'succeeded' && <div className={styles.userInfo}>
                 <div>Id:</div><div>{user.id}</div>
                 <div>Name:</div><div>{user.name}</div>

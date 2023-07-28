@@ -83,19 +83,19 @@ const CreateTheme = () => {
             </div>
             <div className={styles.row}>
                 <Text className={styles.text}>Main gradient: </Text>
-                <Input value={mainGradient} type={'color'} className={styles.color} onChange={(e) => {setMainGradient(e.target.value)}}/>
+                <Input type={'color'} className={styles.color} onChange={(e) => {setMainGradient(e.target.value)}}/>
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={mainGradient} onChange={(e) => {setMainGradient(e.target.value)}}/>
             </div>
             <div className={styles.row}>
                 <Text className={styles.text}>Sub gradient: </Text>
-                <Input value={subGradient} type={'color'} className={styles.color} onChange={(e) => {setSubGradient(e.target.value)}}/>
+                <Input type={'color'} className={styles.color} onChange={(e) => {setSubGradient(e.target.value)}}/>
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={subGradient} onChange={(e) => {setSubGradient(e.target.value)}}/>
             </div>
             <div className={styles.row}>
                 <Text className={styles.text}>Body background: </Text>
-                <Input value={bodyBackground} type={'color'} className={styles.color} onChange={(e) => {setBodyBackground(e.target.value)}}/>
+                <Input type={'color'} className={styles.color} onChange={(e) => {setBodyBackground(e.target.value)}}/>
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={bodyBackground} onChange={(e) => {setBodyBackground(e.target.value)}}/>
             </div>
@@ -109,13 +109,13 @@ const CreateTheme = () => {
             </div>
             <div className={styles.row}>
                 <Text className={styles.text}>Main scrollbar: </Text>
-                <Input value={mainScrollbarBackground} type={'color'} className={styles.color} onChange={(e) => {setMainScrollbarBackground(e.target.value)}}/>
+                <Input type={'color'} className={styles.color} onChange={(e) => {setMainScrollbarBackground(e.target.value)}}/>
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={mainScrollbarBackground} onChange={(e) => {setMainScrollbarBackground(e.target.value)}}/>
             </div>
             <div className={styles.row}>
                 <Text className={styles.text}>Sub scrollbar: </Text>
-                <Input value={subScrollbarBackground} type={'color'} className={styles.color} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
+                <Input type={'color'} className={styles.color} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
                 <Text className={styles.text}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={subScrollbarBackground} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
             </div>

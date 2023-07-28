@@ -1,0 +1,180 @@
+@use '../../../../styles/positioning';
+
+.example {
+  width: 100%;
+  min-height: 100%;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  @include positioning.centered;
+  background: white;
+}
+
+.main {
+  width: 85vw;
+  min-height: 95vh;
+  border: 4px solid black;
+  background-color: #F6F6F6;
+}
+
+@mixin bar {
+  min-height: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+  flex-wrap: wrap;
+}
+
+.toolbar {
+  @include bar;
+  margin-bottom: 5px;
+  &__btn {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-size: cover;
+  }
+  .rect {
+    background: url("../assets/rect.png") no-repeat center center;
+  }
+  .circle {
+    background: url("../assets/circle.png") no-repeat center center;
+  }
+  .eraser {
+    background: url("../assets/eraser.png") no-repeat center center;
+  }
+  .line {
+    background: url("../assets/line.png") no-repeat center center;
+  }
+  .redo {
+    background: url("../assets/redo.png") no-repeat center center;
+  }
+  .save {
+    background: url("../assets/save.png") no-repeat center center;
+    margin-right: 10px;
+  }
+  .refresh {
+    margin-left: auto;
+  }
+  .undo {
+    background: url("../assets/undo.png") no-repeat center center;
+  }
+}
+
+.toolbar__input {
+  margin-left: 10px;
+}
+
+.settingsBar {
+  @include bar;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 1.2rem;
+}
+
+.canvas {
+  display: flex;
+  justify-content: center;
+  canvas {
+    margin: 3rem 0;
+    border: 1px solid black;
+    background-color: white;
+  }
+}
+
+.button {
+  @include positioning.centered;
+  padding: 0.3rem 0.7rem;
+  font-weight: bold;
+  background: lightgray;
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  box-shadow: 2px 3px 2px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+  &:active {
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+}
+
+.settings {
+  &__section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1rem;
+    flex-wrap: wrap;
+    &__option {
+      margin: 5px 0;
+    }
+  }
+}
+
+.input {
+  text-align: center;
+  width: 50px;
+  margin: 0 10px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+  .label {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .toolbar__btn, .toolbar__input {
+    margin: 5px;
+  }
+  .toolbar {
+    .save {
+      margin-right: 5px;
+    }
+    .refresh {
+      margin-left: 5px;
+    }
+  }
+  .color {
+    width: 25px;
+    height: 25px;
+  }
+  .bars {
+    flex-direction: row;
+  }
+  .settingsBar {
+    flex-direction: column;
+    flex: 2;
+    height: 180px;
+    justify-content: center;
+  }
+  .settingsBar, .toolbar {
+    height: 200px;
+    padding: 0.5rem;
+  }
+  .toolbar {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 5px;
+    align-items: center;
+    justify-items: center;
+  }
+  .settings__section {
+    width: 150px;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
