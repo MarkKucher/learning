@@ -1,12 +1,13 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "@/modules/redux/store/configureStore";
 import Tool from "@/modules/websocket/page/tools/Tool";
+import {WritableDraft} from "immer/src/types/types-external";
 
 
 interface paintState {
-    tool: null | Tool;
-    canvas: null | HTMLCanvasElement;
-    socket: null | WebSocket;
+    tool: Tool;
+    canvas: HTMLCanvasElement;
+    socket: WebSocket;
     sessionId: null | string;
     undoList: any[];
     redoList: any[];
@@ -16,9 +17,9 @@ interface paintState {
 }
 
 const initialState: paintState = {
-    tool: null,
-    canvas: null,
-    socket: null,
+    tool: {} as Tool,
+    canvas: {} as HTMLCanvasElement,
+    socket: {} as WebSocket,
     sessionId: null,
     undoList: [],
     redoList: [],
@@ -32,21 +33,23 @@ export const paintSlice = createSlice({
     initialState,
     reducers: {
         setTool(state, action: PayloadAction<Tool>) {
-            return {...state, tool: action.payload}
+            // @ts-ignore
+            state.tool = action.payload
         },
         setCanvas(state, action: PayloadAction<HTMLCanvasElement>) {
-            return {...state, canvas: action.payload}
+            // @ts-ignore
+            state.canvas = action.payload
         },
         setFillColor(state, action: PayloadAction<string>) {
-            state.tool.fillColor = action.payload;
+            if(state.tool) state.tool.fillColor = action.payload;
         },
         setStrokeColor(state, action: PayloadAction<string>) {
-            state.tool.strokeColor = action.payload;
+            if(state.tool) state.tool.strokeColor = action.payload;
         },
         setLineWidth(state, action: PayloadAction<number>) {
-            state.tool.lineWidth = action.payload;
+            if(state.tool) state.tool.lineWidth = action.payload;
         },
-        setSocket(state, action: PayloadAction<null | WebSocket>) {
+        setSocket(state, action: PayloadAction<WebSocket>) {
             state.socket = action.payload;
         },
         setSessionId(state, action: PayloadAction<null | string>) {
