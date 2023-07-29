@@ -10,7 +10,7 @@ export default class Tool {
     }
 
     static sendImage(canvas: HTMLCanvasElement, socket: WebSocket, id: string) {
-        socket.send(JSON.stringify({
+        socket.readyState === socket.OPEN && socket.send(JSON.stringify({
             id: id,
             method: 'draw',
             src: canvas.toDataURL()
