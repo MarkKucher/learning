@@ -28,8 +28,8 @@ const Toolbar = () => {
 
     const clearCanvas = () => {
         const ctx = canvas.getContext('2d');
+        if(!canvas || !sessionId || !ctx) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if(!canvas || !sessionId) return;
         axios.post(`${serverUrl}/image?id=${sessionId}`, {img: canvas.toDataURL()})
         if(socket) Tool.sendImage(canvas, socket, sessionId)
     }
