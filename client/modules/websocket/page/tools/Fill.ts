@@ -3,8 +3,8 @@ import Tool from "@/modules/websocket/page/tools/Tool";
 export default class Fill extends Tool {
     prevMode: GlobalCompositeOperation = this?.ctx?.globalCompositeOperation || 'source-over';
 
-    constructor(canvas: HTMLCanvasElement, socket: WebSocket, id: string) {
-        super(canvas, socket, id);
+    constructor(canvas: HTMLCanvasElement) {
+        super(canvas);
         this.listen();
     }
 
