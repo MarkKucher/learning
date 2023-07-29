@@ -54,7 +54,7 @@ const SettingsBar = () => {
                 <div className={styles.settings__section__option}>
                     <label style={{marginLeft: 0}} className={styles.label} htmlFor={'line-width'}>Line width</label>
                     <input
-                        onChange={(e) => {dispatch(setLineWidth(e.target.value))}}
+                        onChange={(e) => {dispatch(setLineWidth(Number(e.target.value)))}}
                         id={'line-width'}
                         type={'number'}
                         defaultValue={1}
