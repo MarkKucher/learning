@@ -40,7 +40,7 @@ export const defaultStructure: navigationElement[] = [
     new Link('Home', '/', false),
     new Directory('My projects', [
         new Link('Morse code translator', 'https://translator-morse-code.vercel.app', true),
-        new Link('Music platform', 'https://music-platform.up.railway.app', true)
+        new Link('Music platform', 'https://music-platform-nu.vercel.app', true)
     ]),
 ]
 
