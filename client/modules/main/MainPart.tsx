@@ -7,6 +7,7 @@ import {useSelector} from "react-redux";
 import {selectExample} from "@/modules/redux/store/slices/exampleSlice";
 import StyledText from "@/modules/redux/example/StyledText";
 import Websocket from "@/modules/websocket/example/Websocket";
+import {articleDescriptions} from "@/utils/articleDescriptions";
 
 const MainPart = () => {
 
@@ -24,7 +25,7 @@ const MainPart = () => {
                 hasLink
                 customDescription={
                     <StyledText>
-                        Redux is a library that helps manage states across all application. In this example you can see that small container affects a big one thanks to redux.
+                        {articleDescriptions.redux}
                     </StyledText>
                 }
             >
