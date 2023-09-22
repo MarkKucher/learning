@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from '../../styles/Block.module.scss';
 import Title from "@/components/text/Title";
-import ScrollTo from "@/components/icons/ScrollTo";
 import OpenPage from "@/components/icons/OpenPage";
 import styled from "styled-components";
-import {useSelector} from "react-redux";
-import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {articleDescriptions} from "@/utils/articleDescriptions";
 import Description from "@/components/Description";
 

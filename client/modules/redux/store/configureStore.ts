@@ -8,6 +8,7 @@ import paint from "@/modules/websocket/page/redux/paint";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import {postsApi} from "@/modules/redux/store/apis/postsApi";
+import nodes from "@/modules/react flow + resend/redux/nodes";
 
 const themePersistConfig = {
     key: 'theme',
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     filters,
     thunk,
     paint,
+    nodes,
     theme: persistReducer(themePersistConfig, theme),
     [postsApi.reducerPath]: postsApi.reducer
 })

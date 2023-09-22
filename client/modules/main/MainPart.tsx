@@ -3,11 +3,10 @@ import Block from "@/components/blocks/Block";
 import Animations from "@/modules/animations/example/Animations";
 import styles from '../../styles/MainPart.module.scss';
 import Redux from "@/modules/redux/example/Redux";
-import {useSelector} from "react-redux";
-import {selectExample} from "@/modules/redux/store/slices/exampleSlice";
 import StyledText from "@/modules/redux/example/StyledText";
 import Websocket from "@/modules/websocket/example/Websocket";
 import {articleDescriptions} from "@/utils/articleDescriptions";
+import Resend from "@/modules/react flow + resend/example/Resend";
 
 const MainPart = () => {
 
@@ -37,6 +36,13 @@ const MainPart = () => {
                 hasDescription
             >
                 <Websocket/>
+            </Block>
+            <Block
+                title={"React flow + resend"}
+                customLink={`/react-flow+resend`}
+                hasDescription
+            >
+                <Resend/>
             </Block>
         </div>
     );

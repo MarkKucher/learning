@@ -23,7 +23,7 @@ interface Message {
 const Canvas = () => {
     const dispatch = useDispatch();
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    const {sessionId, socket, width, height, imgDataUrl} = useSelector(selectPaint);
+    const {sessionId, socket, width, height} = useSelector(selectPaint);
     const timeoutRef = useRef<any>(null);
     const [shouldDraw, setShouldDraw] = useState(true);
 

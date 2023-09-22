@@ -77,5 +77,8 @@ export const pageNavigationElements = {
     ],
     '/websocket': [
         new Link('Websocket', '#Websocket')
+    ],
+    '/react-flow+resend': [
+        new Link('Email automation system', '#EmailAutomationSystem')
     ]
 }
