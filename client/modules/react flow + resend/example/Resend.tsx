@@ -16,6 +16,7 @@ const Resend = () => {
             }),
             headers: {
                 "Content-Type": "application/json",
+                "Allow": "GET, POST, HEAD"
             },
         })
             .then((data) => {
