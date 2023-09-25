@@ -16,5 +16,6 @@ export const articleDescriptions: articleDescriptionType = {
     'react flow + resend': 'React flow is a highly customizable React' +
         ' component for building node-based editors and interactive diagrams.' +
         ' Resend is the new email API for developers. It is designed ' +
-        'for you to build, test, and send transactional emails at scale.'
+        'for you to build, test, and send transactional emails at scale.',
+    chatGPT: 'ChatGPT is good'
 };

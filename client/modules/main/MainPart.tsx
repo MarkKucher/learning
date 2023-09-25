@@ -44,6 +44,12 @@ const MainPart = () => {
             >
                 <Resend/>
             </Block>
+            {/*<Block*/}
+            {/*    title={'ChatGPT'}*/}
+            {/*    hasDescription*/}
+            {/*>*/}
+
+            {/*</Block>*/}
         </div>
     );
 };
