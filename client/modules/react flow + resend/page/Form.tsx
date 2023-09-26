@@ -6,15 +6,46 @@ import {selectEdges, selectNodes} from "@/modules/react flow + resend/redux/node
 import Task from "@/modules/react flow + resend/components/Task";
 import "reactflow/dist/style.css"
 import axios from "axios";
+import {timer} from "@/helpers/timer";
 
 const Form = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
+    const [isProcessing, setIsProcessing] = useState(false);
+    const [isStopped, setIsStopped] = useState(false);
     const initialNodes = useSelector(selectNodes);
     const initialEdges = useSelector(selectEdges);
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const nodeTypes = useMemo(() => ({task: Task}), []);
+
+    useEffect(() => {
+        const process = async () => {
+            const tasks = nodes.map(node => node.data.value);
+
+            for (let i = 0; i < tasks.length; i++) {
+                axios.post("/api/send", {
+                    body: JSON.stringify({
+                        email,
+                        subject,
+                        text: tasks[i], // map all nodes to a string array
+                    }),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }).catch((err) => {
+                        alert(`Encountered an error ❌`);
+                        console.error(err);
+                    });
+                await timer(300000)
+            }
+
+            setIsProcessing(false)
+        }
+        if(isProcessing) {
+            process()
+        }
+    }, [isProcessing])
 
     useEffect(() => {
         setNodes(initialNodes)
@@ -26,32 +57,13 @@ const Form = () => {
         [setEdges]
     )
 
-    const sendEmail = () => {
-        axios.post("/api/send", {
-            body: JSON.stringify({
-                email,
-                subject,
-                tasks: nodes.map(node => node.data.value), // map all nodes to a string array
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((data) => {
-                alert(`Sent to processing`);
-            })
-            .catch((err) => {
-                alert(`Encountered an error ❌`);
-                console.error(err);
-            });
-    };
-
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        sendEmail();
+        setIsProcessing(true);
         setEmail("");
         setSubject("");
+        alert('Sent to processing. Closing page will stop automation')
     };
 
     return (
@@ -88,7 +100,9 @@ const Form = () => {
                     <Background gap={12} size={5} />
                 </ReactFlow>
             </div>
-            <button className={styles.submitBtn}>START AUTOMATION</button>
+            <button className={styles.submitBtn}>
+                START AUTOMATION
+            </button>
         </form>
     );
 };

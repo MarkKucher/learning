@@ -5,7 +5,6 @@ import Form from "@/modules/react flow + resend/page/Form";
 
 const EmailAutomationSystem = () => {
 
-
     return (
         <TopicBlock title={'Email automation system'} id={'EmailAutomationSystem'}>
             <main className={styles.main}>
