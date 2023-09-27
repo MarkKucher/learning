@@ -24,7 +24,6 @@ const ST = styled.div<STProps>`
 
 const StyledText: React.FC<StyledTextProps> = ({children, ...props}) => {
     const {isBold, isCursive, isUnderlined} = useSelector(selectExample);
-    console.log(defaultThemes[0].mainGradient)
 
     return (
         <ST isBold={isBold} isCursive={isCursive} isUnderlined={isUnderlined} {...props}>

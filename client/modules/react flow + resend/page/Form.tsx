@@ -12,7 +12,6 @@ const Form = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [isProcessing, setIsProcessing] = useState(false);
-    const [isStopped, setIsStopped] = useState(false);
     const initialNodes = useSelector(selectNodes);
     const initialEdges = useSelector(selectEdges);
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -21,6 +20,8 @@ const Form = () => {
 
     useEffect(() => {
         const process = async () => {
+            setEmail("");
+            setSubject("");
             const tasks = nodes.map(node => node.data.value);
 
             for (let i = 0; i < tasks.length; i++) {
@@ -32,6 +33,7 @@ const Form = () => {
                     }),
                     headers: {
                         "Content-Type": "application/json",
+                        "Allow": "GET, POST, PUT, DELETE, OPTIONS"
                     },
                 }).catch((err) => {
                         alert(`Encountered an error ❌`);
@@ -61,8 +63,6 @@ const Form = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsProcessing(true);
-        setEmail("");
-        setSubject("");
         alert('Sent to processing. Closing page will stop automation')
     };
 
@@ -79,10 +79,10 @@ const Form = () => {
                 required
             />
             <label style={{marginTop: '25px'}} className={styles.label} htmlFor={'subject'}>Subject</label>
-            <textarea
+            <input
                 name={'subject'}
                 id={'subject'}
-                className={styles.textarea}
+                className={styles.input}
                 value={subject}
                 onChange={(e) => {setSubject(e.target.value)}}
                 required
