@@ -7,8 +7,6 @@ import {extractSentencesInQuotes} from "@/helpers/extractSentencesInQuotes";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const {question} = req.body;
 
-    console.log(question)
-
     const sysPrompt = `You are a helpful assistant.`
 
     const messages: ChatCompletionMessageParam[] = [
@@ -40,7 +38,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             });
 
             const responseMessage = response.choices[0];
-            console.log(response.choices[0].finish_reason)
             const answer = responseMessage.message.content;
 
             res.status(200).json({answer})

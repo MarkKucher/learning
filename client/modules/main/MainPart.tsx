@@ -7,7 +7,7 @@ import StyledText from "@/modules/redux/example/StyledText";
 import Websocket from "@/modules/websocket/example/Websocket";
 import {articleDescriptions} from "@/utils/articleDescriptions";
 import Resend from "@/modules/react flow + resend/example/Resend";
-import TellRandomFact from "@/modules/chatGPT/example/TellRandomFact";
+import ChatGPT from "@/modules/chatGPT/example/ChatGPT";
 
 const MainPart = () => {
 
@@ -50,7 +50,7 @@ const MainPart = () => {
                 hasDescription
                 hasLink
             >
-                <TellRandomFact/>
+                <ChatGPT/>
             </Block>
         </div>
     );

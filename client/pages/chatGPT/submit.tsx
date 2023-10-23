@@ -8,7 +8,7 @@ const Submit = () => {
             <h2 className={styles.thanks}>
                 Thank You!
             </h2>
-            <p style={{marginBottom: '1.5rem'}}>
+            <p className={styles.text}>
                 Your newly generated meme has been sent to your email.
             </p>
             <Link href="/chatGPT">
