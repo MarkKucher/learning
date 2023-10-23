@@ -11,7 +11,7 @@ import {timer} from "@/helpers/timer";
 const Form = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
-    const [isProcessing, setIsProcessing] = useState(false);
+    const [shouldProcess, setShouldProcess] = useState(false);
     const initialNodes = useSelector(selectNodes);
     const initialEdges = useSelector(selectEdges);
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
@@ -22,6 +22,7 @@ const Form = () => {
         const process = async () => {
             setEmail("");
             setSubject("");
+            setShouldProcess(false)
             const tasks = nodes.map(node => node.data.value);
 
             for (let i = 0; i < tasks.length; i++) {
@@ -41,13 +42,11 @@ const Form = () => {
                     });
                 await timer(300000)
             }
-
-            setIsProcessing(false)
         }
-        if(isProcessing) {
+        if(shouldProcess) {
             process()
         }
-    }, [isProcessing])
+    }, [shouldProcess])
 
     useEffect(() => {
         setNodes(initialNodes)
@@ -62,7 +61,7 @@ const Form = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsProcessing(true);
+        setShouldProcess(true);
         alert('Sent to processing. Closing page will stop automation')
     };
 

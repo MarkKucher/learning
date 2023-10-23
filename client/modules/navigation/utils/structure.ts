@@ -63,9 +63,9 @@ export const pageNavigationElements = {
                 new Link('example', '#React flow + resend'),
                 new Link('page', '/react-flow+resend', false)
             ]),
-            // new Directory('ChatGPT', [
-            //     new Link('example', '#ChatGPT')
-            // ])
+            new Directory('ChatGPT', [
+                new Link('example', '#ChatGPT')
+            ])
         ])
     ],
     '/animations': [
@@ -89,7 +89,6 @@ export const pageNavigationElements = {
     '/websocket': [
         new Link('Websocket', '#Websocket')
     ],
-    '/react-flow+resend': [
-        new Link('Email automation system', '#EmailAutomationSystem')
-    ]
+    '/react-flow+resend': [],
+    '/chatGPT': []
 }

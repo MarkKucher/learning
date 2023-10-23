@@ -36,7 +36,7 @@ const Block: React.FC<BlockProps> = ({children, title, hasDescription, hasLink, 
     if(customLink) {
         link = customLink;
     } else if(hasLink) {
-        link = `/${title.toLowerCase()}`;
+        link = `/${title[0].toLowerCase() + title.slice(1)}`;
     }
 
     return (

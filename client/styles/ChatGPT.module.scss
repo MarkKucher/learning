@@ -1,0 +1,177 @@
+.main {
+  width: 100vw;
+  margin-top: 200px;
+  min-height: 100vh;
+  background: #F8F0E5;
+}
+
+.header {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.h2 {
+  font-weight: bold;
+  margin: 0.5rem;
+  color: #0F2C59;
+  font-size: 2.25rem;
+}
+
+.h3 {
+  text-align: center;
+  font-size: 1.125rem;
+  margin: 0 0.5rem 2rem;
+  opacity: 0.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  &:focus {
+    outline: 2px solid pink;
+  }
+}
+
+.tag {
+  color: black;
+  font-size: 1.2rem;
+  padding: 5px;
+  background: pink;
+}
+
+.remove {
+  margin-left: 5px;
+  background: transparent;
+}
+
+.button {
+  background: #0F2C59;
+  color: #fff;
+  margin-top: 30px;
+  padding: 1rem 0;
+  border-radius: 5px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  &:hover {
+    background: #151d2b;
+  }
+}
+
+.section {
+  height: 100vh;
+  padding: 2.5rem 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.memes {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.meme {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    transition: all 300ms;
+    cursor: pointer;
+    &:hover {
+      scale: 1.05;
+    }
+  }
+}
+
+.submit {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.thanks {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #DAC0A3;
+}
+
+.full_meme {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+    border-radius: 5px;
+  }
+
+  &__link {
+    margin-top: 1.5rem;
+    color: #4299e1;
+  }
+}
+
+.example {
+  width: 100%;
+  min-height: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 4px solid black;
+  &__question {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 15px 0;
+  }
+  &__input {
+    padding: 5px;
+    border: 1px solid gray;
+    margin: 15px 5px 0 0;
+  }
+  &__button {
+    background: lightgray;
+    color: black;
+    padding: 0.5rem 1rem;
+    margin-top: 15px;
+    border: 2px solid black;
+    transition: all 300ms;
+    cursor: pointer;
+    &:hover {
+      background: gray;
+    }
+    &:active {
+      scale: 0.95;
+    }
+  }
+  &__answer {
+    margin: 15px 0;
+    color: gray;
+  }
+}

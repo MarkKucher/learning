@@ -13,10 +13,15 @@
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@next/font": "13.1.6",
     "@reduxjs/toolkit": "^1.9.2",
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.53.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "@trigger.dev/nextjs": "^2.1.7",
+    "@trigger.dev/openai": "^2.1.8",
+    "@trigger.dev/react": "^2.1.7",
+    "@trigger.dev/resend": "^2.1.8",
+    "@trigger.dev/sdk": "^2.1.7",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -34,6 +39,7 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.14.0",
+    "react-tag-input": "^6.8.1",
     "reactflow": "^11.8.3",
     "redux-persist": "^6.0.0",
     "resend": "^1.0.0",
@@ -47,7 +53,11 @@
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "@types/prismjs": "^1.26.0",
+    "@types/react-tag-input": "^6.6.2",
     "@types/styled-components": "^5.1.26",
     "@types/webfontloader": "^1.6.35"
+  },
+  "trigger.dev": {
+    "endpointId": "meme-generator-VsZO"
   }
 }

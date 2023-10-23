@@ -1,14 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-interface message {
-    email: string[];
-    subject: string;
-    content: string[];
-}
-
-let mes: message | undefined = undefined;
+export const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: any, res: any) {
     const {email, subject, text} = JSON.parse(req.body.body);
