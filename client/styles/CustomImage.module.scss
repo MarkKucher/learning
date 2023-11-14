@@ -1,0 +1,6 @@
+@use 'positioning';
+
+.skeleton {
+  @include positioning.centered;
+  background: darkgray;
+}

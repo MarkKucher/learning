@@ -10,9 +10,9 @@ import {
     setTool, setWidth
 } from "@/modules/websocket/page/redux/paint";
 import Brush from "@/modules/websocket/page/tools/Brush";
-import {serverUrl, websocketServer} from "@/modules/websocket/page/utils/const";
 import Tool from "@/modules/websocket/page/tools/Tool";
 import axios from "axios";
+import {websocketServer, wsServerUrl} from "@/utils/const";
 
 interface Message {
     id: string;
@@ -35,7 +35,7 @@ const Canvas = () => {
 
     const draw = () => {
         if(!sessionId) return;
-        axios.get(`${serverUrl}/image?id=${sessionId}`)
+        axios.get(`${wsServerUrl}/image?id=${sessionId}`)
             .then((res) => {
                 if(!res.data) return;
                 const canvas = canvasRef.current;
@@ -91,7 +91,7 @@ const Canvas = () => {
 
     const mouseLooseHandler = () => {
         if(!canvasRef.current || !sessionId) return;
-        axios.post(`${serverUrl}/image?id=${sessionId}`, {img: canvasRef.current.toDataURL()})
+        axios.post(`${wsServerUrl}/image?id=${sessionId}`, {img: canvasRef.current.toDataURL()})
         if(socket) Tool.sendImage(canvasRef.current, socket, sessionId)
     }
 

@@ -1,7 +1,13 @@
 import React, {ComponentPropsWithoutRef, useCallback, useEffect, useState} from 'react';
 import Image from "next/image";
+import Loader from "@/components/Loader";
+import styles from "@/styles/CustomImage.module.scss";
 
-const CustomImage: React.FC<ComponentPropsWithoutRef<typeof Image>> = ({...props}) => {
+interface CustomImageProps extends ComponentPropsWithoutRef<typeof Image> {
+    isLoading?: boolean;
+}
+
+const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
     const [width, setWidth] = useState(Number(props.width) || 300)
     const [height, setHeight] = useState(Number(props.height) || 300)
 
@@ -29,11 +35,15 @@ const CustomImage: React.FC<ComponentPropsWithoutRef<typeof Image>> = ({...props
     }, [])
 
     return (
-        <Image
-            {...props}
-            width={width}
-            height={height}
-        />
+        <>
+            {!isLoading ? <Image
+                {...props}
+                width={width}
+                height={height}
+            /> : <div className={styles.skeleton} style={{width, height}}>
+                <Loader/>
+            </div>}
+        </>
     );
 };
 

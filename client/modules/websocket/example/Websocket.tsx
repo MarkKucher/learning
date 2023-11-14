@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from "@/modules/websocket/page/styles/Websocket.module.scss";
-import {websocketServer} from "@/modules/websocket/page/utils/const";
+import {websocketServer} from "@/utils/const";
 
 const Websocket = () => {
     const [quantity, setQuantity] = useState(1);
@@ -20,13 +20,6 @@ const Websocket = () => {
         window.onbeforeunload = () => {
             closeHandler()
         }
-        // document.onvisibilitychange = (e) => {
-        //     if (document.visibilityState == 'hidden') {
-        //         closeHandler()
-        //     } else if(document.visibilityState == 'visible') {
-        //         openHandler()
-        //     }
-        // }
         socket.onmessage = (e) => {
             setQuantity(e.data)
         }

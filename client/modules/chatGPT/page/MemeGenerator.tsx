@@ -5,8 +5,9 @@ import { useState } from "react";
 import { WithContext as ReactTags } from "react-tag-input";
 import { useRouter } from "next/navigation";
 import ViewMemes from "./components/ViewMemes";
-import {Meme, Topic} from "@/modules/chatGPT/page/types";
+import {MemeType, Topic} from "@/modules/chatGPT/page/types";
 import axios from "axios";
+import { serverUrl } from '@/utils/const';
 
 const KeyCodes = {
     comma: 188,
@@ -18,7 +19,7 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 const MemeGenerator = () => {
     const [audience, setAudience] = useState("");
     const [email, setEmail] = useState("");
-    const [memes, setMemes] = useState<Meme[]>([]);
+    const [memes, setMemes] = useState<MemeType[]>([]);
     const router = useRouter();
     const [topics, setTopics] = useState<Topic[]>([
         { id: "Developers", text: "Developers" },
@@ -26,8 +27,7 @@ const MemeGenerator = () => {
 
     const fetchMemes = async () => {
         try {
-            const request = await fetch("/api/all-memes");
-            const response = await request.json();
+            const response = await axios.get(`${serverUrl}/memes`)
             setMemes(response.data);
         } catch (err) {
             console.error(err);
@@ -59,18 +59,16 @@ const MemeGenerator = () => {
 
     const postData = async (topic: string) => {
         try {
-            const data = await fetch("/api/memes", {
-                method: "POST",
-                body: JSON.stringify({
-                    audience,
-                    topic,
-                    email,
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                },
+            const response = await axios.post(`${serverUrl}/memes`, {
+                audience,
+                topic,
+                email,
             });
-            const response = await data.json();
+
+            const dataFromStorage = localStorage.getItem("created memes")
+            const createdMemes = dataFromStorage ? JSON.parse(dataFromStorage) : [];
+
+            localStorage.setItem("created memes", JSON.stringify([...createdMemes, response.data[0].id]))
         } catch (err) {
             console.error(err);
         }
@@ -105,8 +103,9 @@ const MemeGenerator = () => {
                         className={styles.input}
                         onChange={(e) => setEmail(e.target.value)}
                     />
-
+                    <label htmlFor="topics">Topics</label>
                     <ReactTags
+                        id={'topics'}
                         tags={topics}
                         delimiters={delimiters}
                         handleDelete={handleDelete}
@@ -124,7 +123,7 @@ const MemeGenerator = () => {
                     </button>
                 </form>
             </header>
-            <ViewMemes memes={memes} />
+            <ViewMemes memes={memes} setMemes={setMemes} />
         </main>
     );
 };

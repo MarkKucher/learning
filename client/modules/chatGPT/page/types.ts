@@ -3,8 +3,9 @@ export interface Topic {
     text: string;
 }
 
-export interface Meme {
+export interface MemeType {
     id: string;
     name: string;
     url: string;
+    texts: string[];
 }

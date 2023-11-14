@@ -64,14 +64,14 @@ app.post('/image', (req, res) => {
         const data = req.body.img.replace('data:image/png;base64,', '')
         fs.writeFileSync(path.resolve(__dirname, 'files', `${req.query.id}.jpg`), data, 'base64')
         !ids.includes(req.query.id) && ids.push(req.query.id)
-        return res.status(200).json({message: 'Image saved on server'})
+        return res.status(200).json({message: 'Image saved on ws-server'})
     } catch (e) {
         console.log(e)
-        return res.status(500).json('server error')
+        return res.status(500).json('ws-server error')
     }
 })
 
-app.listen(PORT, () => console.log('server is running on', PORT, 'port'))
+app.listen(PORT, () => console.log('ws-server is running on', PORT, 'port'))
 
 const connectionHandler = (ws, msg) => {
     ws.id = msg.id

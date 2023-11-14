@@ -1,22 +1,23 @@
 import React, {useEffect, useState} from "react";
 import Link from "next/link";
-import {Meme} from "@/modules/chatGPT/page/types";
+import {MemeType} from "@/modules/chatGPT/page/types";
 import Image from "next/image";
 import styles from "@/styles/ChatGPT.module.scss";
 import axios from "axios";
 import {useRouter} from "next/router";
 import CustomImage from "@/components/CustomImage";
+import {serverUrl} from "@/utils/const";
 
 const MemePage = () => {
     const router = useRouter();
     const {id} = router.query;
-    const [meme, setMeme] = useState<Meme>({} as Meme);
+    const [meme, setMeme] = useState<MemeType>({} as MemeType);
 
     useEffect(() => {
         const fetchMeme = async () => {
             if (id) {
-                const response = await axios.get(`/api/meme`, {params: {id}});
-                setMeme(response.data.data[0]);
+                const response = await axios.get(`${serverUrl}/memes/${id}`);
+                setMeme(response.data[0]);
             }
         };
 

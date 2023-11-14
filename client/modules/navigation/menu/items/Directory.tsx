@@ -29,7 +29,6 @@ const Directory: React.FC<DirectoryProps> = ({children, title}) => {
                     exit={{y: -8, opacity: 0, height: 0}}
                     transition={{stiffness: 1000}}
                     className={styles.links}
-
                 >
                     {children}
                 </motion.div>}

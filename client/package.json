@@ -58,6 +58,6 @@
     "@types/webfontloader": "^1.6.35"
   },
   "trigger.dev": {
-    "endpointId": "meme-generator-VsZO"
+    "endpointId": "meme-generator"
   }
 }

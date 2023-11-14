@@ -11,7 +11,7 @@ const SLink = styled('a')`
 interface StyledLinkProps extends ComponentPropsWithoutRef<"a"> {
     title: string;
     link: string;
-    shouldOpenInNewTab: boolean
+    shouldOpenInNewTab?: boolean
 }
 
 const Link: React.FC<StyledLinkProps> = ({title, link,shouldOpenInNewTab, ...rest}) => {

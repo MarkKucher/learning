@@ -2,20 +2,24 @@ import React, {useRef, useState} from 'react';
 import styles from "@/styles/ChatGPT.module.scss";
 import axios from "axios";
 import Loader from "@/components/Loader";
+import {serverUrl} from "@/utils/const";
 
 const ChatGPT = () => {
     const [question, setQuestion] = useState('');
     const [answer, setAnswer] = useState('');
     const [loading, setLoading] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
+    const [error, setError] = useState('')
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
     const sendRequest = async () => {
+        if(!question) return;
         inputRef.current && inputRef.current.blur();
         setQuestion('')
         try {
             setLoading(true)
-            const response = await axios.post('/api/chatGPT', {question})
-            setAnswer(response.data.answer || 'ChatGPT is not answering')
+            const {data} = await axios.post(`${serverUrl}/chatGPT`, {question})
+            console.log(data)
+            data ? setAnswer(data) : setError('ChatGPT is not available')
         } catch (e) {
             console.log(e)
         } finally {
@@ -40,8 +44,8 @@ const ChatGPT = () => {
                 </button>
             </div>
             {!loading ? <div>
-                {answer && <h3 className={styles.h3}>ChatGPT answer</h3>}
-                <div className={styles.example__answer}>{answer}</div>
+                {answer && <h3 className={styles.h3}>{error ? error : 'ChatGPT answer'}</h3>}
+                {!error && <div className={styles.example__answer}>{answer}</div>}
             </div> : <Loader/>}
         </div>
     );
