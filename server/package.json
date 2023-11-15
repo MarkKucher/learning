@@ -11,6 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
     "@trigger.dev/express": "^2.2.3",
