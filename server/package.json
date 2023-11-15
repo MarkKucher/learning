@@ -2,9 +2,9 @@
   "name": "test-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "start": "node .",
     "dev": "nodemon index.ts"
   },
