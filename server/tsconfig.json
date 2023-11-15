@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
+    "lib": [
+      "es6"
+    ],
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "outDir": "dist",
-    "baseUrl": "."
-  },
-  "ts-node": {
-    "esm": true
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
   }
 }
