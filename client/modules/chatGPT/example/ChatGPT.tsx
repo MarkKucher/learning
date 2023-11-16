@@ -17,7 +17,7 @@ const ChatGPT = () => {
         setQuestion('')
         try {
             setLoading(true)
-            const {data} = await axios.post(`${serverUrl}/chatGPT`, {question})
+            const {data} = await axios.post(`${process.env.SERVER_URL}/chatGPT`, {question})
             console.log(data)
             data ? setAnswer(data) : setError('ChatGPT is not available')
         } catch (e) {
