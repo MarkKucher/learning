@@ -6,7 +6,7 @@ const Websocket = () => {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        let socket = new WebSocket(websocketServer + '/quantity')
+        let socket = new WebSocket(process.env.WS_SERVER_URL + '/quantity')
         const openHandler = () => {
             socket.readyState === socket.OPEN && socket.send(JSON.stringify({method: 'open'}))
         }

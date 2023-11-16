@@ -21,6 +21,7 @@ const ChatGPT = () => {
             console.log(data)
             data ? setAnswer(data) : setError('ChatGPT is not available')
         } catch (e) {
+            setError('ChatGPT is not available')
             console.log(e)
         } finally {
             setLoading(false)
