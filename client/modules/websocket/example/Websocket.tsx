@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import styles from "@/modules/websocket/page/styles/Websocket.module.scss";
-import {websocketServer} from "@/utils/const";
+import {websocketServer, wsServerUrl} from "@/utils/const";
 
 const Websocket = () => {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        let socket = new WebSocket('https://learning-rosy.onrender.com' + '/quantity')
+        let socket = new WebSocket(wsServerUrl + '/quantity')
         const openHandler = () => {
             socket.readyState === socket.OPEN && socket.send(JSON.stringify({method: 'open'}))
         }
