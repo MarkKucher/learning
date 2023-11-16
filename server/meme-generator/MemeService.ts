@@ -2,7 +2,7 @@ import {supabase} from "../entities/supabase";
 import axios from "axios";
 import {ChatCompletionCreateParams, ChatCompletionMessageParam} from "openai/resources/chat";
 import {extractSentencesInQuotes} from "../helpers/extractSentencesInQuotes";
-// import {transporter} from "../entities/nodemailer";
+import {transporter} from "../entities/nodemailer";
 import {openai} from "../entities/openai";
 
 interface Meme {
@@ -117,9 +117,9 @@ export class MemeService {
             text: `Hey there, Your meme is ready.\n Access it here: ${url}`,
         };
 
-        // await transporter.sendMail(mailData, (err: any, info: any) => {
-        //     console.log(err ? err : info)
-        // });
+        await transporter.sendMail(mailData, (err: any, info: any) => {
+            console.log(err ? err : info)
+        });
 
         console.log("✨ Yay! Your meme has been emailed to the user! ✨");
 
