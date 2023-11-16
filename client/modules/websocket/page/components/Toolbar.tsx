@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from "../styles/Websocket.module.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {redo, selectPaint, setFillColor, setStrokeColor, setTool, undo} from "@/modules/websocket/page/redux/paint";
+import {selectPaint, setFillColor, setStrokeColor, setTool} from "@/modules/websocket/page/redux/paint";
 import Brush from "@/modules/websocket/page/tools/Brush";
 import Rect from "@/modules/websocket/page/tools/Rect";
 import Circle from "@/modules/websocket/page/tools/Circle";
@@ -11,8 +11,7 @@ import {faBrush, faRefresh, faFill} from "@fortawesome/free-solid-svg-icons";
 import Eraser from "@/modules/websocket/page/tools/Eraser";
 import Tool from "@/modules/websocket/page/tools/Tool";
 import axios from "axios";
-import {serverUrl} from "@/modules/websocket/page/utils/const";
-import Fill from "@/modules/websocket/page/tools/Fill";
+import {serverUrl} from "@/utils/const";
 
 const Toolbar = () => {
     const {canvas, socket, sessionId} = useSelector(selectPaint);
