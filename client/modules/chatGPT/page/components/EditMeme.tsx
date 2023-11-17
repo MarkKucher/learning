@@ -22,12 +22,9 @@ const EditMeme: React.FC<EditMemeProps> = ({meme, setMemes, setMeme, setIsLoadin
     const [isOpen, setIsOpen] = useState(false)
     const [width, setWidth] = useState(700)
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [text, setText] = useState<string[]>(meme.texts)
-    const [isEditing, setIsEditing] = useState<boolean[]>(meme.texts.map(() => false))
 
     const condition = (screenWidth: number) => {
-        const compareTo = 700;
-        if(screenWidth < compareTo) {
+        if(screenWidth < 700) {
             const newWidth = screenWidth - 10
             setWidth(newWidth)
         }
@@ -38,8 +35,7 @@ const EditMeme: React.FC<EditMemeProps> = ({meme, setMemes, setMeme, setIsLoadin
     }, [])
 
     useEffect(() => {
-        condition(window.innerWidth)
-        window.addEventListener('resize', onResize, {passive: true})
+        window.addEventListener('resize', onResize, {passive: false})
         return () => {
             window.removeEventListener('resize', onResize)
         }
@@ -59,7 +55,7 @@ const EditMeme: React.FC<EditMemeProps> = ({meme, setMemes, setMeme, setIsLoadin
     }
 
     return (
-        <div className={styles.edit} style={{width}}>
+        <div className={styles.edit} style={{width: window.innerWidth - 10 < width ? window.innerWidth - 10 : width}}>
             <AnimatePresence>
                 {isOpen && <motion.div
                     initial={{height: 0}}

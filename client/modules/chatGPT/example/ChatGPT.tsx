@@ -18,7 +18,6 @@ const ChatGPT = () => {
         try {
             setLoading(true)
             const {data} = await axios.post(`${serverUrl}/chatGPT`, {question})
-            console.log(data)
             data ? setAnswer(data) : setError('ChatGPT is not available')
         } catch (e) {
             setError('ChatGPT is not available')
@@ -40,7 +39,7 @@ const ChatGPT = () => {
                     onChange={(e) => setQuestion(e.target.value)}
                     onKeyDown={(e) => {e.key === 'Enter' && sendRequest()}}
                 />
-                <button className={styles.example__button} onClick={sendRequest}>
+                <button disabled={loading} className={styles.example__button} onClick={sendRequest}>
                     Ask
                 </button>
             </div>

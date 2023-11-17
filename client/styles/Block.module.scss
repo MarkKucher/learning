@@ -4,13 +4,13 @@
 @use 'positioning';
 
 .block {
-  margin: 10rem 0 0;
-  padding: 1rem 0 0;
+  margin: 12rem 0 0;
+  padding: 1rem;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: space-between;
-  width: 80vw;
+  width: 90vw;
   min-height: 60vh;
   @include shadow.block-shadow;
   border-radius: 20px;
@@ -32,7 +32,7 @@
   flex: 1;
   width: 100%;
   letter-spacing: 1px;
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -60,7 +60,7 @@
   flex: 1;
   font-size: 1.3rem;
   color: theme-primary.$text-color;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .pageExample {
@@ -73,8 +73,8 @@
 
 .content {
   display: flex;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 1rem 1rem 0;
+  padding: 1rem;
   flex: 1;
   min-height: 200px;
   border-radius: 10px;

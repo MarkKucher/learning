@@ -14,8 +14,8 @@ const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
     const relation = width / height;
 
     const condition = (screenWidth: number) => {
-        const compareTo = props.width ? props.width : width;
-        if(screenWidth < compareTo) {
+        const compareTo = props.width ? props.width : 300;
+        if(screenWidth - 10 < compareTo) {
             const newWidth = screenWidth - 10
             setWidth(newWidth)
             setHeight(newWidth / relation)
@@ -30,6 +30,7 @@ const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
         condition(window.innerWidth)
         window.addEventListener('resize', onResize, {passive: true})
         return () => {
+            window.removeEventListener('load', onResize)
             window.removeEventListener('resize', onResize)
         }
     }, [])
@@ -38,7 +39,7 @@ const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
         <>
             {!isLoading ? <Image
                 {...props}
-                width={width}
+                width={window.innerWidth - 10 < width ? window.innerWidth - 10 : width}
                 height={height}
             /> : <div className={styles.skeleton} style={{width, height}}>
                 <Loader/>
