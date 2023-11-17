@@ -35,7 +35,7 @@ const Canvas = () => {
 
     const draw = () => {
         if(!sessionId) return;
-        axios.get(`${websocketServer}/image?id=${sessionId}`)
+        axios.get(`${wsServerUrl}/image?id=${sessionId}`)
             .then((res) => {
                 if(!res.data) return;
                 const canvas = canvasRef.current;
