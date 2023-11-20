@@ -26,13 +26,13 @@ const Header: React.FC<HeaderProps> = ({shouldHaveArrow}) => {
         <>
             <StyledHeader className={styles.header}>
                 <Menu/>
-                <Title position={'left'} title={'Learning'} type={"big"}/>
+                <Title position={'left'} title={'𝑳𝒆𝒂𝒓𝒏𝒊𝒏𝒈'} type={"big"}/>
                 <Tools>
                     <ChangeTheme/>
                     {shouldHaveArrow && <ScrollTo isArrowUp={false} id={'#footer'}/>}
                 </Tools>
             </StyledHeader>
-            <Border/>
+            <Border className={styles.shadow}/>
         </>
 
     );

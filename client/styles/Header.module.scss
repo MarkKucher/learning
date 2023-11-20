@@ -3,6 +3,7 @@
 @use 'shadow';
 
 .header {
+  position: relative;
   width: 100%;
   height: 150px;
   display: flex;
@@ -11,6 +12,9 @@
   justify-content: space-between;
   padding: 1rem 2rem 1rem 4rem;
   @include theme-primary.blocks-gradient-background;
+}
+
+.shadow {
   @include shadow.header-shadow;
 }
 
@@ -33,9 +37,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  min-width: 30%;
   & > div, & > a {
     margin-left: 0.5rem;
+  }
+  &__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
   }
 }
 
