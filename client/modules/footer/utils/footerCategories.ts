@@ -9,7 +9,6 @@ import {
     typeScriptLogo
 } from "@/assets/logos";
 import {StaticImageData} from "next/image";
-import css from "styled-jsx/css";
 
 interface Company {
     logo: StaticImageData;

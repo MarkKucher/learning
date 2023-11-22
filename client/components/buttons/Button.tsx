@@ -1,4 +1,4 @@
-import React, {ComponentPropsWithoutRef, MouseEventHandler} from 'react';
+import React, {ComponentPropsWithoutRef} from 'react';
 import styles from '../../styles/Button.module.scss';
 import styled from "styled-components";
 

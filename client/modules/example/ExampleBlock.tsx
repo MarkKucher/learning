@@ -1,13 +1,10 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import styles from '../../styles/ExampleBlock.module.scss';
 import DetailInfo from "@/components/icons/DetailInfo";
 import {motion} from "framer-motion";
 import Description from "@/modules/example/Description";
 import DescriptionExtended from "@/modules/example/DescriptionExtended";
-import CodeExample from "@/modules/example/CodeExample";
-import {codeExamples} from "@/modules/example/utils/code";
 import styled from "styled-components";
-import Text from "@/components/text/Text";
 import Title from "@/components/text/Title";
 
 interface ExampleBlockProps {

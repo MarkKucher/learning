@@ -4,7 +4,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowUp, faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import {useRouter} from "next/router";
 import styled from "styled-components";
-import Link from "next/link";
 
 interface ScrollTo {
     isArrowUp: boolean;

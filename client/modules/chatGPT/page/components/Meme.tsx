@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from "@/styles/ChatGPT.module.scss";
 import CustomImage from "@/components/CustomImage";
 import EditMeme from "@/modules/chatGPT/page/components/EditMeme";
 import {motion} from "framer-motion";
 import {MemeType} from "@/modules/chatGPT/page/types";
 import {useRouter} from "next/router";
-import axios from "axios";
-import {serverUrl} from "@/utils/const";
 
 interface MemeProps {
     ids: string[]

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
 import styles from "@/styles/Thunk.module.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchRandomUser, selectThunkExample} from "@/modules/redux/store/slices/thunkSlice";
@@ -14,7 +14,6 @@ const StyledButton = styled.button`
 
 const Thunk = () => {
     const {user, loading, error} = useSelector(selectThunkExample);
-    const [shouldResize, setShouldResize] = useState<boolean>(false);
     const dispatch = useDispatch<AppDispatch>();
 
     return (

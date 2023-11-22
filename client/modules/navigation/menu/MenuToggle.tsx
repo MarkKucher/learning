@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import styles from "../../../styles/Menu.module.scss";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
-import {ComponentPropsWithoutRef} from "react";
 
 export const Path: React.FC<any> = (props) => {
     const {active} = useSelector(selectTheme);

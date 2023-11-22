@@ -2,12 +2,10 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import styles from '@/modules/websocket/page/styles/Websocket.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {
-    pushToUndo,
     selectPaint,
-    setCanvas, setImgDataUrl,
-    setSessionId,
+    setCanvas,
     setSocket,
-    setTool, setWidth
+    setTool
 } from "@/modules/websocket/page/redux/paint";
 import Brush from "@/modules/websocket/page/tools/Brush";
 import Tool from "@/modules/websocket/page/tools/Tool";
@@ -85,10 +83,6 @@ const Canvas = () => {
         }
     }
 
-    const mouseDownHandler = () => {
-        if(canvasRef.current) dispatch(pushToUndo(canvasRef.current.toDataURL()))
-    }
-
     const mouseLooseHandler = () => {
         if(!canvasRef.current || !sessionId) return;
         axios.post(`${wsServerUrl}/image?id=${sessionId}`, {img: canvasRef.current.toDataURL()})
@@ -120,7 +114,6 @@ const Canvas = () => {
                 onMouseUp={mouseLooseHandler}
                 onMouseOver={mouseLooseHandler}
                 onTouchEnd={mouseLooseHandler}
-                onMouseDown={mouseDownHandler}
                 ref={canvasRef}
                 width={width}
                 height={height}

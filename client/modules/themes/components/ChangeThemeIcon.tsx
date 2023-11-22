@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Icon from "@/components/icons/Icon";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSun, faMoon} from "@fortawesome/free-solid-svg-icons";
 
 interface ChangeThemeIconProps {
-    shouldOpen: boolean;
     setShouldOpen:  React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ChangeThemeIcon: React.FC<ChangeThemeIconProps> = ({shouldOpen, setShouldOpen}) => {
+const ChangeThemeIcon: React.FC<ChangeThemeIconProps> = ({setShouldOpen}) => {
 
     return (
         <Icon CN={"icon"} onClick={() => {setShouldOpen(prev => !prev)}}>

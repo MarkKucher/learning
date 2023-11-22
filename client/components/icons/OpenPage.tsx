@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../../styles/Icon.module.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faLink} from "@fortawesome/free-solid-svg-icons";
 import Icon from "@/components/icons/Icon";

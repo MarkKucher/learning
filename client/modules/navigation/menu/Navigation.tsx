@@ -4,7 +4,6 @@ import styles from "../../../styles/Menu.module.scss";
 import Directory from "@/modules/navigation/menu/items/Directory";
 import MenuLink from "@/modules/navigation/menu/items/MenuLink";
 import {defaultStructure, navigationElement, pageNavigationElements} from "@/modules/navigation/utils/structure";
-import {useEffect} from "react";
 
 const variants = {
     open: {

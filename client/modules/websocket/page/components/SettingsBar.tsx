@@ -1,10 +1,9 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from '@/modules/websocket/page/styles/Websocket.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {
     selectPaint,
     setHeight,
-    setImgDataUrl,
     setLineWidth,
     setStrokeColor,
     setWidth
@@ -14,7 +13,6 @@ const SettingsBar = () => {
     const dispatch = useDispatch();
     const [widthState, setWidthState] = useState(500);
     const [heightState, setHeightState] = useState(500);
-    const {canvas} = useSelector(selectPaint);
     const [firstRender, setFirstRender] = useState(false);
 
     useEffect(() => {

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import styles from "../styles/Websocket.module.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {selectPaint, setFillColor, setStrokeColor, setTool} from "@/modules/websocket/page/redux/paint";
@@ -7,7 +7,7 @@ import Rect from "@/modules/websocket/page/tools/Rect";
 import Circle from "@/modules/websocket/page/tools/Circle";
 import Line from "@/modules/websocket/page/tools/Line";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faBrush, faRefresh, faFill} from "@fortawesome/free-solid-svg-icons";
+import {faBrush, faRefresh} from "@fortawesome/free-solid-svg-icons";
 import Eraser from "@/modules/websocket/page/tools/Eraser";
 import Tool from "@/modules/websocket/page/tools/Tool";
 import axios from "axios";

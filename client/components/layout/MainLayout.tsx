@@ -1,8 +1,8 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect} from 'react';
 import styles from '../../styles/MainLayout.module.scss';
 import styled, {ThemeProvider} from "styled-components";
 import {useDispatch, useSelector} from "react-redux";
-import {selectTheme, setTheme, setThemes} from "@/modules/themes/redux/themeSlice";
+import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import Head from "next/head";
 
 interface MainLayoutProps {

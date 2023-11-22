@@ -1,11 +1,11 @@
 import * as React from "react";
 import {useEffect, useRef, useState} from "react";
-import {AnimatePresence, motion, sync, useCycle} from "framer-motion";
+import {AnimatePresence, motion, useCycle} from "framer-motion";
 import MenuToggle from "./MenuToggle";
 import Navigation from "./Navigation";
 import {useDimensions} from "@/hooks/useDimensions";
 import styles from "../../../styles/Menu.module.scss";
-import styled, {DefaultTheme} from "styled-components";
+import {DefaultTheme} from "styled-components";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import {useSelector} from "react-redux";
 

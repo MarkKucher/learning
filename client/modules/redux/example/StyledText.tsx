@@ -2,8 +2,6 @@ import React, {ComponentPropsWithoutRef} from 'react';
 import styled from "styled-components";
 import {useSelector} from "react-redux";
 import {selectExample} from "@/modules/redux/store/slices/exampleSlice";
-import {defaultThemes} from "@/modules/themes/utils/themes";
-import {getColorsFromGradient} from "@/helpers/getColorsFromGradient";
 
 interface StyledTextProps extends ComponentPropsWithoutRef<"div"> {
     children: React.ReactNode;

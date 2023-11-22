@@ -8,7 +8,7 @@ const ChangeTheme = () => {
 
     return (
         <div>
-            <ChangeThemeIcon shouldOpen={shouldOpen} setShouldOpen={setShouldOpen}/>
+            <ChangeThemeIcon setShouldOpen={setShouldOpen}/>
             <AnimatePresence>
                 {shouldOpen && <Themes/>}
             </AnimatePresence>
