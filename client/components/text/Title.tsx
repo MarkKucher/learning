@@ -27,7 +27,7 @@ const StyledText = styled.div<{sub?: boolean}>`
 `
 
 const StyledShadow = styled.div`
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7), 0 0 0.5em ${props => props.theme.mainGradient.firstColor};
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7), 0 0 50px ${props => props.theme.text};
 `
 
 const Title: React.FC<TitleProps> = ({title, sub, position = 'center', type = 'small'}) => {
