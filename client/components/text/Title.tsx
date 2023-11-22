@@ -33,11 +33,11 @@ const StyledShadow = styled.div`
 const Title: React.FC<TitleProps> = ({title, sub, position = 'center', type = 'small'}) => {
     return (
         <StyledTitle sub={sub} className={styles[type]} position={position}>
-            <div className={styles.text}>
+            {!sub ? <div className={styles.text}>
                 <StyledText className={styles.visible}>{title}</StyledText>
                 <StyledShadow className={styles.hidden}>{title}</StyledShadow>
                 <div className={styles.height}>{title}</div>
-            </div>
+            </div> : <StyledText sub>{title}</StyledText>}
         </StyledTitle>
     );
 };

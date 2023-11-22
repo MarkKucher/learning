@@ -13,8 +13,6 @@
   position: absolute;
   left: 0;
   z-index: 1;
-  color: white;
-  background: white;
   -webkit-background-clip: text;
 }
 
@@ -23,13 +21,11 @@
   left: 0;
   z-index: 0;
   color: transparent;
-  text-shadow: 3px 3px 1px black;
 }
 
 .small, .medium, .big {
   font-weight: bolder;
   text-align: center;
-  @include theme-primary.text-gradient;
 }
 
 .small {
