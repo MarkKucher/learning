@@ -8,8 +8,8 @@ interface CustomImageProps extends ComponentPropsWithoutRef<typeof Image> {
 }
 
 const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
-    const [width, setWidth] = useState(Number(props.width) || 300)
-    const [height, setHeight] = useState(Number(props.height) || 300)
+    const [width, setWidth] = useState(Number(props.width) || 700)
+    const [height, setHeight] = useState(Number(props.height) || 700)
 
     const relation = width / height;
 
@@ -30,7 +30,6 @@ const CustomImage: React.FC<CustomImageProps> = ({isLoading, ...props}) => {
         condition(window.innerWidth)
         window.addEventListener('resize', onResize, {passive: true})
         return () => {
-            window.removeEventListener('load', onResize)
             window.removeEventListener('resize', onResize)
         }
     }, [])

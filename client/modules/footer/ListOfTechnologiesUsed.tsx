@@ -25,7 +25,7 @@ const StyledLogo = styled.div`
 const ListOfTechnologiesUsed = () => {
 
     return (
-        <div className={styles.technologies}>
+        <div id={'TechnologiesUsed'} className={styles.technologies}>
             {categories.map(category => (
                 <StyledContainer className={styles.logoContainer} key={category.title}>
                     <h3 className={styles.logoTitle}>{category.title}</h3>

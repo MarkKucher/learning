@@ -1,12 +1,20 @@
 import {
-    codeSandboxLogo, cssLogo,
-    framerMotionLogo, htmlLogo,
+    codeSandboxLogo,
+    cssLogo,
+    framerMotionLogo,
+    htmlLogo,
     nextJsLogo,
-    prismJsLogo, reactLogo,
+    prismJsLogo,
+    reactLogo,
     reactSpringLogo,
     reduxLogo,
     sassLogo,
-    typeScriptLogo
+    typeScriptLogo,
+    chatGPTLogo,
+    devLogo,
+    logRocketLogo,
+    nodeJsLogo,
+    supabaseLogo
 } from "@/assets/logos";
 import {StaticImageData} from "next/image";
 
@@ -26,5 +34,7 @@ export const categories: Category[] = [
     {title: 'Animations', companies: [{logo: reactLogo, redirectLink: 'https://reactcommunity.org/react-transition-group'}, {logo: framerMotionLogo, redirectLink: 'https://www.framer.com/motion'}, {logo: reactSpringLogo, redirectLink: 'https://www.react-spring.dev'}]},
     {title: 'Programming language', companies: [{logo: typeScriptLogo, redirectLink: 'https://www.typescriptlang.org'}, {logo: htmlLogo, redirectLink: 'https://html.com'}, {logo: cssLogo, redirectLink: 'https://css.com'}]},
     {title: 'State management', companies: [{logo: reduxLogo, redirectLink: 'https://redux.js.org'}]},
-    {title: 'Providing code examples', companies: [{logo: prismJsLogo,redirectLink: 'https://prismjs.com'}, {logo: codeSandboxLogo, redirectLink: 'https://codesandbox.io'}]}
+    {title: 'Providing code examples', companies: [{logo: prismJsLogo, redirectLink: 'https://prismjs.com'}, {logo: codeSandboxLogo, redirectLink: 'https://codesandbox.io'}]},
+    {title: 'Learning', companies: [{logo: chatGPTLogo, redirectLink: 'https://chat.openai.com'}, {logo: devLogo, redirectLink: 'https://dev.to'}, {logo: logRocketLogo, redirectLink: 'https://blog.logrocket.com/'}]},
+    {title: 'Back end', companies: [{logo: nodeJsLogo, redirectLink: 'https://nodejs.org'}, {logo: supabaseLogo, redirectLink: 'https://supabase.com'}]}
 ]

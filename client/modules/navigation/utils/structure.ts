@@ -66,8 +66,9 @@ export const pageNavigationElements = {
             new Directory('ChatGPT', [
                 new Link('example', '#ChatGPT'),
                 new Link('page', '/chatGPT')
-            ])
-        ])
+            ]),
+        ]),
+        new Link('Technologies used', '#TechnologiesUsed')
     ],
     '/animations': [
         new Directory('Framer motion', [

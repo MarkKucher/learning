@@ -1,0 +1,14 @@
+.skeleton {
+  background: #ddd;
+  overflow: hidden;
+  position: relative;
+}
+
+.shimmer {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+}
