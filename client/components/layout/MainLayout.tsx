@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import styles from '../../styles/MainLayout.module.scss';
 import styled, {ThemeProvider} from "styled-components";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import Head from "next/head";
 
@@ -15,8 +15,7 @@ const StyledLayout = styled.div`
 `
 
 const MainLayout: React.FC<MainLayoutProps> = ({children, title = 'Learning'}) => {
-    const {active, themes} = useSelector(selectTheme);
-    const dispatch = useDispatch();
+    const {active} = useSelector(selectTheme);
 
     useEffect(() => {
         const body = document.querySelector('body');

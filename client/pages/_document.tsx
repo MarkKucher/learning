@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
                 <body>
                 <Main />
                 <NextScript />
-                <script async src="js/prism"></script>
+                <script src="js/prism"></script>
                 </body>
             </Html>
         )

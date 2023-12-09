@@ -4,6 +4,9 @@ import type { AppProps } from 'next/app'
 import {Provider} from "react-redux";
 import configureStore from "@/modules/redux/store/configureStore";
 import { PersistGate } from 'redux-persist/integration/react'
+import LogRocket from 'logrocket';
+
+LogRocket.init('q6xa28/learning-prod');
 
 const store = configureStore().store;
 
