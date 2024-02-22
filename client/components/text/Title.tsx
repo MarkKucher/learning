@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Title.module.scss';
 import styled from "styled-components";
-import {lightOrDark} from "@/helpers/lightOrDark";
 
 interface TitleProps {
     title: string;

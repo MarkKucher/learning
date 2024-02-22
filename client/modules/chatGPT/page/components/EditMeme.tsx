@@ -3,7 +3,7 @@ import {AnimatePresence} from "framer-motion";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {motion} from "framer-motion";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import styles from "@/styles/ChatGPT.module.scss";
+import styles from "@/../../../../../server/styles/ChatGPT.module.scss";
 import Modal from "@/components/modals/Modal";
 import axios from "axios";
 import {serverUrl} from "@/utils/const";

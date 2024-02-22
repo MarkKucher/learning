@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "@/styles/Todo.module.scss";
+import styles from "@/../../../../../../../server/styles/Todo.module.scss";
 import Header from "@/modules/redux/page/redux toolkit/examples/todo/Header";
 import TodoList from "@/modules/redux/page/redux toolkit/examples/todo/TodoList";
 import Footer from "@/modules/redux/page/redux toolkit/examples/todo/Footer";

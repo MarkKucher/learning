@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "@/styles/Thunk.module.scss";
-import {motion} from "framer-motion";
 
 const Loader = () => {
     return (

@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import styles from "@/styles/ChatGPT.module.scss";
+import styles from "styles/ChatGPT.module.scss";
 import axios from "axios";
 import Loader from "@/components/Loader";
 import {serverUrl} from "@/utils/const";

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "@/styles/ChatGPT.module.scss";
+import styles from "@/../../../../../server/styles/ChatGPT.module.scss";
 import CustomImage from "@/components/CustomImage";
 import EditMeme from "@/modules/chatGPT/page/components/EditMeme";
 import {motion} from "framer-motion";

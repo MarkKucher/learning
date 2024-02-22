@@ -1,5 +1,5 @@
 import React, {ComponentPropsWithoutRef} from 'react';
-import styles from "@/styles/Block.module.scss";
+import styles from "styles/Block.module.scss";
 import Title from "@/components/text/Title";
 import styled from "styled-components";
 

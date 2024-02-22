@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import styles from "@/styles/Skeleton.module.scss";
+import styles from "@/../../../../../server/styles/Skeleton.module.scss";
 
 const Shimmer = () => {
     return (

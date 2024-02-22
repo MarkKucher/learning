@@ -8,11 +8,13 @@ import Websocket from "@/modules/websocket/example/Websocket";
 import {articleDescriptions} from "@/utils/articleDescriptions";
 import Resend from "@/modules/react flow + resend/example/Resend";
 import ChatGPT from "@/modules/chatGPT/example/ChatGPT";
+import Introduction from "@/modules/main/components/Introduction";
 
 const MainPart = () => {
 
     return (
         <div className={styles.main}>
+            <Introduction/>
             <Block
                 title={'Animations'}
                 hasDescription

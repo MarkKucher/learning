@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import styles from "@/styles/Posts.module.scss";
+import styles from "@/../../../../../../../server/styles/Posts.module.scss";
 import {Post, useGetPostsQuery} from "@/modules/redux/store/apis/postsApi";
 import PostItem from "./PostItem";
 import Loader from "@/components/Loader";

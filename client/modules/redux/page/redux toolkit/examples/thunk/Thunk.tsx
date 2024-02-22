@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "@/styles/Thunk.module.scss";
+import styles from "@/../../../../../../../server/styles/Thunk.module.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchRandomUser, selectThunkExample} from "@/modules/redux/store/slices/thunkSlice";
 import {AppDispatch} from "@/modules/redux/store/configureStore";

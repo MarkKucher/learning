@@ -1,20 +1,33 @@
-import React from "react";
-import styles from "@/styles/ChatGPT.module.scss";
+import React, {useEffect, useState} from "react";
+import styles from "@/../../../../../server/styles/ChatGPT.module.scss";
 import {MemeType} from "@/modules/chatGPT/page/types";
 import {AnimatePresence} from "framer-motion";
 import Meme from "./Meme";
 import {motion} from "framer-motion";
 import Skeleton from "@/modules/chatGPT/page/components/Skeleton";
-import Shimmer from "@/modules/chatGPT/page/components/Shimmer";
+import axios from "axios";
+import {serverUrl} from "@/utils/const";
 
-interface ViewMemesProps {
-    memes: MemeType[]
-    setMemes: any
-}
-
-const ViewMemes: React.FC<ViewMemesProps> = ({ memes, setMemes }) => {
+const ViewMemes = () => {
     const dataFromStorage = localStorage.getItem('created memes')
     const ids = dataFromStorage ? JSON.parse(dataFromStorage) : [];
+    const [memes, setMemes] = useState<MemeType[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const fetchMemes = async () => {
+        try {
+            setIsLoading(true)
+            const response = await axios.get(`${serverUrl}/memes`)
+            setMemes(response.data);
+            setIsLoading(false)
+        } catch (err: any) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchMemes();
+    }, []);
 
     return (
         <motion.section
@@ -26,7 +39,7 @@ const ViewMemes: React.FC<ViewMemesProps> = ({ memes, setMemes }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
             >
-                {memes ? <AnimatePresence>
+                {!isLoading ? <AnimatePresence>
                     {memes.map((meme) => (
                         <Meme key={meme.id} ids={ids} initialMeme={meme} setMemes={setMemes}/>
                     ))}

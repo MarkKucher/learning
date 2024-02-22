@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "@/styles/ChatGPT.module.scss";
+import styles from "@/../../../../../server/styles/ChatGPT.module.scss";
 import {AnimatePresence, motion} from "framer-motion";
 import axios from "axios";
 import {serverUrl} from "@/utils/const";

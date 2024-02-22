@@ -30,7 +30,7 @@ const sidebar = (active: DefaultTheme) => ({
     }
 });
 
-export const Menu = () => {
+const Menu = () => {
     const {active} = useSelector(selectTheme)
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
@@ -65,3 +65,5 @@ export const Menu = () => {
         </motion.nav>
     );
 };
+
+export default Menu;

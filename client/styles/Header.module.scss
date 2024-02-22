@@ -49,9 +49,28 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  .tools {
+    height: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .header {
     padding: 1rem;
     height: 125px;
+  }
+  .tools {
+    height: 80%;
+    div, a {
+      font-size: 1.5rem;
+      margin-left: 0.3rem;
+    }
+    div {
+      margin-right: 0.3rem;
+    }
   }
 }

@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import styles from "@/styles/Todo.module.scss";
+import styles from "@/../../../../../../../server/styles/Todo.module.scss";
 import {addTodo, selectTodoIds} from "@/modules/redux/store/slices/todoSlice";
 import {useDispatch, useSelector} from "react-redux";
 

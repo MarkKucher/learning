@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from "../../../styles/ChatGPT.module.scss";
 import { Space_Grotesk } from "next/font/google";
 import { useState } from "react";
 import { WithContext as ReactTags } from "react-tag-input";
 import { useRouter } from "next/navigation";
 import ViewMemes from "./components/ViewMemes";
-import {MemeType, Topic} from "@/modules/chatGPT/page/types";
+import {Topic} from "@/modules/chatGPT/page/types";
 import axios from "axios";
 import { serverUrl } from '@/utils/const';
 
@@ -19,24 +19,10 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 const MemeGenerator = () => {
     const [audience, setAudience] = useState("");
     const [email, setEmail] = useState("");
-    const [memes, setMemes] = useState<MemeType[]>([]);
     const router = useRouter();
     const [topics, setTopics] = useState<Topic[]>([
         { id: "Developers", text: "Developers" },
     ]);
-
-    const fetchMemes = async () => {
-        try {
-            const response = await axios.get(`${serverUrl}/memes`)
-            setMemes(response.data);
-        } catch (err) {
-            console.error(err);
-        }
-    };
-
-    useEffect(() => {
-        fetchMemes();
-    }, []);
 
     const handleDelete = (i: number) =>
         setTopics(topics.filter((topic, index) => index !== i));
@@ -123,7 +109,7 @@ const MemeGenerator = () => {
                     </button>
                 </form>
             </header>
-            <ViewMemes memes={memes} setMemes={setMemes} />
+            <ViewMemes/>
         </main>
     );
 };
