@@ -1,0 +1,28 @@
+.text {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+  .text {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .text {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .text {
+    font-size: 2.5rem;
+  }
+}

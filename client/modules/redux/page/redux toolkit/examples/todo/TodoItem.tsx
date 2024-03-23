@@ -8,7 +8,7 @@ import {
     updateTodo
 } from "@/modules/redux/store/slices/todoSlice";
 import {RootState} from "@/modules/redux/store/configureStore";
-import styles from "@/../../../../../../../server/styles/Todo.module.scss";
+import styles from "@/styles/Todo.module.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck, faPen, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {availableColors} from "@/modules/redux/utils/colors";

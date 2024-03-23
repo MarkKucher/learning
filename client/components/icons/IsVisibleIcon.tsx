@@ -6,11 +6,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 interface isVisibleProps {
     isHidden: boolean;
     setIsHidden: Dispatch<SetStateAction<boolean>>;
+    className?: string;
 }
 
-const IsVisibleIcon: React.FC<isVisibleProps> = ({isHidden, setIsHidden}) => {
+const IsVisibleIcon: React.FC<isVisibleProps> = ({isHidden, setIsHidden, className}) => {
     return (
-        <Icon CN={'corner'} onClick={() => {setIsHidden(prev => !prev)}}>
+        <Icon CN={'corner'} onClick={() => {setIsHidden(prev => !prev)}} className={className}>
             <FontAwesomeIcon icon={isHidden ? faEye : faEyeSlash}/>
         </Icon>
     );

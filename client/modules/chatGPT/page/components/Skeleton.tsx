@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from "react";
-import styles from "@/../../../../../server/styles/Skeleton.module.scss";
+import styles from "@/styles/Skeleton.module.scss";
 import Shimmer from "@/modules/chatGPT/page/components/Shimmer";
 
 interface SkeletonProps {

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "../../../../../styles/CreateTheme.module.scss";
+import styles from "@/styles/CreateTheme.module.scss";
 import Text from "@/components/text/Text";
 import Link from "@/components/Link";
 import Button from "@/components/buttons/Button";
@@ -78,48 +78,48 @@ const CreateTheme = () => {
     return (
         <div className={styles.selection}>
             <div className={styles.row}>
-                <Text className={styles.text}>Theme name: </Text>
+                <Text className={styles.text_between}>Theme name: </Text>
                 <Input className={styles.textInput} type={'text'} value={name} placeholder={'...'} onChange={(e) => {setName(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Main gradient: </Text>
+                <Text className={styles.text_between}>Main gradient: </Text>
                 <Input type={'color'} className={styles.color} onChange={(e) => {setMainGradient(e.target.value)}}/>
-                <Text className={styles.text}>or</Text>
+                <Text className={styles.text_between}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={mainGradient} onChange={(e) => {setMainGradient(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Sub gradient: </Text>
+                <Text className={styles.text_between}>Sub gradient: </Text>
                 <Input type={'color'} className={styles.color} onChange={(e) => {setSubGradient(e.target.value)}}/>
-                <Text className={styles.text}>or</Text>
+                <Text className={styles.text_between}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={subGradient} onChange={(e) => {setSubGradient(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Body background: </Text>
+                <Text className={styles.text_between}>Body background: </Text>
                 <Input type={'color'} className={styles.color} onChange={(e) => {setBodyBackground(e.target.value)}}/>
-                <Text className={styles.text}>or</Text>
+                <Text className={styles.text_between}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={bodyBackground} onChange={(e) => {setBodyBackground(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Text color: </Text>
+                <Text className={styles.text_between}>Text color: </Text>
                 <Input value={text} type={'color'} className={styles.color} onChange={(e) => {setText(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Description color: </Text>
+                <Text className={styles.text_between}>Description color: </Text>
                 <Input value={description} type={'color'} className={styles.color} onChange={(e) => {setDescription(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Main scrollbar: </Text>
+                <Text className={styles.text_between}>Main scrollbar: </Text>
                 <Input type={'color'} className={styles.color} onChange={(e) => {setMainScrollbarBackground(e.target.value)}}/>
-                <Text className={styles.text}>or</Text>
+                <Text className={styles.text_between}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={mainScrollbarBackground} onChange={(e) => {setMainScrollbarBackground(e.target.value)}}/>
             </div>
             <div className={styles.row}>
-                <Text className={styles.text}>Sub scrollbar: </Text>
+                <Text className={styles.text_between}>Sub scrollbar: </Text>
                 <Input type={'color'} className={styles.color} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
-                <Text className={styles.text}>or</Text>
+                <Text className={styles.text_between}>or</Text>
                 <Input placeholder={'linear-gradient(...)'} type={'text'} className={styles.textInput} value={subScrollbarBackground} onChange={(e) => {setSubScrollbarBackground(e.target.value)}}/>
             </div>
-            <motion.div className={styles.footer}>
+            <div className={styles.footer}>
                 <AnimatePresence>
                     {error && <div className={styles.error}>
                         <ErrorMessage message={error}/>
@@ -130,7 +130,7 @@ const CreateTheme = () => {
                         Create
                     </Button>
                 </div>
-            </motion.div>
+            </div>
             <div className={styles.link}>
                 <Link title={'You can create gradients here'} link={'https://gradienta.io/editor'} shouldOpenInNewTab={true}/>
             </div>

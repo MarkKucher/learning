@@ -6,12 +6,13 @@ import Icon from "@/components/icons/Icon";
 interface PlayAndPause {
     shouldPlay: boolean;
     changeState: Dispatch<SetStateAction<boolean>>;
+    className?: string;
 }
 
-const PlayAndPause: React.FC<PlayAndPause> = ({shouldPlay, changeState}) => {
+const PlayAndPause: React.FC<PlayAndPause> = ({shouldPlay, changeState, className}) => {
 
     return (
-        <Icon CN={"corner"} onClick={() => {changeState(prev => !prev)}}>
+        <Icon CN={"corner"} onClick={() => {changeState(prev => !prev)}} className={className}>
             <FontAwesomeIcon icon={shouldPlay ? faPause : faPlay}/>
         </Icon>
     );

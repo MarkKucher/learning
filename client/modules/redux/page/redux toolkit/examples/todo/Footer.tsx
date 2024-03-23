@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/../../../../../../../server/styles/Todo.module.scss';
+import styles from '@/styles/Todo.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {
     changeColorFilter,

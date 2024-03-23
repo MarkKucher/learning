@@ -20,7 +20,7 @@ interface StyledBlockProps {
 const StyledBlock = styled.div<StyledBlockProps>`
   background: ${props => props.theme.mainGradient.gradient};
   transition: 300ms linear;
-  box-shadow: ${props => props.isDescription ? `inset -1000px 0 0 0 ${props.theme.description}` : 'none'};
+  box-shadow: ${props => props.isDescription ? `inset -2000px 0 0 0 ${props.theme.description}` : 'none'};
   &::-webkit-scrollbar-thumb {
     background: ${props => props.theme.subScrollbarBackground};
   }
@@ -54,22 +54,22 @@ const ExampleBlock: React.FC<ExampleBlockProps> = ({title, children, description
 
     return (
         <StyledBlock id={title} isDescription={shouldShowDescription} className={shouldShowDescription ? styles.description : styles.block}>
-                <div className={styles.header}>
-                    <Title type={'medium'} position={'left'} title={title} sub/>
-                    {descriptionContent && <DetailInfo state={shouldShowDescription} toggleState={setShouldShowDescription}/>}
-                </div>
-                <motion.div
-                    animate={shouldShowDescription ? 'description' : 'content'}
-                    variants={content}
-                    className={styles.contentContainer}
-                    initial={false}
+            <div className={styles.header}>
+                <Title type={'medium'} position={'left'} title={title} sub className={styles.title}/>
+                {descriptionContent && <DetailInfo state={shouldShowDescription} toggleState={setShouldShowDescription} className={styles.info_icon}/>}
+            </div>
+            <motion.div
+                animate={shouldShowDescription ? 'description' : 'content'}
+                variants={content}
+                className={styles.contentContainer}
+                initial={false}
+            >
+                <StyledContent
+                    className={styles.content}
                 >
-                    <StyledContent
-                        className={styles.content}
-                    >
-                        {shouldShowDescription && descriptionContent ? description : children}
-                    </StyledContent>
-                </motion.div>
+                    {shouldShowDescription && descriptionContent ? description : children}
+                </StyledContent>
+            </motion.div>
         </StyledBlock>
     );
 };

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import styles from "@/../../../../../server/styles/ChatGPT.module.scss";
+import styles from "@/styles/ChatGPT.module.scss";
 import {MemeType} from "@/modules/chatGPT/page/types";
 import {AnimatePresence} from "framer-motion";
 import Meme from "./Meme";

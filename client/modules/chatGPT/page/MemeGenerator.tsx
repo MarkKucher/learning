@@ -8,6 +8,7 @@ import ViewMemes from "./components/ViewMemes";
 import {Topic} from "@/modules/chatGPT/page/types";
 import axios from "axios";
 import { serverUrl } from '@/utils/const';
+import TopicBlock from "@/modules/example/TopicBlock";
 
 const KeyCodes = {
     comma: 188,
@@ -61,56 +62,58 @@ const MemeGenerator = () => {
     };
 
     return (
-        <main className={`${styles.main} ${inter.className}`}>
-            <header className={styles.header}>
-                <h2 className={styles.h2}>Meme Magic</h2>
-                <h3 className={styles.h3}>
-                    Creating memes with a touch of magic
-                </h3>
-                <form
-                    className={styles.form}
-                    onSubmit={handleSubmit}
-                >
-                    <label htmlFor="audience">Audience</label>
-                    <input
-                        type="text"
-                        name="audience"
-                        value={audience}
-                        required
-                        className={styles.input}
-                        onChange={(e) => setAudience(e.target.value)}
-                    />
-                    <label htmlFor="email">Your email address</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        required
-                        className={styles.input}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <label htmlFor="topics">Topics</label>
-                    <ReactTags
-                        id={'topics'}
-                        tags={topics}
-                        delimiters={delimiters}
-                        handleDelete={handleDelete}
-                        handleAddition={handleAddition}
-                        inputFieldPosition="top"
-                        autocomplete
-                        placeholder="Enter a topic for the meme and press enter"
-                        classNames={{tagInputField: styles.input, tag: styles.tag, remove: styles.remove, tags: styles.tags}}
-                    />
-                    <button
-                        type="submit"
-                        className={styles.button}
+        <TopicBlock title={"ChatGPT"} id={"ChatGPT"}>
+            <main className={`${styles.main} ${inter.className}`}>
+                <header className={styles.header}>
+                    <h2 className={styles.h2}>Meme Magic</h2>
+                    <h3 className={styles.h3}>
+                        Creating memes with a touch of magic
+                    </h3>
+                    <form
+                        className={styles.form}
+                        onSubmit={handleSubmit}
                     >
-                        GENERATE MEME
-                    </button>
-                </form>
-            </header>
-            <ViewMemes/>
-        </main>
+                        <label htmlFor="audience">Audience</label>
+                        <input
+                            type="text"
+                            name="audience"
+                            value={audience}
+                            required
+                            className={styles.input}
+                            onChange={(e) => setAudience(e.target.value)}
+                        />
+                        <label htmlFor="email">Your email address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={email}
+                            required
+                            className={styles.input}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <label htmlFor="topics">Topics</label>
+                        <ReactTags
+                            id={'topics'}
+                            tags={topics}
+                            delimiters={delimiters}
+                            handleDelete={handleDelete}
+                            handleAddition={handleAddition}
+                            inputFieldPosition="top"
+                            autocomplete
+                            placeholder="Enter a topic for the meme and press enter"
+                            classNames={{tagInputField: styles.input, tag: styles.tag, remove: styles.remove, tags: styles.tags}}
+                        />
+                        <button
+                            type="submit"
+                            className={styles.button}
+                        >
+                            GENERATE MEME
+                        </button>
+                    </form>
+                </header>
+                <ViewMemes/>
+            </main>
+        </TopicBlock>
     );
 };
 

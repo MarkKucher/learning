@@ -5,7 +5,7 @@ import CreateTheme from "@/modules/redux/page/redux toolkit/examples/CreateTheme
 import {reduxCodeExamples, reduxDescription} from "@/modules/redux/utils/reduxDescription";
 import CodeExample from "@/modules/example/CodeExample";
 import Todo from "@/modules/redux/page/redux toolkit/examples/todo/Todo";
-import Thunk from "@/modules/redux/page/redux toolkit/examples/thunk/Thunk";
+import Thunk from "@/modules/redux/page/redux toolkit/examples/Thunk";
 
 const ReduxToolkit = () => {
     return (

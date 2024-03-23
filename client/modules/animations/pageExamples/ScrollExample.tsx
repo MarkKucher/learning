@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import blockStyles from "../../../styles/Block.module.scss";
 import {useScroll, useTransform, motion} from "framer-motion";
 import {useSelector} from "react-redux";
@@ -8,7 +8,7 @@ import styles from "../../../styles/ScrollExample.module.scss";
 const ScrollExample = () => {
     const {active} = useSelector(selectTheme);
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 1], [0.2, 4]);
+    const scale = useTransform(scrollYProgress, [0, 1], [0.8, 2]);
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
     const move = useTransform(scrollYProgress, [0, 1], [30, 0]);
 

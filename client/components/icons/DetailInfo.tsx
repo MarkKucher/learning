@@ -7,6 +7,7 @@ import styled from "styled-components";
 interface DetailInfoProps {
     state: boolean;
     toggleState: Dispatch<SetStateAction<boolean>>;
+    className?: string;
 }
 
 interface StyledIconProps {
@@ -25,10 +26,10 @@ const StyledIcon = styled.div<StyledIconProps>`
 `
 
 
-const DetailInfo: React.FC<DetailInfoProps> = ({state, toggleState}) => {
+const DetailInfo: React.FC<DetailInfoProps> = ({state, toggleState, className}) => {
 
     return (
-        <StyledIcon isInfoOpened={state} className={styles.detailInfo} onClick={() => {toggleState((prev: boolean) => !prev)}}>
+        <StyledIcon isInfoOpened={state} className={styles.detailInfo + ' ' + className} onClick={() => {toggleState((prev: boolean) => !prev)}}>
             <FontAwesomeIcon icon={faInfo}/>
         </StyledIcon>
     );

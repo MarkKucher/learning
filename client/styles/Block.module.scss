@@ -17,15 +17,10 @@
 }
 
 .topicBlock {
-  width: 90vw;
+  width: 100vw;
   display: flex;
+  flex-flow: column;
   align-items: center;
-  justify-content: space-evenly;
-  flex-flow: wrap row;
-  padding: 1rem 0;
-  margin: 5rem 0;
-  border-radius: 20px;
-  @include shadow.block-shadow;
 }
 
 .header {
@@ -42,8 +37,10 @@
 .mainHeader {
   width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 30vh 15vh 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons {

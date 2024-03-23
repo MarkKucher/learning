@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/../../../../../../../server/styles/Posts.module.scss';
+import styles from '@/styles/Posts.module.scss';
 import {Post} from "../../../../store/apis/postsApi";
 
 interface PostProps {
