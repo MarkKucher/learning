@@ -4,6 +4,7 @@ import styles from "../../../styles/Menu.module.scss";
 import Directory from "@/modules/navigation/menu/items/Directory";
 import MenuLink from "@/modules/navigation/menu/items/MenuLink";
 import {defaultStructure, navigationElement, pageNavigationElements} from "@/modules/navigation/utils/structure";
+import styled from "styled-components";
 
 const variants = {
     open: {
@@ -19,6 +20,15 @@ const variants = {
     }
 };
 
+const StyledItems = styled(motion.div)`
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.subScrollbarBackground};
+  }
+`
+
 const Navigation = () => {
 
     const returnTree = (children: navigationElement[]) => children.map(entity => entity.isLink
@@ -29,7 +39,7 @@ const Navigation = () => {
     )
 
     return (
-        <motion.div
+        <StyledItems
             initial={variants.closed}
             exit={variants.closed}
             animate={variants.open}
@@ -37,7 +47,7 @@ const Navigation = () => {
             className={styles.items}
         >
             {returnTree([...defaultStructure, ...(pageNavigationElements as any)['/' + window.location.pathname.split('/')[1]]])}
-        </motion.div>
+        </StyledItems>
     );
 };
 

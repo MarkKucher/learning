@@ -1,5 +1,6 @@
 @use 'theme-primary';
 @use 'positioning';
+@use 'scrollbars';
 
 .nav {
   z-index: 2;
@@ -69,12 +70,17 @@
 }
 
 .items {
+  display: flex;
+  flex-direction: column;
   z-index: 2;
   padding: 25px 25px 25px 50px;
   position: absolute;
-  top: 100px;
+  top: 0;
+  max-height: 100%;
   width: 300px;
   opacity: 0;
+  overflow-y: auto;
+  @include scrollbars.light-scrollbar;
 }
 
 .directory {

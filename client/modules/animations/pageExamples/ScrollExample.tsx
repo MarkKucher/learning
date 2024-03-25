@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import blockStyles from "../../../styles/Block.module.scss";
 import {useScroll, useTransform, motion} from "framer-motion";
 import {useSelector} from "react-redux";

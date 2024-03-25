@@ -8,10 +8,8 @@
 }
 
 .container {
-  width: 55vh;
-  height: 55vh;
-  max-width: 70vw;
-  max-height: 70vw;
+  width: clamp(300px, 55vh, 70vw);
+  height: clamp(300px, 55vh, 70vw);
   border-radius: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

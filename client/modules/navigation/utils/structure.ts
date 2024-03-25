@@ -49,26 +49,27 @@ export const pageNavigationElements = {
         new Directory('Skills', [
             new Directory('Animations', [
                 new Link('example', '#Animations'),
-                new Link('page', '/animations', false)
+                new Link('page', '/animations')
             ]),
             new Directory('Redux', [
                 new Link('example', '#Redux'),
-                new Link('page', '/redux', false)
+                new Link('page', '/redux')
             ]),
             new Directory('Websocket', [
                 new Link('example', '#Websocket'),
-                new Link('page', `/websocket/f${(+new Date).toString(16)}`, false)
+                new Link('page', `/websocket/f${(+new Date).toString(16)}`)
             ]),
             new Directory('React flow + resend', [
                 new Link('example', '#React flow + resend'),
-                new Link('page', '/react-flow+resend', false)
+                new Link('page', '/react-flow+resend')
             ]),
             new Directory('ChatGPT', [
                 new Link('example', '#ChatGPT'),
                 new Link('page', '/chatGPT')
             ]),
         ]),
-        new Link('Technologies used', '#TechnologiesUsed')
+        new Link('Technologies used', '#TechnologiesUsed'),
+        new Link('Contact me', '#ContactMe')
     ],
     '/animations': [
         new Directory('Framer motion', [

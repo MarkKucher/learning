@@ -5,7 +5,7 @@ import MainGradientText from "@/components/text/MainGradientText";
 
 const ContactMe = () => {
     return (
-        <div className={styles.footer}>
+        <div className={styles.footer} id={'ContactMe'}>
             <Title title={'Contact me'} type={"medium"}/>
             <div className={styles.contacts}>
                 <MainGradientText className={styles.contact}>Phone: 0984266311</MainGradientText>

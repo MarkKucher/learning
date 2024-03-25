@@ -65,6 +65,8 @@
   cursor: pointer;
 }
 
-.loader {
-  margin-bottom: 1rem;
+.loader, .end {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

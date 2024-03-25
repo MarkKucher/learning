@@ -31,6 +31,8 @@ const PathExample = () => {
             setMultiplier(0.7) //210:300
         } else if(width <= 475) {
             setMultiplier(0.8) //240:300
+        } else {
+            setMultiplier(1)
         }
     }
 
@@ -50,6 +52,7 @@ const PathExample = () => {
     return (
         <div className={styles.container}>
             <motion.div
+                key={multiplier}
                 className={styles.sample}
                 onHoverStart={() => {animation !== 'dead' && setAnimation('warn')}}
                 onHoverEnd={() => {animation !== 'dead' && setAnimation('peace')}}
