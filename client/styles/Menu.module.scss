@@ -69,18 +69,22 @@
   }
 }
 
-.items {
-  display: flex;
-  flex-direction: column;
+.container {
   z-index: 2;
   padding: 25px 25px 25px 50px;
   position: absolute;
   top: 0;
-  max-height: 100%;
   width: 300px;
   opacity: 0;
   overflow-y: auto;
+  max-height: 100%;
   @include scrollbars.light-scrollbar;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .directory {

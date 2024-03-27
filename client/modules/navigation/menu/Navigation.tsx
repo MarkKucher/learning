@@ -20,7 +20,7 @@ const variants = {
     }
 };
 
-const StyledItems = styled(motion.div)`
+const StyledContainer = styled(motion.div)`
   &::-webkit-scrollbar {
     width: 5px;
   }
@@ -39,15 +39,17 @@ const Navigation = () => {
     )
 
     return (
-        <StyledItems
+        <StyledContainer
             initial={variants.closed}
             exit={variants.closed}
             animate={variants.open}
             transition={{stiffness: 1000, damping: 40}}
-            className={styles.items}
+            className={styles.container}
         >
-            {returnTree([...defaultStructure, ...(pageNavigationElements as any)['/' + window.location.pathname.split('/')[1]]])}
-        </StyledItems>
+            <div className={styles.items}>
+                {returnTree([...defaultStructure, ...(pageNavigationElements as any)['/' + window.location.pathname.split('/')[1]]])}
+            </div>
+        </StyledContainer>
     );
 };
 

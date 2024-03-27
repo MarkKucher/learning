@@ -8,8 +8,8 @@
 }
 
 .container {
-  width: clamp(300px, 55vh, 70vw);
-  height: clamp(300px, 55vh, 70vw);
+  width: clamp(260px, 55vh, 70vw);
+  height: clamp(260px, 55vh, 70vw);
   border-radius: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -30,8 +30,8 @@
   align-items: center;
   justify-content: space-evenly;
   margin: 0.5rem;
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 85%;
   border-radius: 20px;
 }
 
