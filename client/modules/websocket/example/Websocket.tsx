@@ -36,9 +36,8 @@ const Websocket = () => {
             </div>
             <input
                 type={'number'}
-                maxLength={4}
                 value={summand}
-                onChange={(e) => {setSummand(Number(e.target.value))}}
+                onChange={(e) => {String(summand).length < 4 && setSummand(Number(e.target.value))}}
             />
             <button onClick={sendSummand}>
                 Add
