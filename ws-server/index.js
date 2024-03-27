@@ -21,10 +21,10 @@ app.ws('/', (ws) => {
     })
     ws.on('close', () => {
         try {
-            let result = [];
-            aWss.clients.forEach(client => {result.push(client.id)})
+            let connected = [];
+            aWss.clients.forEach(client => {connected.push(client.id)})
             ids.forEach(id => {
-                if(!result.includes(id)) {
+                if(!connected.includes(id)) {
                     fs.unlinkSync(path.resolve(__dirname, 'files', `${id}.jpg`))
                 }
             })
@@ -34,19 +34,33 @@ app.ws('/', (ws) => {
     })
 })
 
-let quantity = 0;
+// let quantity = 0;
+//
+// app.ws('/quantity', (ws) => {
+//     ws.on('message', (msg) => {
+//         msg = JSON.parse(msg)
+//         console.log(msg.method)
+//         if(msg.method === 'open') {
+//             quantity += 1;
+//         } else {
+//             quantity -= 1;
+//         }
+//         getQuantity(ws)
+//     })
+// })
 
-app.ws('/quantity', (ws) => {
+let number = 0;
+
+app.ws('/example', (ws) => {
     ws.on('message', (msg) => {
         msg = JSON.parse(msg)
-        console.log(msg.method)
-        if(msg.method === 'open') {
-            quantity += 1;
-        } else {
-            quantity -= 1;
-        }
-        getQuantity(ws)
+        number += msg.summand
+        connectionHandler(ws, {sum: number})
     })
+})
+
+app.get('/example', (req, res) => {
+    res.json(number)
 })
 
 app.get('/image', (req, res) => {
