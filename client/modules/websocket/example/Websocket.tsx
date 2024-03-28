@@ -37,7 +37,9 @@ const Websocket = () => {
             <input
                 type={'number'}
                 value={summand}
-                onChange={(e) => {String(summand).length < 4 && setSummand(Number(e.target.value))}}
+                onChange={(e) => {setSummand(Number(e.target.value))}}
+                max={99999}
+                min={-99999}
             />
             <button onClick={sendSummand}>
                 Add

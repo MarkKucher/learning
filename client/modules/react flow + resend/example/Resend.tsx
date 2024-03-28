@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import styles from "../../../styles/EmailAutomationSystem.module.scss";
 import axios from "axios";
+import { useForm } from "react-hook-form";
 
 const Resend = () => {
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [text, setText] = useState('');
+    const { handleSubmit, register, reset } = useForm();
 
-    const sendEmail = () => {
+    const sendEmail = handleSubmit((data) => {
+        const {email, subject, text} = data;
+        reset()
         axios.post("/api/send", {
             body: JSON.stringify({
                 email,
@@ -26,43 +27,32 @@ const Resend = () => {
                 alert(`Encountered an error ❌`);
                 console.error(err);
             });
-    };
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        sendEmail()
-        setEmail('')
-        setSubject('')
-        setText('')
-    }
+    });
 
     return (
-        <form onSubmit={handleSubmit} className={styles.example}>
+        <form onSubmit={sendEmail} className={styles.example}>
             <label htmlFor="email">Email</label>
             <input
                 id={'email'}
                 type="email"
-                value={email}
-                onChange={(e) => {setEmail(e.target.value)}}
                 required
+                {...register("email")}
             />
             <label htmlFor="subject">Subject</label>
             <input
                 id={'subject'}
                 type="text"
-                value={subject}
-                onChange={(e) => {setSubject(e.target.value)}}
                 required
+                {...register("subject")}
             />
             <label htmlFor="text">Text</label>
             <input
                 id={'text'}
                 type="text"
-                value={text}
-                onChange={(e) => {setText(e.target.value)}}
                 required
+                {...register("text")}
             />
-            <button className={styles.example__btn}>
+            <button type="submit" className={styles.example__btn}>
                 SEND
             </button>
         </form>

@@ -11,42 +11,40 @@ import {timer} from "@/helpers/timer";
 const Form = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
-    const [shouldProcess, setShouldProcess] = useState(false);
     const initialNodes = useSelector(selectNodes);
     const initialEdges = useSelector(selectEdges);
+    const [isProcessing, setIsProcessing] = useState(false);
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
     const nodeTypes = useMemo(() => ({task: Task}), []);
+    const [delay, setDelay] = useState(60);
 
-    useEffect(() => {
-        const process = async () => {
-            setEmail("");
-            setSubject("");
-            setShouldProcess(false)
-            const tasks = nodes.map(node => node.data.value);
+    const sendEmail = async () => {
+        setEmail("");
+        setSubject("");
+        setIsProcessing(true);
 
-            for (let i = 0; i < tasks.length; i++) {
-                axios.post("/api/send", {
-                    body: JSON.stringify({
-                        email,
-                        subject,
-                        text: tasks[i], // map all nodes to a string array
-                    }),
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Allow": "GET, POST, PUT, DELETE, OPTIONS"
-                    },
-                }).catch((err) => {
-                        alert(`Encountered an error ❌`);
-                        console.error(err);
-                    });
-                await timer(300000)
-            }
+        const tasks = nodes.map(node => node.data.value);
+
+        for (let i = 0; i < tasks.length; i++) {
+            axios.post("/api/send", {
+                body: JSON.stringify({
+                    email,
+                    subject,
+                    text: tasks[i],
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Allow": "GET, POST, PUT, DELETE, OPTIONS"
+                },
+            }).catch((err) => {
+                alert(`Encountered an error ❌`);
+                console.error(err);
+            });
+            await timer(delay * 1000)
         }
-        if(shouldProcess) {
-            process()
-        }
-    }, [shouldProcess])
+        setIsProcessing(false)
+    }
 
     useEffect(() => {
         setNodes(initialNodes)
@@ -58,15 +56,14 @@ const Form = () => {
         [setEdges]
     )
 
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setShouldProcess(true);
+        e.preventDefault()
+        sendEmail()
         alert('Sent to processing. Closing page will stop automation')
-    };
+    }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
             <label className={styles.label} htmlFor={'email'}>Email</label>
             <input
                 id={'email'}
@@ -77,7 +74,7 @@ const Form = () => {
                 onChange={(e) => {setEmail(e.target.value)}}
                 required
             />
-            <label style={{marginTop: '25px'}} className={styles.label} htmlFor={'subject'}>Subject</label>
+            <label className={styles.label} htmlFor={'subject'}>Subject</label>
             <input
                 name={'subject'}
                 id={'subject'}
@@ -85,6 +82,17 @@ const Form = () => {
                 value={subject}
                 onChange={(e) => {setSubject(e.target.value)}}
                 required
+            />
+            <label className={styles.label} htmlFor={'delay'}>Delay (in seconds)</label>
+            <input
+                name={'delay'}
+                id={'delay'}
+                type={'number'}
+                className={styles.input}
+                value={delay}
+                onChange={(e) => {setDelay(Number(e.target.value))}}
+                min={0}
+                max={9999}
             />
             <div className={styles.nodes}>
                 <ReactFlow
@@ -99,8 +107,8 @@ const Form = () => {
                     <Background gap={12} size={5} />
                 </ReactFlow>
             </div>
-            <button className={styles.submitBtn}>
-                START AUTOMATION
+            <button disabled={isProcessing} className={styles.submitBtn}>
+                {!isProcessing ? 'START AUTOMATION' : 'PROCESSING'}
             </button>
         </form>
     );
