@@ -34,21 +34,6 @@ app.ws('/', (ws) => {
     })
 })
 
-// let quantity = 0;
-//
-// app.ws('/quantity', (ws) => {
-//     ws.on('message', (msg) => {
-//         msg = JSON.parse(msg)
-//         console.log(msg.method)
-//         if(msg.method === 'open') {
-//             quantity += 1;
-//         } else {
-//             quantity -= 1;
-//         }
-//         getQuantity(ws)
-//     })
-// })
-
 let number = 0;
 
 app.ws('/example', (ws) => {
