@@ -1,9 +1,11 @@
 import {supabase} from "../entities/supabase";
 import axios from "axios";
-import {ChatCompletionCreateParams, ChatCompletionMessageParam} from "openai/resources/chat";
+import {ChatCompletionMessageParam} from "openai/resources/chat";
 import {extractSentencesInQuotes} from "../helpers/extractSentencesInQuotes";
-// import {transporter} from "../entities/nodemailer";
 import {openai} from "../entities/openai";
+import { Resend } from "resend";
+
+export const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface Meme {
     id: number;
@@ -62,7 +64,7 @@ export class MemeService {
         ];
 
         const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
+            model: "gpt-3.5-turbo-0125",
             messages,
             functions,
             function_call: "auto",
@@ -110,16 +112,16 @@ export class MemeService {
 
         const url = `${clientUrl}/chatGPT/${selectedTemplate.id}`
 
-        const mailData = {
-            from: "markkucher100@gmail.com",
-            to: [email],
-            subject: "Your meme is ready!",
-            text: `Hey there, Your meme is ready.\n Access it here: ${url}`,
-        };
-
-        // await transporter.sendMail(mailData, (err: any, info: any) => {
-        //     console.log(err ? err : info)
-        // });
+        try {
+            await resend.emails.send({
+                from: "onboarding@resend.dev",
+                to: [email],
+                subject: "Your meme is ready!",
+                text: `Hey there, Your meme is ready.\n Access it here: ${url}`,
+            })
+        } catch (e) {
+            console.log('Error with sending email: ', e)
+        }
 
         console.log("✨ Yay! Your meme has been emailed to the user! ✨");
 

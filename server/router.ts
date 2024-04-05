@@ -8,6 +8,5 @@ export const router = (app: Application) => {
     app.post('/memes', MemeController.generate)
     app.delete('/memes/:id', MemeController.deleteOne)
     app.patch('/memes/:id', MemeController.patch)
-
     app.post('/chatGPT', ChatGPTController.answer)
 }

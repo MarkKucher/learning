@@ -1,4 +1,4 @@
-import express, {Express, Request, Response, Application, json, urlencoded} from 'express';
+import express, {Application, json, urlencoded} from 'express';
 import "dotenv/config";
 import cors from "cors"
 import {router} from "./router";

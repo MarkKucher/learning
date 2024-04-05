@@ -9,7 +9,7 @@ export class ChatGPTController {
             const response = await ChatGPTService.answer(question);
             res.json(response)
         } catch (e) {
-            res.status(500).json('openai error')
+            res.status(500).json('openai error: ' + e)
         }
     }
 }
