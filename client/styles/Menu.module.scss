@@ -1,4 +1,3 @@
-@use 'theme-primary';
 @use 'positioning';
 @use 'scrollbars';
 
@@ -18,7 +17,6 @@
   left: 0;
   bottom: 0;
   width: 300px;
-  @include theme-primary.blocks-gradient-background;
 }
 
 .button {

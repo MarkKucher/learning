@@ -1,19 +1,7 @@
-@use 'theme-primary';
-
 @mixin default-scrollbar {
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
-  }
-}
-
-@mixin darken-scrollbar {
-  @include default-scrollbar;
-  ::-webkit-scrollbar {
-    background: black;
-  }
-  ::-webkit-scrollbar-thumb {
-    @include theme-primary.blocks-gradient-background;
   }
 }
 

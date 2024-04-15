@@ -1,6 +1,7 @@
 @use 'positioning';
 @use 'scrollbars';
-@use 'theme-primary';
+
+$dark-color: #1E1E1EFF;
 
 .container {
   width: 100%;
@@ -17,7 +18,7 @@
   width: 100%;
   max-height: calc(100% - 5rem);
   @include positioning.centered;
-  background: theme-primary.$dark-color;
+  background: $dark-color;
   border-radius: 7px;
   overflow-y: auto;
   overflow-x: auto;

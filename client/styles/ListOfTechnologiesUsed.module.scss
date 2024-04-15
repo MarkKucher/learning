@@ -1,5 +1,4 @@
 @use 'positioning';
-@use 'theme-primary';
 @use 'scrollbars';
 @use 'shadow';
 
@@ -17,7 +16,6 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 0 10px 10px 0;
   }
-  @include theme-primary.golden-gradient-background;
   @include shadow.block-shadow;
 }
 
@@ -54,7 +52,7 @@
     outline: 4px solid white
   }
   &:active {
-    outline: 4px solid theme-primary.$text-color;
+    outline: 4px solid;
   }
   cursor: pointer;
 }

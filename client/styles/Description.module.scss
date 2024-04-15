@@ -1,7 +1,6 @@
 @use 'positioning';
 @use 'animations';
 @use 'scrollbars';
-@use 'theme-primary';
 
 $font-size: 2rem;
 $line-height: calc($font-size * 1.1);
@@ -62,10 +61,6 @@ $line-height: calc($font-size * 1.1);
   border-radius: 50%;
   cursor: pointer;
   @include animations.tapWithScale;
-}
-
-.active {
-  background: theme-primary.$blocks-gradient;
 }
 
 @media screen and (max-width: 700px) {

@@ -12,7 +12,7 @@ interface DescriptionExtendedProps {
 }
 
 const StyledOption = styled.div`
-  background: ${props => props.theme.text};
+  background: ${(props: any) => props.isActive ? props.theme.mainGradient.firstColor : props.theme.text};
 `
 
 const StyledContent = styled(motion.div)`
@@ -81,8 +81,9 @@ const DescriptionExtended: React.FC<DescriptionExtendedProps> = ({content}) => {
                     {content.map((c, i) => (
                         <StyledOption
                             onClick={() => paginate(i - pageIndex)}
-                            className={i === pageIndex ? `${styles.active} ${styles.option}` : styles.option}
+                            className={styles.option}
                             key={i}
+                            isActive={i === pageIndex}
                         />
                     ))}
                 </div>}

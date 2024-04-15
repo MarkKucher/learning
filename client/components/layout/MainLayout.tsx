@@ -17,11 +17,11 @@ const StyledLayout = styled.div`
 const MainLayout: React.FC<MainLayoutProps> = ({children, title = 'Learning'}) => {
     const {active} = useSelector(selectTheme);
 
-    useEffect(() => {
-        const body = document.querySelector('body');
-        body?.style.setProperty("--scrollbar-background", active.bodyBackground)
-        body?.style.setProperty("--scrollbar-thumb-background", active.subGradient.gradient)
-    }, [active])
+    // useEffect(() => {
+    //     const body = document.querySelector('body');
+    //     body?.style.setProperty("--scrollbar-background", active.bodyBackground)
+    //     body?.style.setProperty("--scrollbar-thumb-background", active.subGradient.gradient)
+    // }, [active])
 
     return (
         <div>

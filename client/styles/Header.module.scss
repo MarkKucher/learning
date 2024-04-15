@@ -1,4 +1,3 @@
-@use 'theme-primary';
 @use 'positioning';
 @use 'shadow';
 
@@ -11,7 +10,6 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 4rem;
-  @include theme-primary.blocks-gradient-background;
 }
 
 .shadow {
@@ -26,8 +24,6 @@
 }
 
 .title {
-  @include theme-primary.golden-gradient-background;
-  @include theme-primary.text-gradient;
   font-size: 4rem;
 }
 

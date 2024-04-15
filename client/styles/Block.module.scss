@@ -1,4 +1,3 @@
-@use 'theme-primary';
 @use 'icons';
 @use 'shadow';
 @use 'positioning';
@@ -56,7 +55,6 @@
 .description {
   flex: 1;
   font-size: 1.3rem;
-  color: theme-primary.$text-color;
   margin: 1rem 0;
 }
 
