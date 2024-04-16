@@ -11,8 +11,8 @@ interface DescriptionExtendedProps {
     content: React.ReactNode[];
 }
 
-const StyledOption = styled.div`
-  background: ${(props: any) => props.isActive ? props.theme.mainGradient.firstColor : props.theme.text};
+const StyledOption = styled.div<{isActive: boolean}>`
+  background: ${(props) => props.isActive ? props.theme.mainGradient.firstColor : props.theme.text};
 `
 
 const StyledContent = styled(motion.div)`
