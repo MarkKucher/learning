@@ -14,18 +14,11 @@
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.2",
-    "@supabase/supabase-js": "^2.42.0",
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
     "axios": "^1.4.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "fontawesome": "^5.6.3",
     "framer-motion": "^9.1.6",
-    "lodash": "^4.17.21",
-    "logrocket": "^7.0.0",
-    "micro-cors": "^0.1.1",
     "next": "^13.3.0",
     "popmotion": "^11.0.5",
     "prismjs": "^1.29.0",
@@ -40,18 +33,12 @@
     "resend": "^1.0.0",
     "sass": "^1.58.1",
     "styled-components": "^5.3.9",
-    "typescript": "4.9.5",
-    "webfontloader": "^1.6.28"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/traverse": "^7.24.1",
-    "@types/lodash": "^4.14.191",
+    "@types/node": "^20.12.7",
     "@types/prismjs": "^1.26.0",
     "@types/react-tag-input": "^6.6.2",
-    "@types/styled-components": "^5.1.26",
-    "@types/webfontloader": "^1.6.35"
-  },
-  "trigger.dev": {
-    "endpointId": "meme-generator"
+    "@types/styled-components": "^5.1.26"
   }
 }

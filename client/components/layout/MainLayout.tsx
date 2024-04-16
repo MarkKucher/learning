@@ -4,6 +4,7 @@ import styled, {ThemeProvider} from "styled-components";
 import {useSelector} from "react-redux";
 import {selectTheme} from "@/modules/themes/redux/themeSlice";
 import Head from "next/head";
+import Header from "@/modules/header/Header";
 
 interface MainLayoutProps {
     children: React.ReactNode;
@@ -17,23 +18,22 @@ const StyledLayout = styled.div`
 const MainLayout: React.FC<MainLayoutProps> = ({children, title = 'Learning'}) => {
     const {active} = useSelector(selectTheme);
 
-    // useEffect(() => {
-    //     const body = document.querySelector('body');
-    //     body?.style.setProperty("--scrollbar-background", active.bodyBackground)
-    //     body?.style.setProperty("--scrollbar-thumb-background", active.subGradient.gradient)
-    // }, [active])
+    useEffect(() => {
+        const body = document.querySelector('body');
+        body?.style.setProperty("--scrollbar-background", active.bodyBackground)
+        body?.style.setProperty("--scrollbar-thumb-background", active.subGradient.gradient)
+    }, [active])
 
     return (
-        <div>
-            <Head>
-                <title>{title}</title>
-            </Head>
-            <ThemeProvider theme={active}>
-                <StyledLayout className={styles.main}>
-                    {children}
-                </StyledLayout>
-            </ThemeProvider>
-        </div>
+        <ThemeProvider theme={active}>
+            <StyledLayout className={styles.main}>
+                <Head>
+                    <title>{title}</title>
+                </Head>
+                <Header/>
+                {children}
+            </StyledLayout>
+        </ThemeProvider>
     );
 };
 

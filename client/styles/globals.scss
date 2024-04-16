@@ -14,9 +14,21 @@ button {
   -ms-user-select: none;
 }
 
+:root {
+  --scrollbar-background: black;
+  --scrollbar-thumb-background: white;
+}
+
 body {
+  width: 100vw;
   overflow-x: clip;
   scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    background: var(--scrollbar-background);
+  };
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-background);
+  };
 }
 
 a {
