@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
-import styles from "styles/EmailAutomationSystem.module.scss";
+import styles from "@/styles/EmailAutomationSystem.module.scss";
 import ReactFlow, {addEdge, Background, Controls, useEdgesState, useNodesState} from "reactflow";
 import {useSelector} from "react-redux";
 import {selectEdges, selectNodes} from "@/modules/react flow + resend/redux/nodes";

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import {MemeType} from "@/modules/chatGPT/page/types";
-import styles from "styles/ChatGPT.module.scss";
+import styles from "@/styles/ChatGPT.module.scss";
 import axios from "axios";
 import CustomImage from "@/components/CustomImage";
 import {serverUrl} from "@/utils/const";
@@ -38,7 +38,17 @@ export async function getServerSideProps(context: any) {
     const { params } = context;
 
     const response = await axios.get(`${serverUrl}/memes/${params.id}`);
+
     const meme = response.data[0];
+
+    if(!meme) {
+        return {
+            redirect: {
+                permanent: false,
+                destination: "/error"
+            }
+        }
+    }
 
     return {
         props: {meme}

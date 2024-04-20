@@ -23,7 +23,7 @@ const CodeExample: React.FC<CodeExampleProps> = ({code, language, codesandboxLin
 
     return (
         <div className={styles.container}>
-            <script defer src="js/prism"></script>
+            <script defer src="@/src/js/prism"></script>
             <pre className={styles.code}>
                 <code className={`language-${language}`}>
                     {code}

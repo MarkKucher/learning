@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import styles from 'styles/ChatGPT.module.scss';
+import styles from '@/styles/ChatGPT.module.scss';
 
 const Submit = () => {
     return (

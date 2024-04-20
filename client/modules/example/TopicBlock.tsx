@@ -1,5 +1,5 @@
 import React, {ComponentPropsWithoutRef} from 'react';
-import styles from "styles/Block.module.scss";
+import styles from "@/styles/Block.module.scss";
 import MainText from "@/components/text/MainText";
 
 interface TopicBlockProps extends ComponentPropsWithoutRef<"div"> {

@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import styles from "styles/ChatGPT.module.scss";
+import styles from "@/styles/ChatGPT.module.scss";
 import axios from "axios";
 import Loader from "@/components/Loader";
 import {serverUrl} from "@/utils/const";
@@ -16,6 +16,7 @@ const ChatGPT = () => {
         inputRef.current && inputRef.current.blur();
         setQuestion('')
         try {
+            setError('')
             setLoading(true)
             const {data} = await axios.post(`${serverUrl}/chatGPT`, {question})
             data ? setAnswer(data) : setError('ChatGPT is not available')
