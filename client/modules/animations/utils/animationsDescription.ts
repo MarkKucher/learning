@@ -7,6 +7,6 @@ export const framerMotionDescription = {
     gestures: 'It is easy to track hover and click events over element simultaneously changing its appearance using framer motion.',
     drag: 'Framer motion can easily make element draggable. Drag behavior is configurable. Also it can help animate element depending on certain value. ' +
         'In this example color of container and circle changes depending on circle position.',
-    scroll: 'Framer motion has useful hooks that helps tracking scroll progress (useScroll) and animating elements (useTransform).',
+    scroll: 'Framer motion has useful hooks that help tracking scroll progress (useScroll) and animating elements (useTransform).',
     path: "Framer motion allows to animate svg elements. In this example you can see how emoji's smile and eyes are animated."
 }
