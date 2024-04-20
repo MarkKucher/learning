@@ -34,7 +34,7 @@ class ChatGPTService {
                     }
                 }];
             const response = yield openai_1.openai.chat.completions.create({
-                model: "gpt-3.5-turbo",
+                model: "gpt-3.5-turbo-0125",
                 messages,
                 functions,
                 function_call: "auto",

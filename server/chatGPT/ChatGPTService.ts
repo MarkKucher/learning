@@ -11,31 +11,18 @@ export class ChatGPTService {
             { role: "user", content: question }
         ];
 
-        const functions = [{
-            name: 'answerAQuestion',
-            description: 'Answer a question',
-            parameters: {
-                type: 'object',
-                properties: {
-                    answer: {
-                        type: 'string',
-                        description: 'Answer'
-                    }
-                },
-                required: ['answer']
-            }
-        }]
+        try {
+            const response = await openai.chat.completions.create({
+                messages,
+                model: "gpt-3.5-turbo",
+            });
 
-        const response = await openai.chat.completions.create( {
-            model: "gpt-3.5-turbo-0125",
-            messages,
-            functions,
-            function_call: "auto",
-        });
+            const responseMessage = response.choices[0];
+            const answer = responseMessage.message.content;
 
-        const responseMessage = response.choices[0];
-        const answer = responseMessage.message.content;
-
-        return answer;
+            return answer;
+        } catch (e) {
+            console.log(e)
+        }
     }
 }
