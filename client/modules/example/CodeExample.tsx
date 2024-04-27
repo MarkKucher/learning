@@ -7,7 +7,7 @@ import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-tsx";
 import CopyIcon from "@/components/icons/CopyIcon";
 import CodeSandboxButton from "@/modules/example/buttons/CodeSandboxButton";
-
+import Script from 'next/script'
 
 interface CodeExampleProps {
     code: string;
@@ -23,7 +23,7 @@ const CodeExample: React.FC<CodeExampleProps> = ({code, language, codesandboxLin
 
     return (
         <div className={styles.container}>
-            <script defer src="@/src/js/prism"></script>
+            <Script defer src="js/prism"></Script>
             <pre className={styles.code}>
                 <code className={`language-${language}`}>
                     {code}
