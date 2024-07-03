@@ -8,7 +8,11 @@ const fs = require('fs')
 const path = require('path')
 const bodyParser = require('body-parser');
 
-app.use(cors())
+const corsOptions = {
+    origin: ['http://localhost:3000', 'https://learning-rosy.verce.app']
+}
+
+app.use(cors(corsOptions))
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
@@ -82,11 +86,5 @@ const broadCastConnection = (ws, msg) => {
         if(client.id === msg.id) {
             client.send(JSON.stringify(msg))
         }
-    })
-}
-
-const getQuantity = () => {
-    aWss.clients.forEach(client => {
-        client.send(quantity)
     })
 }
