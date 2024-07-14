@@ -45,30 +45,6 @@ export class MemeService {
                 {role: "user", content: userPrompt},
             ];
 
-            const tools = [
-                {
-                    type: 'function',
-                    function: {
-                        name: "generateMemeImage",
-                        description: "Generate meme via the imgflip API based on the given idea",
-                        parameters: {
-                            type: "object",
-                            properties: {
-                                text0: {
-                                    type: "string",
-                                    description: "The text for the top caption of the meme",
-                                },
-                                text1: {
-                                    type: "string",
-                                    description: "The text for the bottom caption of the meme",
-                                },
-                            },
-                            required: ["text0", "text1"],
-                        },
-                    }
-                }
-            ]
-
             const functions = [
                 {
                     name: "generateMemeImage",
@@ -98,7 +74,6 @@ export class MemeService {
             });
 
             const responseMessage = response.choices[0]
-            const inputString = responseMessage.message.content
 
             const answer = responseMessage.message.function_call?.arguments
 
