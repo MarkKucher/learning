@@ -7,7 +7,7 @@ const app: Application = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://learning-rosy.verce.app']
+    origin: ['http://localhost:3000', 'https://learning-rosy.vercel.app']
 }
 
 app.use(cors(corsOptions))
