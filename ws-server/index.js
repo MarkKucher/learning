@@ -9,7 +9,7 @@ const path = require('path')
 const bodyParser = require('body-parser');
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://learning-rosy.verce.app']
+    origin: ['http://localhost:3000', 'https://learning-rosy.vercel.app']
 }
 
 app.use(cors(corsOptions))
