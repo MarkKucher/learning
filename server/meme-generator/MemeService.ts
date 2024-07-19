@@ -1,7 +1,6 @@
 import {supabase} from "../entities/supabase";
 import axios from "axios";
 import {ChatCompletionMessageParam} from "openai/resources/chat";
-import {extractSentencesInQuotes} from "../helpers/extractSentencesInQuotes";
 import {openai} from "../entities/openai";
 import { Resend } from "resend";
 

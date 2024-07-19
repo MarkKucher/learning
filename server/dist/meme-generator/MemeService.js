@@ -176,7 +176,7 @@ class MemeService {
             texts.forEach((t, i) => {
                 objTexts[`text${i}`] = t;
             });
-            const formatData = new URLSearchParams(Object.assign({ template_id: id, username: 'g_user_108829902778473979498', password: 'sfhasiufhse@#34' }, objTexts));
+            const formatData = new URLSearchParams(Object.assign({ template_id: id, username: process.env.IMGFLIP_USERNAME, password: process.env.IMGFLIP_PW }, objTexts));
             const getCaptionedMeme = () => __awaiter(this, void 0, void 0, function* () {
                 const response = yield axios_1.default.post("https://api.imgflip.com/caption_image", formatData.toString());
                 return yield response.data;
