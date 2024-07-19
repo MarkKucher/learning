@@ -28,7 +28,6 @@ const SettingsBar = () => {
     useEffect(() => {
         let maxWidth = Math.floor(window.innerWidth * 0.8)
         if(maxWidth < 500) {
-            console.log(maxWidth)
             dispatch(setWidth(maxWidth))
         }
         window.addEventListener('resize', onResize, {passive: true})

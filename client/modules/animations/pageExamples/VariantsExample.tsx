@@ -57,7 +57,6 @@ const VariantsExample = () => {
     const [times, setTimes] = useState<number>(9);
 
     const condition = (width: number) => {
-        console.log(width)
         if(width <= 475) {
             setTimes(4)
         } else if(width <= 500) {

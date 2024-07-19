@@ -26,7 +26,6 @@ const CreateTheme = () => {
     const dispatch = useDispatch();
 
     const create = () => {
-        console.log(mainGradient)
         if(!name) {
             setError('Theme must have name')
             return null;
