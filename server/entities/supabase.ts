@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseURL = 'https://ybcowivznkuauyibygeq.supabase.co';
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || '';
+const supabaseURL = 'https://hgrdcvsykfndbuopbhfj.supabase.co';
+const supabaseKey = process.env.SUPABASE_ANON_KEY || '';
 
-export const supabase = createClient(supabaseURL, supabaseAnonKey, {
+export const supabase = createClient(supabaseURL, supabaseKey, {
     auth: { persistSession: false },
 });

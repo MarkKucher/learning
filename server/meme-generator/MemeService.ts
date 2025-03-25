@@ -2,9 +2,9 @@ import {supabase} from "../entities/supabase";
 import axios from "axios";
 import {ChatCompletionMessageParam} from "openai/resources/chat";
 import {openai} from "../entities/openai";
-import { Resend } from "resend";
+import {resend} from "../entities/resend";
 
-export const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 interface Meme {
     id: number;
