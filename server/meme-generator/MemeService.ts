@@ -139,11 +139,7 @@ export class MemeService {
             .from("meme")
             .select("*")
             .order("created_at", { ascending: false });
-        if(error) {
-            throw error;
-        } else {
-            return data;
-        }
+        return data;
     }
 
     static async getOne(id: string) {
