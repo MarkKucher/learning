@@ -42,15 +42,15 @@ const EditMeme: React.FC<EditMemeProps> = ({meme, setMemes, setMeme, setIsLoadin
     }, [])
 
     const remove = () => {
-        axios.delete(`${serverUrl}/memes/${meme.id}`)
-        setMemes((prev: MemeType[]) => prev.filter(m => m.id !== meme.id))
+        axios.delete(`${serverUrl}/memes/${meme._id}`)
+        setMemes((prev: MemeType[]) => prev.filter(m => m._id !== meme._id))
         setIsModalOpen(false)
         const dataFromStorage = localStorage.getItem('created memes')
         const createdMemes = dataFromStorage ? JSON.parse(dataFromStorage) : [];
         if(createdMemes.length <= 1) {
             localStorage.removeItem('created memes')
         } else {
-            localStorage.setItem('created memes', JSON.stringify(createdMemes.filter((id: string) => id !== meme.id)))
+            localStorage.setItem('created memes', JSON.stringify(createdMemes.filter((id: string) => id !== meme._id)))
         }
     }
 
@@ -71,7 +71,7 @@ const EditMeme: React.FC<EditMemeProps> = ({meme, setMemes, setMeme, setIsLoadin
                         className={styles.edit__area}
                     >
                         {meme.texts.map((t, i) =>
-                            <EditText initialText={t} memeId={meme.id} textId={i} setMeme={setMeme} setIsLoading={setIsLoading} key={t + i}/>
+                            <EditText initialText={t} memeId={meme._id} textId={i} setMeme={setMeme} setIsLoading={setIsLoading} key={t + i}/>
                         )}
                         <div className={styles.edit__area__text}>
                             <button

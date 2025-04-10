@@ -41,7 +41,7 @@ const ViewMemes = () => {
             >
                 {!isLoading ? <AnimatePresence>
                     {memes.map((meme) => (
-                        <Meme key={meme.id} ids={ids} initialMeme={meme} setMemes={setMemes}/>
+                        <Meme key={meme._id} ids={ids} initialMeme={meme} setMemes={setMemes}/>
                     ))}
                 </AnimatePresence> : <Skeleton width={700} height={700}/>}
             </motion.div>

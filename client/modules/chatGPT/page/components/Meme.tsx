@@ -28,12 +28,12 @@ const Meme: React.FC<MemeProps> = ({ids, initialMeme, setMemes}) => {
                 width={700}
                 height={700}
                 isLoading={isLoading}
-                onClick={() => router.push(`/chatGPT/${meme.id}`)}
+                onClick={() => router.push(`/chatGPT/${meme._id}`)}
                 src={meme.url}
                 alt={meme.name}
                 className={styles.meme__img}
             />}
-            {ids.includes(meme.id) && <EditMeme meme={meme} setMemes={setMemes} setMeme={setMeme} setIsLoading={setIsLoading}/>}
+            {ids.includes(meme._id) && <EditMeme meme={meme} setMemes={setMemes} setMeme={setMeme} setIsLoading={setIsLoading}/>}
         </motion.div>
     );
 };

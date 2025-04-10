@@ -55,7 +55,7 @@ const MemeGenerator = () => {
             const dataFromStorage = localStorage.getItem("created memes")
             const createdMemes = dataFromStorage ? JSON.parse(dataFromStorage) : [];
 
-            localStorage.setItem("created memes", JSON.stringify([...createdMemes, response.data[0].id]))
+            localStorage.setItem("created memes", JSON.stringify([...createdMemes, response.data]))
         } catch (err) {
             console.error(err);
         }
@@ -77,6 +77,7 @@ const MemeGenerator = () => {
                         <input
                             type="text"
                             name="audience"
+                            id="audience"
                             value={audience}
                             required
                             className={styles.input}
@@ -86,6 +87,7 @@ const MemeGenerator = () => {
                         <input
                             type="email"
                             name="email"
+                            id="email"
                             value={email}
                             required
                             className={styles.input}
@@ -93,7 +95,7 @@ const MemeGenerator = () => {
                         />
                         <label htmlFor="topics">Topics</label>
                         <ReactTags
-                            id={'topics'}
+                            id='topics'
                             tags={topics}
                             delimiters={delimiters}
                             handleDelete={handleDelete}

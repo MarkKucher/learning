@@ -39,7 +39,7 @@ export async function getServerSideProps(context: any) {
 
     const response = await axios.get(`${serverUrl}/memes/${params.id}`);
 
-    const meme = response.data[0];
+    const meme = response.data;
 
     if(!meme) {
         return {

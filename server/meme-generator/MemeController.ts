@@ -1,5 +1,6 @@
 import {MemeService} from "./MemeService";
 import {Request, Response} from "express";
+import {DBError} from "../database/exceptions/error";
 
 export class MemeController {
 
@@ -10,7 +11,11 @@ export class MemeController {
             const meme = await MemeService.generate(topic, audience, email)
             res.json(meme)
         } catch (e) {
-            res.status(500).json(e)
+            if(e instanceof DBError) {
+                res.status(e.status).json(e);
+            } else {
+                res.status(500).json(e)
+            }
         }
     }
 
@@ -19,7 +24,11 @@ export class MemeController {
             const memes = await MemeService.getAll()
             res.json(memes)
         } catch (e) {
-            res.status(500).json(e)
+            if(e instanceof DBError) {
+                res.status(e.status).json(e);
+            } else {
+                res.status(500).json(e)
+            }
         }
     }
 
@@ -28,7 +37,11 @@ export class MemeController {
             const meme = await MemeService.getOne(req.params.id);
             res.json(meme)
         } catch (e) {
-            res.status(500).json(e)
+            if(e instanceof DBError) {
+                res.status(e.status).json(e);
+            } else {
+                res.status(500).json(e)
+            }
         }
     }
 
@@ -36,7 +49,11 @@ export class MemeController {
         try {
             await MemeService.deleteOne(req.params.id)
         } catch (e) {
-            res.status(500).json(e)
+            if(e instanceof DBError) {
+                res.status(e.status).json(e);
+            } else {
+                res.status(400).json(e)
+            }
         }
     }
 
@@ -44,10 +61,15 @@ export class MemeController {
         const {textId, text} = req.body;
         try {
             const meme = await MemeService.patch(req.params.id, textId, text)
-            console.log(meme)
             res.json(meme)
         } catch (e) {
-            res.status(500).json(e)
+            if(e instanceof DBError) {
+                console.log(e.message);
+                res.status(e.status).json(e);
+            } else {
+                console.log(e);
+                res.status(500).json(e)
+            }
         }
     }
 }

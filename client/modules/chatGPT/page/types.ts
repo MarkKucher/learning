@@ -4,7 +4,7 @@ export interface Topic {
 }
 
 export interface MemeType {
-    id: string;
+    _id: string;
     name: string;
     url: string;
     texts: string[];

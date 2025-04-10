@@ -23,12 +23,16 @@ const EditText: React.FC<EditTextProps> = ({initialText, memeId, textId, setMeme
     }
 
     const change = async () => {
-        setInitialTextState(text);
-        setIsDisabled(true);
-        setIsLoading(true);
-        const response = await axios.patch(`${serverUrl}/memes/${memeId}`, {textId, text})
-        setMeme(response.data)
-        setIsLoading(false);
+        try {
+            setInitialTextState(text);
+            setIsDisabled(true);
+            setIsLoading(true);
+            const response = await axios.patch(`${serverUrl}/memes/${memeId}`, {textId, text})
+            setMeme(response.data)
+            setIsLoading(false);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
